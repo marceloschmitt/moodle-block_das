@@ -1,0 +1,245 @@
+p{
+    font-size: small;
+    font-family: Verdana;
+    margin-bottom: 0.5em !important;
+}
+
+.row{
+    margin-top: 150px;
+}
+
+.col-md-3{
+    padding: 0.2em !important;
+}
+
+.das-title{
+    color: #FC8943;
+    font-size: large;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.2em;
+}
+
+.das-subtitle{
+    font-weight: 600;
+}
+
+.das-user-small-image{
+    margin-right: 0.6em;
+    width: 25px;
+    border-radius: 14px;
+    margin-bottom: 0.2em;
+}
+
+.das-online-users-box{
+    border: 1px solid #282828;
+    border-radius: 10px;
+    padding: 0.8em 0.5em;
+}
+
+.das-online-users-box p a{
+    text-decoration: none;
+    color: black;
+}
+
+.das-missing-users-box{
+    margin-top: 0.5em;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0.8em 0.2em;
+}
+
+.das-missing-users-box .das-subtitle{
+    margin: 0.1em 0.3em;
+}
+
+.das-missing-user-color-grey{
+    background-color: rgb(153,153,153);
+    padding: 0.6em;
+    color: #FFF;
+    font-size: small;
+    font-family: Verdana;
+    border-radius: 20px;
+    border: solid 1px;
+    margin: 0.3em 0em;
+}
+
+.das-missing-user-color-white{
+    color: black;
+    padding: 0.6em;
+    background-color: #FFF;
+    font-size: small;
+    font-family: Verdana;
+    border-radius: 20px;
+    border: solid 1px;
+    margin: 0.3em 0em;
+}
+
+.das-missing-user-days-white{
+    float: right;
+    padding: 0.3em 0.4em;
+    background-color: #FFF;
+    color: black;
+    border-radius: 16px;
+    font-weight: 600;
+}
+
+.das-missing-user-days-grey{
+    float: right;
+    padding: 0.3em 0.4em;
+    background-color: rgb(153,153,153);
+    color: #FFF;
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+.das-message-icon{
+    width: 25px;
+    float: right;
+}
+
+#caixa1{
+    width: 100%;
+    height: 185px;
+    background-color: antiquewhite;
+}
+
+#caixa2{
+    width: 100%;
+    height: 255px;
+    background-color: gray;
+}
+
+#caixa3{
+    width: 100%;
+    height: 105px;
+    background-color: cornflowerblue;
+}
+
+#caixa4{
+    width: 100%;
+    height: 175px;
+    background-color: wheat;
+}
+
+#caixa5{
+    width: 100%;
+    height: 245px;
+    background-color: lightgray;
+}
+
+#caixa6{
+    width: 100%;
+    height: 385px;
+    background-color: thistle;
+}
+
+.menu{
+	background-color: rgb(153,153,153);
+	font-family: Verdana;
+	border-radius:10px;
+	display: block;
+	font-size: 14px;
+}
+
+ul#menu-vertical{
+	list-style:none;
+	margin: 0;
+    padding: 0;
+}
+
+.menu a{	
+	text-decoration: none;
+	color: white;
+}
+
+ul#menu-vertical li{
+	border-bottom: 1px solid #ffffff;
+	padding:20px;
+	position: relative;
+	
+}
+ul#menu-vertical li#ativos{
+	background: url('../img/globo.png') no-repeat; 
+	background-position: 15% 50%;  
+	background-size: 10%;
+	padding-left:80px;
+}
+
+ul#menu-vertical li#evasao{
+	background: url('../img/evasão.png') no-repeat; 
+	background-position: 15% 50%;  
+	background-size: 10%;
+	padding-left:80px;
+	
+}
+
+ul#menu-vertical li#antecip{
+	background: url('../img/postagensadiantadas.png') no-repeat; 
+	background-position: 15% 50%;  
+	background-size: 10%;
+	padding-left:80px;
+}
+
+ul#menu-vertical li#aviso{
+	background: url('../img/svisopreventivo.png') no-repeat; 
+	background-position: 15% 50%;  
+	background-size: 10%;
+	padding-left:80px;
+}
+
+ul#menu-vertical li#noprazo{
+	background: url('../img/post.png') no-repeat; 
+	background-position: 15% 50%;  
+	background-size: 10%;
+	padding-left:80px;	
+}
+
+ul#menu-vertical li#fora{
+	background: url('../img/tempo.png') no-repeat; 
+	background-position: 15% 50%;  
+	background-size: 10%;
+	padding-left:80px;
+}
+ul#menu-vertical li#repost{
+	background: url('../img/repostagem.png') no-repeat; 
+	background-position: 15% 50%;  
+	background-size: 15%;
+	padding-left:80px;
+}
+ul#menu-vertical li#status{
+	background: url('../img/status.png') no-repeat; 
+	background-position: 15% 50%;  
+	background-size: 7%;
+	padding-left:80px;
+}
+ul#menu-vertical li#acesso{
+	background: url('../img/topicos.png') no-repeat; 
+	background-position: 15% 50%;  
+	background-size: 10%;
+	padding-left:80px;
+}
+ul#menu-vertical li#recursos{
+	background: url('../img/top.png') no-repeat; 
+	background-position: 15% 50%;  
+	background-size: 10%;
+	padding-left:80px;
+}
+ul#menu-vertical li#bottom{
+	background: url('../img/bottom.png') no-repeat; 
+	background-position: 15% 50%;  
+	background-size: 10%;
+	padding-left:80px;
+}
+ul#menu-vertical li#tempo{
+	background: url('../img/tempo.png') no-repeat; 
+	background-position: 15% 50%;  
+	background-size: 10%;
+	padding-left:80px;
+}
+ul#menu-vertical li#graficos{
+	background: url('../img/grafico.png') no-repeat; 
+	background-position: 15% 50%;  
+	background-size: 10%;
+	padding-left:80px;
+}

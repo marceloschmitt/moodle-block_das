@@ -1,0 +1,352 @@
+p {
+    font-size: small;
+    font-family: Verdana;
+    margin-bottom: 0.5em !important;
+}
+
+.row {
+    margin-top: 100px;
+}
+
+.das-delay{
+    -webkit-animation-duration: 2s;
+    -webkit-animation-delay: 1.5s;
+    -webkit-animation-iteration-count: 1;
+}
+ 
+.das-vertical-align {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); 
+}
+
+#das-col-menu,
+#das-user-column-1,
+#das-user-column-2,
+#das-user-column-3 {
+    position: absolute;
+    width: 25%;
+    padding: 0.2em !important;
+    -webkit-transition: all 2s; /* Safari 3.1 to 6.0 */
+    transition: all 2s;
+}
+
+#das-col-menu {
+    left: 0%;
+}
+
+#das-menu-vertical {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana;
+    border: solid 1px #FFF;
+    border-radius: 10px;
+    display: block;
+    font-size: 14px;
+}
+
+#das-menu-vertical a {
+    text-decoration: none;
+    color: white;
+}
+
+ul#das-menu-vertical li {
+    border-bottom: 1px solid #ffffff;
+    position: relative;
+    height: 58px;
+}
+
+.das-image-menu {
+    float: left;
+    width: 3em;
+    margin-left: 0.6em;
+    margin-top: 0.4em;
+    margin-right: 2em;
+}
+
+ul#das-menu-vertical p {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 2em;
+}
+
+#das-item-menu0 {
+    border-radius: 0px 10px 0px 0px;
+}
+
+#das-item-menu0,
+#das-item-menu1,
+#das-item-menu2,
+#das-item-menu3,
+#das-item-menu4,
+#das-item-menu5,
+#das-item-menu6,
+#das-item-menu7,
+#das-item-menu8,
+#das-item-menu9,
+#das-item-menu10,
+#das-item-menu11,
+#das-item-menu12 {
+    background-color: #ff6600;
+}
+
+#das-name-menu0,
+#das-name-menu1,
+#das-name-menu2,
+#das-name-menu3,
+#das-name-menu4,
+#das-name-menu5,
+#das-name-menu6,
+#das-name-menu7,
+#das-name-menu8,
+#das-name-menu9,
+#das-name-menu10,
+#das-name-menu11,
+#das-name-menu12 {
+    -webkit-transition: all 2s; /* Safari 3.1 to 6.0 */
+    transition: all 2s;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 1s;
+    -webkit-animation-iteration-count: 1;
+}
+
+#das-item-menu12 {
+    border-radius: 0px 0px 10px 0px;
+}
+
+.das-select-buttons {
+    margin-top: 1.5em;
+    margin-left: 0.2em;
+}
+
+.das-select-buttons-division {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 0.6em;
+}
+
+.das-check-buttom,
+.das-uncheck-buttom {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 0.6em;
+}
+
+.das-check-buttom:hover,
+.das-uncheck-buttom:hover {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 0.6em;
+}
+
+#das-check,
+#das-uncheck {
+    height: 20px;
+    width: 20px;
+    background-size: cover;
+    margin-right: 0.2em;
+    -webkit-transition: all 2s; /* Safari 3.1 to 6.0 */
+    transition: all 2s;
+}
+
+#das-check {
+    background-image: url(../img/check_color.png);
+}
+
+#das-uncheck {
+    background-image: url(../img/uncheck.png);
+}
+
+#das-user-column-1 {
+    left: 25%;
+}
+
+#das-user-column-2 {
+    left: 50%;
+}
+
+#das-user-column-3 {
+    left: 75%;
+}
+
+.das-title {
+    color: #FC8943;
+    font-size: large;
+    font-weight: 600;
+    text-align: center;
+    margin: 0.6em 0.2em !important;
+}
+
+.das-subtitle {
+    color: #282828;
+    font-weight: bold;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+
+.das-gear {
+    width: 15px;
+    float: right;
+}
+
+#das-activity-deliver,
+#das-preventive-notice,
+#das-on-time,
+#das-out-of-time,
+#das-remail,
+#das-status-class,
+#das-acess-activity,
+#das-resources,
+#das-permanence-course {
+    width: 100%;
+    border: 1px solid #282828;
+    border-radius: 10px;
+    padding: 0.8em 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.das-activity-number {
+    position: absolute;
+    right: 10px;
+    padding: 0.3em 0.3em;
+    background-color: rgb(255, 102, 0);
+    color: #FFF;
+    border-radius: 18px;
+    font-weight: 600;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+}
+
+.das-item-default-expansive{
+    margin-left: 1em;
+}
+
+.das-item-default-header, .das-item-default-expansive{
+    display: flex;
+    flex-direction: row;
+    height: 25px;
+    margin-bottom: 0.3em;
+}
+
+.das-activity-deliver-img {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.6em;
+}
+
+.das-status-class-graphic {
+    margin-left: 1.5em;
+}
+
+.das-acess-activity-graphic {
+    margin-left: 4em;
+}
+
+.das-top-bottom {
+    color: #FC8943;
+    font-size: small;
+    text-align: center;
+    margin-top: -13px;
+}
+
+.das-resources-graphic {
+    margin-left: 1.2em;
+}
+
+.das-permanence-course-graphic {
+    margin-left: 2.5em;
+}
+
+#das-online-users-box,
+#das-missing-users-box {
+    border: 1px solid #282828;
+    border-radius: 10px;
+}
+
+#das-online-users-box {
+    margin-bottom: 0.5em;
+    padding: 0.8em 0.5em;
+}
+
+.das-online-users-box p a {
+    text-decoration: none;
+    color: black;
+}
+
+#das-missing-users-box {
+    padding: 0.8em 0.2em;
+}
+
+.das-missing-users-box .das-subtitle {
+    margin: 0.1em 0.3em;
+}
+
+.das-missing-user-color-grey,
+.das-missing-user-color-white {
+    display: flex;
+    flex-direction: row;
+    height: 42px;
+    padding: 0.6em;
+    font-size: small;
+    font-family: Verdana;
+    border-radius: 20px;
+    border: solid 1px;
+    margin: 0.3em 0em;
+}
+
+.das-missing-user-color-grey {
+    background-color: #999999;
+    color: #FFFFFF;
+}
+
+.das-missing-user-color-white {
+    background-color: #FFFFFF;
+    color: black;
+}
+
+.das-missing-user-days-white,
+.das-missing-user-days-grey {
+    float: right;
+    padding: 0.3em 0.4em;
+    border-radius: 15px;
+    font-weight: 600;
+    position: absolute;
+    right: 16px;
+}
+
+.das-user-small-image {
+    margin-right: 0.6em;
+    width: 25px;
+    border-radius: 14px;
+}
+
+.das-missing-user-days-white {
+    background-color: #FFFFFF;
+    color: black;
+}
+
+.das-missing-user-days-grey {
+    background-color: #999999;
+    color: #FFFFFF;
+}
+
+.das-message-icon {
+    width: 25px;
+    position: absolute;
+    right: 10px;
+}
+
+.das-p-overflow {
+    overflow: hidden;
+    max-width: 80%;
+}
