@@ -1,4 +1,4 @@
-AnalyticsGraphs
+DAS
 ===============
 
-Learning analytics Moodle plugin - graphs to help teachers.
+DAS Moodle plugin - graphs to help teachers.
