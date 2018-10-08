@@ -14,13 +14,10 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-
-
-
-$string['analytics_graphs:addinstance'] = 'Add a new AG block';
-$string['nalytics_graphs:bemonitored'] = 'Usuário é monitorado na disciplina';
-$string['analytics_graphs:myaddinstance'] = 'Add a new AG block to the My Moodle page';
-$string['analytics_graphs:viewpages'] = 'Visualiza gráficos';
+$string['das:addinstance'] = 'Add a new AG block';
+$string['das:bemonitored'] = 'Usuário é monitorado na disciplina';
+$string['das:myaddinstance'] = 'Add a new AG block to the My Moodle page';
+$string['das:viewpages'] = 'Visualiza gráficos';
 
 $string['pluginname'] = 'Sistema de Alerta com Dashboard';
 $string['dashboard_alert_system'] = 'Sistema de Alerta com Dashboard';
