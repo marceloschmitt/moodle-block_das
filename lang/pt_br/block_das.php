@@ -22,8 +22,9 @@ $string['nalytics_graphs:bemonitored'] = 'Usuário é monitorado na disciplina';
 $string['analytics_graphs:myaddinstance'] = 'Add a new AG block to the My Moodle page';
 $string['analytics_graphs:viewpages'] = 'Visualiza gráficos';
 
-$string['pluginname'] = 'Analytics Graphs';
-$string['analytics_graphs'] = 'Analytics Graphs';
+$string['pluginname'] = 'Sistema de Alerta com Dashboard';
+$string['dashboard_alert_system'] = 'Sistema de Alerta com Dashboard';
+$string['das'] = 'SAD';
 
 $string['access'] = 'Acessaram';
 $string['access_to_contents'] = 'Materiais acessados';
