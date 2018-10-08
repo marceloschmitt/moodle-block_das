@@ -17,14 +17,14 @@
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
-    'block/analytics_graphs:bemonitored' => array(
+    'block/das:bemonitored' => array(
         'captype' => 'read',
         'contextlevel' => CONTEXT_BLOCK,
         'archetypes' => array(
             'student' => CAP_ALLOW,
         )
     ),
-     'block/analytics_graphs:viewpages' => array(
+     'block/das:viewpages' => array(
         'riskbitmask' => RISK_SPAM,
         'captype' => 'read',
         'contextlevel' => CONTEXT_BLOCK,
@@ -38,7 +38,7 @@ $capabilities = array(
         )
     ),
 
-    'block/analytics_graphs:addinstance' => array(
+    'block/das:addinstance' => array(
         'riskbitmask' => RISK_SPAM | RISK_XSS,
         'captype' => 'write',
         'contextlevel' => CONTEXT_BLOCK,
@@ -49,7 +49,7 @@ $capabilities = array(
         'clonepermissionsfrom' => 'moodle/site:manageblocks'
     ),
     
-    'block/analytics_graphs:myaddinstance' => array(
+    'block/das:myaddinstance' => array(
 		'riskbitmask' => RISK_SPAM | RISK_XSS,
 		'captype' => 'write',
 		'contextlevel' => CONTEXT_BLOCK,
