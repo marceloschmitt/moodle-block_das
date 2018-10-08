@@ -1,6 +1,6 @@
 <?php
  
-namespace block_analytics_graphs\privacy;
+namespace block_das\privacy;
  
 class provider implements 
     // This plugin does not store any personal user data.
