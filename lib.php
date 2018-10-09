@@ -16,7 +16,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-function() {
+function usuarios_online() {
  return aray('Marcelo', 'Anita', 'Patricia'); 
 }
 
