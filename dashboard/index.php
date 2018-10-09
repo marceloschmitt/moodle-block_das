@@ -577,6 +577,8 @@
             </div>
         </div>
     </div>
-
+<?php include '../lib.php'; ?>
 </body>
 </html>
+
+
