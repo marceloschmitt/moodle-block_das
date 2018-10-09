@@ -442,7 +442,7 @@ include('../lib.php');
                 <!-- Loop com resultado da query para usuários online -->
                 
                 <?php
-                $vetor_usuarios_online = usuarios_online();
+                $vetor_usuarios_online = array('eu','ty','ele');
                  foreach($vetor_usuarios_online AS $nome) {
                 ?>
 
