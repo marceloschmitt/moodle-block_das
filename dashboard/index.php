@@ -162,6 +162,7 @@
 </head>
 
 <body>
+<?php include '../lib.php'; ?>
 
     <div class="row" style="margin-left: 0; margin-right: 0;">
         <div id="das-col-menu">
@@ -577,7 +578,6 @@
             </div>
         </div>
     </div>
-<?php include '../lib.php'; ?>
 </body>
 </html>
 
