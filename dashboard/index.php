@@ -1,3 +1,6 @@
+<!php
+include('../libphp');
+!>
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -438,13 +441,19 @@
 
                 <!-- Loop com resultado da query para usuários online -->
                 
+                <?php
                 $vetor_usuarios_online = usuarios_online();
+                foreach($vetor_usuarios_online AS $nome) {
+                !>
 
                 <div class="das-item-default-header">
                     <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
-                    <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
+                    <p class="das-vertical-align das-p-overflow"><?php echo $nome !></p>
                     <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                 </div>
+                <?php
+                }
+                <!>
 
                 <div class="das-item-default-header">
                     <img class="das-user-small-image das-vertical-align" src="assets/img/rosto2.jpg" alt="User-Image">
