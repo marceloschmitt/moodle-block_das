@@ -16,3 +16,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+function() {
+ return aray('Marcelo', 'Anita', 'Patricia'); 
+}
+
