@@ -17,7 +17,6 @@
 defined('MOODLE_INTERNAL') || die();
 
 function usuarios_online() {
- $nome = "Anita";
- return $nome; 
+ return array("Anita", "Marcelo", "Patricia"); 
 }
 ?>
