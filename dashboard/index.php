@@ -439,8 +439,8 @@
                 <!-- Loop com resultado da query para usuários online -->
                 
                 <?php
-                $vetor_usuarios_online = array('eu','ty','ele');
-                 foreach($vetor_usuarios_online AS $nome) {
+                $vetor_usuarios_online = usuarios_online();
+                foreach($vetor_usuarios_online AS $nome) {
                 ?>
 
                 <div class="das-item-default-header">
