@@ -443,7 +443,7 @@ include('../lib.php');
                 
                 <?php
                 $vetor_usuarios_online = usuarios_online();
-                foreach($vetor_usuarios_online AS $nome) {
+                /* foreach($vetor_usuarios_online AS $nome) {
                 ?>
 
                 <div class="das-item-default-header">
@@ -452,7 +452,7 @@ include('../lib.php');
                     <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                 </div>
                 <?php
-                }
+                }*/
                 ?>
 
                 <div class="das-item-default-header">
