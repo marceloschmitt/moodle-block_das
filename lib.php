@@ -17,5 +17,5 @@
 //defined('MOODLE_INTERNAL') || die();
 
 function usuarios_online() {
- return array('Anita', 'Marcelo', 'Patricia'); 
+ return array('AAnita', 'MMarcelo', 'PPatricia'); 
 }
