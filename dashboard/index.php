@@ -1,6 +1,3 @@
-<?php
-include('../lib.php');
-?>
 <!DOCTYPE html>
 <html lang="pt">
 
