@@ -19,3 +19,4 @@ defined('MOODLE_INTERNAL') || die();
 function usuarios_online() {
  return array('Marcelo', 'Anita', 'Patricia'); 
 }
+?>
