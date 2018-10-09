@@ -448,7 +448,7 @@ include('../lib.php');
 
                 <div class="das-item-default-header">
                     <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
-                    <p class="das-vertical-align das-p-overflow"><?php echo $nome ?></p>
+                    <p class="das-vertical-align das-p-overflow"><?php echo $nome; ?></p>
                     <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                 </div>
                 <?php
