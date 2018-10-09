@@ -16,12 +16,13 @@
 
 
 
-$string['analytics_graphs:addinstance'] = 'Add a new AG block';
-$string['analytics_graphs:bemonitored'] = 'User is monitored in the course';
-$string['analytics_graphs:myaddinstance'] = 'Add a new AG block to the My Moodle page';
-$string['analytics_graphs:viewpages'] = 'View graphs';
-$string['pluginname'] = 'Analytics Graphs';
-$string['analytics_graphs'] = 'Analytics Graphs';
+$string['das:addinstance'] = 'Add a new AG block';
+$string['das:bemonitored'] = 'User is monitored in the course';
+$string['das:myaddinstance'] = 'Add a new AG block to the My Moodle page';
+$string['das:viewpages'] = 'View graphs';
+$string['pluginname'] = 'DAS';
+$string['das'] = 'das';
+
 
 $string['no_types_requested'] = 'No modules selected to base graph on.';
 

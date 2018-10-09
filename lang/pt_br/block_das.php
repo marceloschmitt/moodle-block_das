@@ -21,7 +21,7 @@ $string['das:viewpages'] = 'Visualiza gráficos';
 
 $string['pluginname'] = 'Sistema de Alerta com Dashboard';
 $string['dashboard_alert_system'] = 'Sistema de Alerta com Dashboard';
-$string['das'] = 'SAD';
+$string['das'] = 'DAS - clique aqui';
 
 $string['access'] = 'Acessaram';
 $string['access_to_contents'] = 'Materiais acessados';

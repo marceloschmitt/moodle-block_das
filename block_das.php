@@ -16,7 +16,7 @@
 defined('MOODLE_INTERNAL') || die();
 class block_das extends block_base {
     public function init() {
-        $this->title = get_string('das', 'block_das');
+        $this->title = get_string('pluginname', 'block_das');
     }
     // The PHP tag and the curly bracket for the class definition
     // will only be closed after there is another function added in the next section.
@@ -40,7 +40,7 @@ class block_das extends block_base {
         // $this->content->text = get_string('graphs', 'block_das');
         $this->content->text = "";
         $this->content->text .= "<li> <a href= {$CFG->wwwroot}/blocks/das/dashboard/index.php 
-                          target=_blank>" . get_string('grades_chart', 'block_das') . "</a>";
+                          target=_blank>" . get_string('das', 'block_das') . "</a>";
       
         $this->content->footer = '<hr/>';
         return $this->content;
