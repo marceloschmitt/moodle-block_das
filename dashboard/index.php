@@ -444,7 +444,7 @@ include('../libphp');
                 <?php
                 $vetor_usuarios_online = usuarios_online();
                 foreach($vetor_usuarios_online AS $nome) {
-                !>
+                ?>
 
                 <div class="das-item-default-header">
                     <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
@@ -453,7 +453,7 @@ include('../libphp');
                 </div>
                 <?php
                 }
-                <!>
+                <?>
 
                 <div class="das-item-default-header">
                     <img class="das-user-small-image das-vertical-align" src="assets/img/rosto2.jpg" alt="User-Image">
