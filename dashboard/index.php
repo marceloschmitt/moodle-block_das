@@ -162,7 +162,9 @@
 </head>
 
 <body>
+    echo 'a';
 <?php include '../lib.php'; ?>
+    echo 'b';
 
     <div class="row" style="margin-left: 0; margin-right: 0;">
         <div id="das-col-menu">
