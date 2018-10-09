@@ -1,5 +1,5 @@
 <?php
-include('../libphp');
+include('../lib.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt">
