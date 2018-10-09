@@ -437,6 +437,8 @@
                 <!-- Alterar String!!! -->
 
                 <!-- Loop com resultado da query para usuários online -->
+                
+                $vetor_usuarios_online = usuarios_online();
 
                 <div class="das-item-default-header">
                     <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
