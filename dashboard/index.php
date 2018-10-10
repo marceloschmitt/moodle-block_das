@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include '../lib.php'; ?>
 <html lang="pt">
 
 <head>
@@ -162,7 +163,6 @@
 </head>
 
 <body>
-<?php include '../lib.php'; ?>
 
     <div class="row" style="margin-left: 0; margin-right: 0;">
         <div id="das-col-menu">
@@ -440,37 +440,26 @@
                 <!-- Loop com resultado da query para usuários online -->
                 
                 <?php
-                $vetor_usuarios_online = usuarios_online();
-                foreach($vetor_usuarios_online AS $nome) {
+                $onlineusers = usuarios_online();
+                foreach($onlineusers AS $user) {
                 ?>
 
                 <div class="das-item-default-header">
                     <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
-                    <p class="das-vertical-align das-p-overflow"><?php echo $nome; ?></p>
+                    <p class="das-vertical-align das-p-overflow"><?php echo "$user->firstname $user->lastname"; ?></p>
                     <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                 </div>
                 <?php
                 }
                 ?>
 
+            
                 <div class="das-item-default-header">
                     <img class="das-user-small-image das-vertical-align" src="assets/img/rosto2.jpg" alt="User-Image">
                     <p class="das-vertical-align das-p-overflow">Givaldo Batista Medeiros</p>
                     <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                 </div>
-
-                <div class="das-item-default-header">
-                    <img class="das-user-small-image das-vertical-align" src="assets/img/rosto3.jpg" alt="User-Image">
-                    <p class="das-vertical-align das-p-overflow">Bruno Gomes</p>
-                    <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
-                </div>
-
-                <div class="das-item-default-header">
-                    <img class="das-user-small-image das-vertical-align" src="assets/img/rosto4.jpg" alt="User-Image">
-                    <p class="das-vertical-align das-p-overflow">Cristiane de Souza Abreu</p>
-                    <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
-                </div>
-
+                
                 <div class="das-box-buttons">
 
                 </div>
