@@ -34,6 +34,8 @@ function usuarios_online() {
         $params['now'] = $now;
         $timefrom = 100 * floor(($now - $timetoshowusers) / 100); // Round to nearest 100 seconds for better query cache.
         $params['timefrom'] = $timefrom;
+        $params['courseid] = $courseid;
+    
  
         $userfields = \user_picture::fields('u', array('username'));
         $timeaccess    = ", ul.timeaccess AS lastaccess";
