@@ -476,8 +476,8 @@
                     <p class="das-subtitle">Entre 3 e 6 dias</p>
                     
                     <?php
-                    $das_missing_users = $missing_users_das();
-                    foreach($das_missing_users as $users){
+                    $das_missing_users = missing_users_das();
+                    foreach($das_missing_users As $users){
                     ?>
                     <div class="das-missing-user-color-grey">
                        <img class="das-user-small-image" src="assets/img/rosto1.jpg" alt="User-Image">
@@ -486,7 +486,9 @@
                             <div style="width: 18px;text-align: center;" n>5</div>
                         </div>
                     </div>
-                    <?php } ?>
+                    <?php 
+                    } 
+                    ?>
                 </div>
                 
                 <div class="das-missing-users-period">
