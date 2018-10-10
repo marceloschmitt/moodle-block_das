@@ -35,23 +35,27 @@ function usuarios_online() {
         $timefrom = 100 * floor(($now - $timetoshowusers) / 100); // Round to nearest 100 seconds for better query cache.
         $params['timefrom'] = $timefrom;
  
+        $userfields = \user_picture::fields('u', array('username'));
+        $timeaccess    = ", ul.timeaccess AS lastaccess";
+        $groupby = "GROUP BY $userfields";
+
             // Course level - show only enrolled users for now.
             // TODO: add a new capability for viewing of all users (guests+enrolled+viewing).
             $context = context_course::instance($courseid);
 
             list($esqljoin, $eparams) = get_enrolled_sql($context);
             $params = array_merge($params, $eparams);
- 
-            $sql = "SELECT $userfields $timeaccess
-                      FROM {user_lastaccess} ul $groupmembers, {user} u
+             $sql = "SELECT $userfields $timeaccess
+                      FROM {user_lastaccess} ul, {user} u
                       JOIN ($esqljoin) euj ON euj.id = u.id
-                     WHERE ul.timeaccess > $timefrom
+                     WHERE ul.timeaccess > :timefrom
                            AND u.id = ul.userid
-                           AND ul.courseid = $courseid
-                           AND ul.timeaccess <= $now
+                           AND ul.courseid = :courseid
+                           AND ul.timeaccess <= :now
                            AND u.deleted = 0
+                  $groupby
                   ORDER BY lastaccess DESC";
-             $params['courseid'] = $courseid;
+
         
         //Calculate minutes
         $minutes  = floor($timetoshowusers/60);
@@ -66,7 +70,5 @@ function usuarios_online() {
         } else {
             $users = array();
         }
-      
-        echo $users;
- return array('AAnita', 'MMarcelo', 'PPatricia'); 
+ return $users; 
 }
