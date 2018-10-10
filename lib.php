@@ -29,7 +29,7 @@ function usuarios_online() {
         $timetoshowusers = 300; //Seconds default, make it configurable
         $now = time();
         $params = array();
-        $params['now'] = $now
+        $params['now'] = $now;
         $timefrom = 100 * floor(($now - $timetoshowusers) / 100); // Round to nearest 100 seconds for better query cache.
         $params['timefrom'] = $timefrom;
  
