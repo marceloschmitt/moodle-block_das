@@ -474,14 +474,20 @@
 
                 <div class="das-missing-users-period">
                     <p class="das-subtitle">Entre 3 e 6 dias</p>
+                    
+                    <?php
+                    $das_missing_users = $missing_users_das();
+                    foreach($das_missing_users as $users){
+                    ?>
                     <div class="das-missing-user-color-grey">
                        <img class="das-user-small-image" src="assets/img/rosto1.jpg" alt="User-Image">
-                       <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
+                       <p class="das-vertical-align das-p-overflow"><?php echo "$users->first_name $users->last_name; "?></p>
                         <div class="das-missing-user-days-white">
                             <div style="width: 18px;text-align: center;" n>5</div>
                         </div>
                     </div>
                 </div>
+                <?php } ?>
                 <div class="das-missing-users-period">
                     <p class="das-subtitle">Entre 7 e 10 dias</p>
                     <div class="das-missing-user-color-white">
