@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<?php include '../lib.php'; ?>
+<?php 
+require_once("../../../config.php");
+include '../lib.php'; ?>
 <html lang="pt">
 
 <head>
