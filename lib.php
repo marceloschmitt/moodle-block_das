@@ -75,5 +75,5 @@ function usuarios_online() {
  return $users; 
 }
 function missing_users_das(){
-        return array('a', 'b');        
+        return array('Anita', 'Patricia');        
 }
