@@ -66,5 +66,6 @@ function usuarios_online() {
             $users = array();
         }
       
+        echo $users;
  return array('AAnita', 'MMarcelo', 'PPatricia'); 
 }
