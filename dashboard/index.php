@@ -481,13 +481,14 @@
                     ?>
                     <div class="das-missing-user-color-grey">
                        <img class="das-user-small-image" src="assets/img/rosto1.jpg" alt="User-Image">
-                       <p class="das-vertical-align das-p-overflow"><?php echo "$users->first_name $users->last_name; "?></p>
+                       <p class="das-vertical-align das-p-overflow"><?php echo "$users"?></p>
                         <div class="das-missing-user-days-white">
                             <div style="width: 18px;text-align: center;" n>5</div>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
-                <?php } ?>
+                
                 <div class="das-missing-users-period">
                     <p class="das-subtitle">Entre 7 e 10 dias</p>
                     <div class="das-missing-user-color-white">
