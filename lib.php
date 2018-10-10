@@ -45,14 +45,12 @@ function usuarios_online() {
             $sql = "SELECT $userfields $timeaccess
                       FROM {user_lastaccess} ul $groupmembers, {user} u
                       JOIN ($esqljoin) euj ON euj.id = u.id
-                     WHERE ul.timeaccess > :timefrom
+                     WHERE ul.timeaccess > $timefrom
                            AND u.id = ul.userid
-                           AND ul.courseid = :courseid
-                           AND ul.timeaccess <= :now
+                           AND ul.courseid = $courseid
+                           AND ul.timeaccess <= $now
                            AND u.deleted = 0
-                           $groupselect $groupby
                   ORDER BY lastaccess DESC";
-
              $params['courseid'] = $courseid;
         
         //Calculate minutes
