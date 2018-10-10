@@ -26,6 +26,7 @@ function usuarios_online() {
  */
         global $CFG, $DB;
       
+        $courseid = 194;
         $timetoshowusers = 300; //Seconds default, make it configurable
         $now = time();
         $params = array();
@@ -35,6 +36,8 @@ function usuarios_online() {
  
             // Course level - show only enrolled users for now.
             // TODO: add a new capability for viewing of all users (guests+enrolled+viewing).
+            $context = context_course::instance($courseid);
+
             list($esqljoin, $eparams) = get_enrolled_sql($context);
             $params = array_merge($params, $eparams);
  
@@ -49,8 +52,7 @@ function usuarios_online() {
                            $groupselect $groupby
                   ORDER BY lastaccess DESC";
 
-            // $params['courseid'] = $courseid;
-            $params['courseid'] = 194;
+             $params['courseid'] = $courseid;
         
         //Calculate minutes
         $minutes  = floor($timetoshowusers/60);
