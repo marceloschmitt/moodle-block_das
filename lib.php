@@ -71,25 +71,17 @@ function usuarios_online() {
         }
  return $users; 
 }
-function missing_users_das_six_days(){
-        $date = new DateTime();
-        $date->setTimestamp(time());
-        $date->modify('-3 day');
-        $sixdayslimit = $date->modify('-2 day');
-        return array('Anita', 'Patricia');        
-}
 
-function missing_users_das_ten_days(){
-        return array('Anita', 'Patricia', 'Marcelo');        
-}
-function missing_users_das_sixty_days(){
-        return array('Anita', 'Patricia', 'Marcelo');        
-}
-
-function missing_users_das_more_sixty_days(){
-        return array('Anita', 'Patricia', 'Marcelo');        
-}
-
-function timestampoftoday() {
-        return mktime(0,0,0, date('m'), date('d'), date('Y'));    
+ 
+function missingusers($users, $lowboundary, $highboundary){
+        $limitedusers = array();
+        $now = time();
+        foreach($users AS $user) {
+                $days = ($now - $user->lastaccess) / 3600 / 24;
+                if($days >= $lowboundary && $days < $highboundary) {
+                        $user->days = floor($days);
+                        $limitedusers[] = $user;
+                }
+        }
+        return $limitedusers;
 }
