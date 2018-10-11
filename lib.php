@@ -78,5 +78,5 @@ function missing_users_das_six_days(){
 }
 
 function missing_users_das_ten_days(){
-        return array('Anita', 'Patricia');        
+        return array('Anita', 'Patricia', 'Marcelo');        
 }
