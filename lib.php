@@ -71,7 +71,7 @@ function usuarios_online() {
         }
  return $users; 
 }
-function missinguserssixdays(){
+function missing_users_das_six_days(){
         $date = new DateTime();
         $date->setTimestamp(time());
         $date->modify('-3 day');
