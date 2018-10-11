@@ -478,7 +478,7 @@ include '../lib.php'; ?>
                     <p class="das-subtitle">Entre 3 e 6 dias</p>
                     
                     <?php
-                    $das_missing_users = missing_users_das();
+                    $das_missing_users = missing_users_das_six_days();
                     foreach($das_missing_users As $users){
                     ?>
                     <div class="das-missing-user-color-grey">
@@ -495,13 +495,20 @@ include '../lib.php'; ?>
                 
                 <div class="das-missing-users-period">
                     <p class="das-subtitle">Entre 7 e 10 dias</p>
+                    <?php
+                    $das_missing_users = missing_users_das_ten_days();
+                    foreach($das_missing_users As $users){
+                    ?>
                     <div class="das-missing-user-color-white">
                        <img class="das-user-small-image" src="assets/img/rosto2.jpg" alt="User-Image">
-                       <p class="das-vertical-align das-p-overflow">Givaldo Batista Medeiros</p>
+                       <p class="das-vertical-align das-p-overflow"><?php echo "$users"?></p>
                         <div class="das-missing-user-days-grey">
                             <div style="width: 18px;text-align: center;" n>7</div>
                         </div>
                     </div>
+                    <?php
+                    }
+                    ?>
 
                     <div class="das-missing-user-color-grey">
                        <img class="das-user-small-image" src="assets/img/rosto3.jpg" alt="User-Image">
