@@ -497,7 +497,7 @@ include '../lib.php'; ?>
                 <div class="das-missing-users-period">
                     <p class="das-subtitle">Entre 7 e 10 dias</p>
                     <?php
-                    $das_missing_users = missing_users_das_ten_days();
+                    $das_missing_users = missingusers($onlineusers, 2, 6);
                     foreach($das_missing_users As $users){
                     ?>
                     <div class="das-missing-user-color-white">
@@ -523,7 +523,7 @@ include '../lib.php'; ?>
                 <div class="das-missing-users-period">
                     <p class="das-subtitle">Entre 11 e 60 dias</p>
                     <?php
-                    $das_missing_users = missing_users_das_sixty_days();
+                    $das_missing_users = missingusers($onlineusers, 2, 6);
                     foreach($das_missing_users As $users){
                     ?>
                     <div class="das-missing-user-color-white">
@@ -548,7 +548,7 @@ include '../lib.php'; ?>
                 <div class="das-missing-users-period">
                     <p class="das-subtitle">Mais de 60 dias</p>
                     <?php
-                    $das_missing_users = missing_users_das_more_sixty_days();
+                    $das_missing_users = missingusers($onlineusers, 2, 6);
                     foreach($das_missing_users As $users){
                     ?>
                     <div class="das-missing-user-color-white">
