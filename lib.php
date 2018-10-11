@@ -31,7 +31,7 @@ function usuarios_online() {
         $now = time();
         $params = array();
         //$timefrom = 100 * floor(($now - $timetoshowusers) / 100); // Round to nearest 100 seconds for better query cache.
-        $timefrom = timestampoftoday()
+        $timefrom = timestampoftoday();
         $params['courseid'] = $courseid;
     
  
