@@ -30,10 +30,8 @@ function usuarios_online() {
         $timetoshowusers = 300; //Seconds default, make it configurable
         $now = time();
         $params = array();
-        $params['now'] = $now;
         //$timefrom = 100 * floor(($now - $timetoshowusers) / 100); // Round to nearest 100 seconds for better query cache.
-        $timefrom = timestampoftoday();
-        $params['timefrom'] = $timefrom;
+        $timefrom = timestampoftoday()
         $params['courseid'] = $courseid;
     
  
@@ -50,10 +48,9 @@ function usuarios_online() {
              $sql = "SELECT $userfields $timeaccess
                       FROM {user_lastaccess} ul, {user} u
                       JOIN ($esqljoin) euj ON euj.id = u.id
-                     WHERE ul.timeaccess > :timefrom
+                     WHERE
                            AND u.id = ul.userid
                            AND ul.courseid = :courseid
-                           AND ul.timeaccess <= :now
                            AND u.deleted = 0
                   $groupby
                   ORDER BY lastaccess DESC";
@@ -74,7 +71,11 @@ function usuarios_online() {
         }
  return $users; 
 }
-function missing_users_das_six_days(){
+function missinguserssixdays(){
+        $date = new DateTime();
+        $date->setTimestamp(time());
+        $date->modify('-3 day');
+        $sixdayslimit = $date->modify('-2 day');
         return array('Anita', 'Patricia');        
 }
 
@@ -82,8 +83,9 @@ function missing_users_das_ten_days(){
         return array('Anita', 'Patricia', 'Marcelo');        
 }
 function missing_users_das_sixty_days(){
-        return array('Anita', 'Patricia', 'Marcelo');        
-}
+        return array('Ani
+        $date->modify('-3 day');ta', 'Patricia', 'Marcelo');        
+}$date->modify('-2 day');
 
 function missing_users_das_more_sixty_days(){
         return array('Anita', 'Patricia', 'Marcelo');        
