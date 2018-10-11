@@ -514,10 +514,11 @@ include '../lib.php'; ?>
                             <div style="width: 18px;text-align: center;">10</div>
                         </div>
                     </div>
-                </div>
-                <?php
+                    <?php
                     }
-                ?>
+                    ?>
+                </div>
+                
                 <div class="das-missing-users-period">
                     <p class="das-subtitle">Entre 11 e 60 dias</p>
                     <div class="das-missing-user-color-white">
