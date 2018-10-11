@@ -90,5 +90,5 @@ function missing_users_das_more_sixty_days(){
 }
 
 function timestampoftoday() {
-        return mktime(0,0,0, date('m'), date('d'), date('Y'))       
+        return mktime(0,0,0, date('m'), date('d'), date('Y'));    
 }
