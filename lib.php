@@ -49,7 +49,7 @@ function usuarios_online() {
                       FROM {user_lastaccess} ul, {user} u
                       JOIN ($esqljoin) euj ON euj.id = u.id
                      WHERE
-                           AND u.id = ul.userid
+                           u.id = ul.userid
                            AND ul.courseid = :courseid
                            AND u.deleted = 0
                   $groupby
