@@ -506,10 +506,7 @@ include '../lib.php'; ?>
                             <div style="width: 18px;text-align: center;" n>7</div>
                         </div>
                     </div>
-                    <?php
-                    }
-                    ?>
-
+                    
                     <div class="das-missing-user-color-grey">
                        <img class="das-user-small-image" src="assets/img/rosto3.jpg" alt="User-Image">
                        <p class="das-vertical-align das-p-overflow">Bruno Gomes</p>
@@ -518,6 +515,9 @@ include '../lib.php'; ?>
                         </div>
                     </div>
                 </div>
+                <?php
+                    }
+                ?>
                 <div class="das-missing-users-period">
                     <p class="das-subtitle">Entre 11 e 60 dias</p>
                     <div class="das-missing-user-color-white">
