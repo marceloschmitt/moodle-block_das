@@ -30,8 +30,6 @@ function usuarios_online() {
         $timetoshowusers = 300; //Seconds default, make it configurable
         $now = time();
         $params = array();
-        //$timefrom = 100 * floor(($now - $timetoshowusers) / 100); // Round to nearest 100 seconds for better query cache.
-        $timefrom = timestampoftoday();
         $params['courseid'] = $courseid;
  
         $userfields = \user_picture::fields('u', array('username'));
