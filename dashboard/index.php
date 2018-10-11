@@ -478,7 +478,7 @@ include '../lib.php'; ?>
                  <div class="das-missing-users-period">
                     <p class="das-subtitle">Entre 3 e 6 dia
                     <?php
-                    $das_missing_users = missingusers($onlineusers, 2, 6);
+                    $das_missing_users = missingusers($onlineusers, 0, 6);
                     foreach($das_missing_users As $user){
                     ?>
                     <div class="das-missing-user-color-grey">
