@@ -31,7 +31,8 @@ function usuarios_online() {
         $now = time();
         $params = array();
         $params['now'] = $now;
-        $timefrom = 100 * floor(($now - $timetoshowusers) / 100); // Round to nearest 100 seconds for better query cache.
+        //$timefrom = 100 * floor(($now - $timetoshowusers) / 100); // Round to nearest 100 seconds for better query cache.
+        $timefrom = timestampoftoday();
         $params['timefrom'] = $timefrom;
         $params['courseid'] = $courseid;
     
@@ -86,4 +87,8 @@ function missing_users_das_sixty_days(){
 
 function missing_users_das_more_sixty_days(){
         return array('Anita', 'Patricia', 'Marcelo');        
+}
+
+function timestampoftoday() {
+        return mktime(0,0,0, date('m'), date('d'), date('Y'))       
 }
