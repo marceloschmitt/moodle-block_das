@@ -73,6 +73,10 @@ function usuarios_online() {
         }
  return $users; 
 }
-function missing_users_das(){
+function missing_users_das_six_days(){
+        return array('Anita', 'Patricia');        
+}
+
+function missing_users_das_ten_days(){
         return array('Anita', 'Patricia');        
 }
