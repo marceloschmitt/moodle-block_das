@@ -473,25 +473,26 @@ include '../lib.php'; ?>
                 <!-- Alterar String!!! -->
 
                 <!-- Aqui já fazer a query para verificar quais das DIVs são úteis -->
-
-                <div class="das-missing-users-period">
-                    <p class="das-subtitle">Entre 3 e 6 dias</p>
-                    
+                
+                 <!-- Modelo para as outras consultas de ausências -->
+                 <div class="das-missing-users-period">
+                    <p class="das-subtitle">Entre 3 e 6 dia
                     <?php
-                    $das_missing_users = missing_users_das_six_days();
-                    foreach($das_missing_users As $users){
+                    $das_missing_users = missingusers($onlineusers, 2, 6);
+                    foreach($das_missing_users As $user){
                     ?>
                     <div class="das-missing-user-color-grey">
                        <img class="das-user-small-image" src="assets/img/rosto1.jpg" alt="User-Image">
-                       <p class="das-vertical-align das-p-overflow"><?php echo "$users"?></p>
+                       <p class="das-vertical-align das-p-overflow"><?php echo "$user->firstname $user->lastname"?></p>
                         <div class="das-missing-user-days-white">
-                            <div style="width: 18px;text-align: center;" n>5</div>
+                            <div style="width: 18px;text-align: center;" n><?php echo "$user->days"?></div>
                         </div>
                     </div>
-                    <?php 
-                    } 
+                    <?php
+                    }
                     ?>
                 </div>
+                <!-- Fim do modelo -->
                 
                 <div class="das-missing-users-period">
                     <p class="das-subtitle">Entre 7 e 10 dias</p>
