@@ -502,7 +502,7 @@ include '../lib.php'; ?>
                     ?>
                     <div class="das-missing-user-color-white">
                        <img class="das-user-small-image" src="assets/img/rosto2.jpg" alt="User-Image">
-                       <p class="das-vertical-align das-p-overflow"><?php echo "$users"?></p>
+                       <p class="das-vertical-align das-p-overflow"><?php echo "$user->firstname"?></p>
                         <div class="das-missing-user-days-grey">
                             <div style="width: 18px;text-align: center;" n>7</div>
                         </div>
