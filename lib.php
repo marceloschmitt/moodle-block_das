@@ -33,7 +33,6 @@ function usuarios_online() {
         //$timefrom = 100 * floor(($now - $timetoshowusers) / 100); // Round to nearest 100 seconds for better query cache.
         $timefrom = timestampoftoday();
         $params['courseid'] = $courseid;
-    
  
         $userfields = \user_picture::fields('u', array('username'));
         $timeaccess    = ", ul.timeaccess AS lastaccess";
@@ -56,10 +55,10 @@ function usuarios_online() {
                   ORDER BY lastaccess DESC";
 
         
-        //Calculate minutes
+                //Calculate minutes
         $minutes  = floor($timetoshowusers/60);
         $periodminutes = get_string('periodnminutes', 'block_online_users', $minutes);
-        
+
         $userlimit = 50; // We'll just take the most recent 50 maximum.
         $users = $DB->get_records_sql($sql, $params, 0, $userlimit);
         if ($users) {
@@ -69,7 +68,7 @@ function usuarios_online() {
         } else {
             $users = array();
         }
- return $users; 
+ return $users;
 }
 
  
