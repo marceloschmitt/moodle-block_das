@@ -521,9 +521,13 @@ include '../lib.php'; ?>
                 
                 <div class="das-missing-users-period">
                     <p class="das-subtitle">Entre 11 e 60 dias</p>
+                    <?php
+                    $das_missing_users = missing_users_das_sixty_days();
+                    foreach($das_missing_users As $users){
+                    ?>
                     <div class="das-missing-user-color-white">
                        <img class="das-user-small-image" src="assets/img/rosto4.jpg" alt="User-Image">
-                       <p class="das-vertical-align das-p-overflow">Cristiane de Souza</p>
+                       <p class="das-vertical-align das-p-overflow"><?php echo "$users"?></p>
                         <div class="das-missing-user-days-grey">
                             <div style="width: 18px;text-align: center;">15</div>
                         </div>
@@ -531,17 +535,24 @@ include '../lib.php'; ?>
 
                     <div class="das-missing-user-color-grey">
                        <img class="das-user-small-image" src="assets/img/rosto5.jpg" alt="User-Image">
-                       <p class="das-vertical-align das-p-overflow">Solange Osório da Silva</p>
+                       <p class="das-vertical-align das-p-overflow"><?php echo "$users"?></p>
                         <div class="das-missing-user-days-white">
                             <div style="width: 18px;text-align: center;">15</div>
                         </div>
                     </div>
+                    <?php
+                    }   
+                    ?>
                 </div>
                 <div class="das-missing-users-period">
                     <p class="das-subtitle">Mais de 60 dias</p>
+                    <?php
+                    $das_missing_users = missing_users_das_more_sixty_days();
+                    foreach($das_missing_users As $users){
+                    ?>
                     <div class="das-missing-user-color-white">
                        <img class="das-user-small-image" src="assets/img/rosto6.jpg" alt="User-Image">
-                       <p class="das-vertical-align das-p-overflow">Osio Stumpf</p>
+                       <p class="das-vertical-align das-p-overflow"><?php echo "$users"?></p>
                         <div class="das-missing-user-days-grey">
                             <div style="width: 18px;text-align: center;">65</div>
                         </div>
@@ -549,11 +560,14 @@ include '../lib.php'; ?>
 
                     <div class="das-missing-user-color-grey">
                         <img class="das-user-small-image" src="assets/img/rosto7.jpg" alt="User-Image">
-                        <p class="das-vertical-align das-p-overflow">Leonardo Marcondes</p>
+                        <p class="das-vertical-align das-p-overflow"><?php echo "$users"?></p>
                         <div class="das-missing-user-days-white">
                             <div style="width: 18px;text-align: center;">85</div>
                         </div>
                     </div>
+                    <?php
+                    }   
+                    ?>
                 </div>
 
                 <div class="das-box-buttons">
