@@ -520,7 +520,7 @@ include '../lib.php'; ?>
 function printmissingusers($onlineusers, $lowboundary, $highboundary) {
    ?>
    <div class="das-missing-users-period">
-   <p class="das-subtitle">Entre 3 e 6 dia
+   <p class="das-subtitle"><?php echo "Entre $lowboundary e $highboundary dias";?>
    <?php
    $das_missing_users = missingusers($onlineusers, $lowboundary, $highboundary);
    $color = 1;
