@@ -481,7 +481,7 @@ include '../lib.php'; ?>
                     $das_missing_users = missingusers($onlineusers, 0, 6);
                     $color = 1;
                     foreach($das_missing_users As $user){
-                        if($color % 2) {
+                        if($color++ % 2) {
                            ?> <div class="das-missing-user-color-grey"> <?php
                         } 
                         else {
