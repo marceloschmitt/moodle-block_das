@@ -436,7 +436,7 @@ include '../lib.php'; ?>
 
         <div id="das-user-column-2">
             <div id="das-online-users-box">
-                <p class="das-title">Usuários Online</p>
+                <p class="das-title"><?php echo get_string('todayusers','block_das');?></p>
                 <!-- Alterar String!!! -->
 
                 <!-- Loop com resultado da query para usuários online -->
@@ -469,7 +469,7 @@ include '../lib.php'; ?>
 
             <div id="das-missing-users-box">
                 <img class="das-gear" src="assets/img/engrenagemcinza.png" alt="das-gear-img">
-                <p class="das-title"><?php get_string('missingusers','block_das');?></p>
+                <p class="das-title"><?php echo get_string('missingusers','block_das');?></p>
                 <?php 
                 printmissingusers($onlineusers, 0, 6);
                 printmissingusers($onlineusers, 0, 10);
