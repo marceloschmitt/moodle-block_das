@@ -474,7 +474,7 @@ include '../lib.php'; ?>
 
                 <!-- Aqui já fazer a query para verificar quais das DIVs são úteis -->
                 
-                <?php printmissingusers(0, 6);?>
+                <?php printmissingusers($onlineusers, 0, 6);?>
                  <!-- Modelo para as outras consultas de ausências -->
                  <div class="das-missing-users-period">
                     <p class="das-subtitle">Entre 3 e 6 dia
@@ -613,14 +613,14 @@ include '../lib.php'; ?>
 </html>
 
 <?php
-function printmissingusers($lowboundary, $highboundary) {
+function printmissingusers($onlineusers, $lowboundary, $highboundary) {
    ?>
    <div class="das-missing-users-period">
    <p class="das-subtitle">Entre 3 e 6 dia
    <?php
    $das_missing_users = missingusers($onlineusers, $lowboundary, $highboundary);
    $color = 1;
-   foreach($das_missing_users As $user){
+   foreach($das_missing_users As $user) {
        if($color++ % 2) {
            ?> <div class="das-missing-user-color-grey"> <?php
        } 
@@ -635,10 +635,9 @@ function printmissingusers($lowboundary, $highboundary) {
        </div>
        </div>
        <?php
-       }
-       ?>
-       </div>
-    <?php           
-    }
+   }
+   ?>
+   </div>
+   <?php           
 }
 ?>
