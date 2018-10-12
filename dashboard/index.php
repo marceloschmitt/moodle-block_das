@@ -514,7 +514,7 @@ function das_print_today_users($courseusers) {
 
 
 function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000) {
-   if(!($das_missing_users = missingusers($courseusers, $lowboundary, $highboundary))) {
+   if(!($missingusers = das_missing_users($courseusers, $lowboundary, $highboundary))) {
        return;
    }
    ?>
@@ -528,7 +528,7 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
        echo "$lowboundary dias ou mais";
    }
    $color = 1;
-   foreach($das_missing_users As $user) {
+   foreach($missing_users As $user) {
        if($color++ % 2) {
            ?> <div class="das-missing-user-color-grey"> <?php
        } 
