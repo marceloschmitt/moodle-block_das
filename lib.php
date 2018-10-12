@@ -85,14 +85,17 @@ function das_missing_users($users, $lowboundary, $highboundary){
 
 
 function das_print_today_users($courseusers) {
+   $beginOfDay = strtotime("midnight", now())
    foreach($courseusers AS $user) {
-       ?>
-       <div class="das-item-default-header">
-       <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
-       <p class="das-vertical-align das-p-overflow"><?php echo "$user->firstname $user->lastname"; ?></p>
-       <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
-       </div>
-       <?php
+       if($beginOfDay < $user->lastaccess) {
+           ?>
+           <div class="das-item-default-header">
+           <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+           <p class="das-vertical-align das-p-overflow"><?php echo "$user->firstname $user->lastname"; ?></p>
+           <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+           </div>
+           <?php
+       }
    }
 }             
 
