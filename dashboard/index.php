@@ -470,24 +470,18 @@ include '../lib.php'; ?>
             <div id="das-missing-users-box">
                 <img class="das-gear" src="assets/img/engrenagemcinza.png" alt="das-gear-img">
                 <p class="das-title">Usuários Ausentes</p>
-                <!-- Alterar String!!! -->
-
-                <!-- Aqui já fazer a query para verificar quais das DIVs são úteis -->
-                
                 <?php 
                 printmissingusers($onlineusers, 0, 6);
                 printmissingusers($onlineusers, 0, 10);
                 printmissingusers($onlineusers, 0, 60);
-                printmissingusers($onlineusers, 60, 500);
-                ?>
-
-                
-
+                printmissingusers($onlineusers, 60, 10000);
+                ?>           
                 <div class="das-box-buttons">
-
                 </div>
             </div>
         </div>
+        
+        
         <div id="das-user-column-3">
             <div id="das-status-class">
                 <img class="das-gear" src="assets/img/engrenagemcinza.png" alt="das-gear-img">
