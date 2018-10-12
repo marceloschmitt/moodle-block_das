@@ -25,7 +25,7 @@ $string['das'] = 'DAS - clique aqui';
 
 
 // Middle column
-$string['lastdayusers'] = 'Usuários ativos no dia';
+$string['todayusers'] = 'Usuários ativos no dia';
 $string['missingusers'] = 'Usuários ausentes';
 
 
