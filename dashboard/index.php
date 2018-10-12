@@ -6,6 +6,7 @@ $courseid = required_param('id', PARAM_INT);
 require_login($courseid);
 $context = context_course::instance($courseid);
 require_capability('block/analytics_graphs:viewpages', $context);
+$courseusers = das_course_users($courseid);
 ?>
 <html lang="pt">
 
@@ -438,9 +439,7 @@ require_capability('block/analytics_graphs:viewpages', $context);
             </div>
 
         </div>
-        <?php
-        $courseusers = das_course_users();
-        ?>
+
         <div id="das-user-column-2">
             <div id="das-online-users-box">
                 <p class="das-title"><?php echo get_string('todayusers','block_das');?></p>
