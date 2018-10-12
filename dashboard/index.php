@@ -438,35 +438,15 @@ require_capability('block/analytics_graphs:viewpages', $context);
             </div>
 
         </div>
-
+        <?php
+        $courseusers = das_course_users();
+        ?>
         <div id="das-user-column-2">
             <div id="das-online-users-box">
                 <p class="das-title"><?php echo get_string('todayusers','block_das');?></p>
-                <!-- Alterar String!!! -->
-
-                <!-- Loop com resultado da query para usuários online -->
-                
-                <?php
-                $onlineusers = usuarios_online();
-                foreach($onlineusers AS $user) {
+                <?php 
+                das_print_today_users($courseusers);
                 ?>
-
-                <div class="das-item-default-header">
-                    <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
-                    <p class="das-vertical-align das-p-overflow"><?php echo "$user->firstname $user->lastname"; ?></p>
-                    <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
-                </div>
-                <?php
-                }
-                ?>
-
-            
-                <div class="das-item-default-header">
-                    <img class="das-user-small-image das-vertical-align" src="assets/img/rosto2.jpg" alt="User-Image">
-                    <p class="das-vertical-align das-p-overflow">Givaldo Batista Medeiros</p>
-                    <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
-                </div>
-                
                 <div class="das-box-buttons">
 
                 </div>
@@ -476,10 +456,10 @@ require_capability('block/analytics_graphs:viewpages', $context);
                 <img class="das-gear" src="assets/img/engrenagemcinza.png" alt="das-gear-img">
                 <p class="das-title"><?php echo get_string('missingusers','block_das');?></p>
                 <?php 
-                das_print_missing_users($onlineusers, 0, 6);
-                das_print_missing_users($onlineusers, 0, 10);
-                das_print_missing_users($onlineusers, 0, 60);
-                das_print_missing_users($onlineusers, 60, 10000);
+                das_print_missing_users($courseusers, 0, 6);
+                das_print_missing_users($courseusers, 0, 10);
+                das_print_missing_users($courseusers, 0, 60);
+                das_print_missing_users($courseusers, 60, 10000);
                 ?>           
                 <div class="das-box-buttons">
                 </div>
@@ -515,9 +495,26 @@ require_capability('block/analytics_graphs:viewpages', $context);
 </body>
 </html>
 
+
+
+
 <?php
-function das_print_missing_users($onlineusers, $lowboundary, $highboundary=10000) {
-   if(!($das_missing_users = missingusers($onlineusers, $lowboundary, $highboundary))) {
+function das_print_today_users($courseusers) {
+   foreach($courseusers AS $user) {
+       ?>
+       <div class="das-item-default-header">
+       <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+       <p class="das-vertical-align das-p-overflow"><?php echo "$user->firstname $user->lastname"; ?></p>
+       <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+       </div>
+       <?php
+   }
+}             
+
+
+
+function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000) {
+   if(!($das_missing_users = missingusers($courseusers, $lowboundary, $highboundary))) {
        return;
    }
    ?>
