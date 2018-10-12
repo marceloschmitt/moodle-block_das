@@ -24,6 +24,12 @@ $string['dashboard_alert_system'] = 'Sistema de Alerta com Dashboard';
 $string['das'] = 'DAS - clique aqui';
 
 
+// Middle column
+$string['lastdayusers'] = 'Usuários ativos no dia';
+$string['missingusers'] = 'Usuários ausentes';
+
+
+
 // Privacy
 $string['privacy:metadata'] = 'O bloco das mostra apenas dados já existentes no moodle.';
 
