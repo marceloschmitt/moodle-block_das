@@ -16,19 +16,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-function das_course_users() {
-
-/**
- * This code comes fom online users block
- * This block needs to be reworked.
- * The new roles system does away with the concepts of rigid student and
- * teacher roles.
- */
+function das_course_users($courseid) {
         global $CFG, $DB;
-      
-        $courseid = 194;
-        $timetoshowusers = 300; //Seconds default, make it configurable
-        $now = time();
+          
         $params = array();
         $params['courseid'] = $courseid;
  
@@ -51,11 +41,6 @@ function das_course_users() {
                            AND u.deleted = 0
                   $groupby
                   ORDER BY lastaccess DESC";
-
-        
-                //Calculate minutes
-        $minutes  = floor($timetoshowusers/60);
-        $periodminutes = get_string('periodnminutes', 'block_online_users', $minutes);
 
         $userlimit = 50; // We'll just take the most recent 50 maximum.
         $users = $DB->get_records_sql($sql, $params, 0, $userlimit);
