@@ -85,7 +85,7 @@ function das_missing_users($users, $lowboundary, $highboundary){
 
 
 function das_print_today_users($courseusers) {
-   $beginOfDay = strtotime("midnight", now());
+   $beginOfDay = strtotime("midnight", time());
    foreach($courseusers AS $user) {
        if($beginOfDay < $user->lastaccess) {
            ?>
