@@ -469,7 +469,7 @@ include '../lib.php'; ?>
 
             <div id="das-missing-users-box">
                 <img class="das-gear" src="assets/img/engrenagemcinza.png" alt="das-gear-img">
-                <p class="das-title">Usuários Ausentes</p>
+                <p class="das-title"><?php get_string('missingusers','block_das');?></p>
                 <?php 
                 printmissingusers($onlineusers, 0, 6);
                 printmissingusers($onlineusers, 0, 10);
