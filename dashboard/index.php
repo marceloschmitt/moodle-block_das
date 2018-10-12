@@ -474,33 +474,13 @@ include '../lib.php'; ?>
 
                 <!-- Aqui já fazer a query para verificar quais das DIVs são úteis -->
                 
-                <?php printmissingusers($onlineusers, 0, 6);?>
-                 <!-- Modelo para as outras consultas de ausências -->
-                 <div class="das-missing-users-period">
-                    <p class="das-subtitle">Entre 3 e 6 dia
-                    <?php
-                    $das_missing_users = missingusers($onlineusers, 0, 6);
-                    $color = 1;
-                    foreach($das_missing_users As $user){
-                        if($color++ % 2) {
-                           ?> <div class="das-missing-user-color-grey"> <?php
-                        } 
-                        else {
-                           ?> <div class="das-missing-user-color-white"> <?php 
-                        }       
-                        ?>
-                                
-                       <img class="das-user-small-image" src="assets/img/rosto1.jpg" alt="User-Image">
-                       <p class="das-vertical-align das-p-overflow"><?php echo "$user->firstname $user->lastname"?></p>
-                        <div class="das-missing-user-days-white">
-                            <div style="width: 18px;text-align: center;" n><?php echo "$user->days"?></div>
-                        </div>
-                    </div>
-                    <?php
-                    }
-                    ?>
-                </div>
-                <!-- Fim do modelo -->
+                <?php 
+                printmissingusers($onlineusers, 0, 6);
+                printmissingusers($onlineusers, 7, 10);
+                printmissingusers($onlineusers, 11, 60);
+                printmissingusers($onlineusers, 60, 500);
+                ?>
+
                 
                 <div class="das-missing-users-period">
                     <p class="das-subtitle">Entre 7 e 10 dias</p>
