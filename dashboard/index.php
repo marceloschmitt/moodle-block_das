@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <?php 
 require_once("../../../config.php");
-include '../lib.php'; ?>
+include '../lib.php';
+$courseid = required_param('id', PARAM_INT);
+require_login($courseid);
+$context = context_course::instance($courseid);
+require_capability('block/analytics_graphs:viewpages', $context);
+?>
 <html lang="pt">
 
 <head>
