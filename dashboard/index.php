@@ -471,10 +471,10 @@ include '../lib.php'; ?>
                 <img class="das-gear" src="assets/img/engrenagemcinza.png" alt="das-gear-img">
                 <p class="das-title"><?php echo get_string('missingusers','block_das');?></p>
                 <?php 
-                printmissingusers($onlineusers, 0, 6);
-                printmissingusers($onlineusers, 0, 10);
-                printmissingusers($onlineusers, 0, 60);
-                printmissingusers($onlineusers, 60, 10000);
+                das_print_missing_users($onlineusers, 0, 6);
+                das_print_missing_users($onlineusers, 0, 10);
+                das_print_missing_users($onlineusers, 0, 60);
+                das_print_missing_users($onlineusers, 60, 10000);
                 ?>           
                 <div class="das-box-buttons">
                 </div>
@@ -511,7 +511,7 @@ include '../lib.php'; ?>
 </html>
 
 <?php
-function printmissingusers($onlineusers, $lowboundary, $highboundary=10000) {
+function das_print_missing_users($onlineusers, $lowboundary, $highboundary=10000) {
    if(!($das_missing_users = missingusers($onlineusers, $lowboundary, $highboundary))) {
        return;
    }
