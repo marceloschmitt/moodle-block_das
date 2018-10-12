@@ -16,7 +16,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-function usuarios_online() {
+function das_course_users() {
 
 /**
  * This code comes fom online users block
@@ -70,7 +70,7 @@ function usuarios_online() {
 }
 
  
-function missingusers($users, $lowboundary, $highboundary){
+function das_missing_users($users, $lowboundary, $highboundary){
         $limitedusers = array();
         $now = time();
         foreach($users AS $user) {
