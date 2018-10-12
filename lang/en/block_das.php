@@ -23,6 +23,9 @@ $string['das:viewpages'] = 'View graphs';
 $string['pluginname'] = 'DAS';
 $string['das'] = 'das';
 
+$string['todayusers'] = 'Usuários ativos no dia';
+$string['missingusers'] = 'Usuários ausentes';
+
 
 
 // Privacy
