@@ -512,6 +512,9 @@ include '../lib.php'; ?>
 
 <?php
 function printmissingusers($onlineusers, $lowboundary, $highboundary=10000) {
+   if(!($das_missing_users = missingusers($onlineusers, $lowboundary, $highboundary))) {
+       return;
+   }
    ?>
    <div class="das-missing-users-period">
    <p class="das-subtitle">
@@ -522,7 +525,6 @@ function printmissingusers($onlineusers, $lowboundary, $highboundary=10000) {
    else {
        echo "$lowboundary dias ou mais";
    }
-   $das_missing_users = missingusers($onlineusers, $lowboundary, $highboundary);
    $color = 1;
    foreach($das_missing_users As $user) {
        if($color++ % 2) {
