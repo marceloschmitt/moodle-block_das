@@ -17,11 +17,11 @@
 defined('MOODLE_INTERNAL') || die();
 
 function das_course_users($courseid) {
-        global $CFG, $DB;
-          
+        global $DB, $PAGE;
+
         $params = array();
         $params['courseid'] = $courseid;
- 
+
         $userfields = \user_picture::fields('u', array('username'));
         $timeaccess    = ", ul.timeaccess AS lastaccess";
         $groupby = "GROUP BY $userfields";
@@ -47,21 +47,29 @@ function das_course_users($courseid) {
         if ($users) {
             foreach ($users as $user) {
                 $users[$user->id]->fullname = fullname($user);
+                $userpicture = new user_picture($user);
+                $url = $userpicture->get_url($PAGE);
+                $users[$user->id]->pictureurl = $url->out();
             }
         } else {
             $users = array();
         }
+
  return $users;
 }
 
  
 function das_missing_users($users, $lowboundary, $highboundary){
+        global $PAGE;
         $limitedusers = array();
         $now = time();
         foreach($users AS $user) {
                 $days = ($now - $user->lastaccess) / 3600 / 24;
                 if($days >= $lowboundary && $days < $highboundary) {
                         $user->days = floor($days);
+                        $userpicture = new user_picture($user);
+                        $url = $userpicture->get_url($PAGE);
+                        $user->pictureurl = $url->out();
                         $limitedusers[] = $user;
                 }
         }
@@ -74,15 +82,15 @@ function das_print_today_users($courseusers) {
    foreach($courseusers AS $user) {
        if($beginOfDay < $user->lastaccess) {
            ?>
-           <div class="das-item-default-header">
-           <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+          <div class="das-item-default-header">
+        <img class="das-user-small-image das-vertical-align" src="<?php echo $user->pictureurl;?>" alt="User-Image">
            <p class="das-vertical-align das-p-overflow"><?php echo "$user->firstname $user->lastname"; ?></p>
            <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
            </div>
            <?php
        }
    }
-}             
+}            
 
 
 function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000) {
@@ -92,7 +100,7 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
    ?>
    <div class="das-missing-users-period">
    <p class="das-subtitle">
-   <?php 
+   <?php
    if($highboundary < 10000) {
        echo "Entre $lowboundary e $highboundary dias";
    }
@@ -103,13 +111,13 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
    foreach($missingusers As $user) {
        if($color++ % 2) {
            ?> <div class="das-missing-user-color-grey"> <?php
-       } 
+       }
        else {
-           ?> <div class="das-missing-user-color-white"> <?php 
-       }       
-       ?>                     
-       <img class="das-user-small-image" src="assets/img/rosto1.jpg" alt="User-Image">
-       <p class="das-vertical-align das-p-overflow"><?php echo "$user->firstname $user->lastname"?></p>
+           ?> <div class="das-missing-user-color-white"> <?php
+       }
+        ?>
+       <img class="das-user-small-image" src="<?php echo $user->pictureurl;?>" alt="User-Image">
+       <p class="das-vertical-align das-p-overflow"><?php echo "$user->firstname";?></p>
        <div class="das-missing-user-days-white">
        <div style="width: 18px;text-align: center;" n><?php echo "$user->days"?></div>
        </div>
@@ -118,5 +126,5 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
    }
    ?>
    </div>
-   <?php           
+   <?php
 }
