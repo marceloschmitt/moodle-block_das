@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 require_once("../../../config.php");
-include('../lib.php');
+require('../lib.php');
 $courseid = required_param('id', PARAM_INT);
 require_login($courseid);
 $context = context_course::instance($courseid);

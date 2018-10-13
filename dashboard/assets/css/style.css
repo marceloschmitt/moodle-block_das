@@ -1,5 +1,5 @@
 p {
-    font-size: small;
+	font-size: small;
     font-family: Verdana;
     margin-bottom: 0.5em !important;
 }
@@ -13,11 +13,11 @@ p {
     -webkit-animation-delay: 1.5s;
     -webkit-animation-iteration-count: 1;
 }
- 
+
 .das-vertical-align {
     position: relative;
     top: 50%;
-    transform: translateY(-50%); 
+    transform: translateY(-50%);
 }
 
 #das-col-menu,
