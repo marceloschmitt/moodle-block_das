@@ -92,7 +92,7 @@ $courseusers = das_course_users($courseid);
                 }
                 reorganizeSkeleton();
             });
-            
+
             $("#das-col-menu").mouseover(function() {
                 document.getElementById("das-col-menu").style.width = '25%';
                 document.getElementById("das-check-text").style.display = 'block';
@@ -114,7 +114,7 @@ $courseusers = das_course_users($courseid);
                     $("#das-user-column-2").removeClass('animated fadeIn das-delay');
                 }
                 if (columns[1] == 1){
-                    document.getElementById("das-user-column-2").style.width = '25%';                
+                    document.getElementById("das-user-column-2").style.width = '25%';
                     document.getElementById("das-user-column-2").style.left = '50%';
                     document.getElementById("das-user-column-1").style.display = 'block';
                     $("#das-user-column-1").addClass('animated fadeIn das-delay');
@@ -130,9 +130,9 @@ $courseusers = das_course_users($courseid);
                     $("#"+someTag).addClass('animated fadeIn');
                     document.getElementById(someTag).style.display = 'block';
                 }
-                
+
             });
-            
+
             $("#das-col-menu").mouseout(function() {
                 document.getElementById("das-col-menu").style.width = '5%';
                 document.getElementById("das-check-text").style.display = 'none';
@@ -152,12 +152,12 @@ $courseusers = das_course_users($courseid);
                     document.getElementById("das-user-column-2").style.display = 'none';
                 }
                 if (columns[1] == 1){
-                    document.getElementById("das-user-column-2").style.width = '35%';                
+                    document.getElementById("das-user-column-2").style.width = '35%';
                     document.getElementById("das-user-column-2").style.left = '40%';
                     document.getElementById("das-user-column-1").style.display = 'block';
                 }
                 else{
-                    document.getElementById("das-user-column-2").style.width = '70%';                
+                    document.getElementById("das-user-column-2").style.width = '70%';
                     document.getElementById("das-user-column-2").style.left = '5%';
                     document.getElementById("das-user-column-1").style.display = 'none';
                 }
@@ -166,7 +166,7 @@ $courseusers = das_course_users($courseid);
                     document.getElementById(someTag).style.display = 'none';
                     $("#"+someTag).removeClass('animated fadeIn');
                 }
-            });               
+            });
         });
     </script>
 </head>
@@ -275,7 +275,7 @@ $courseusers = das_course_users($courseid);
                         <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
                         <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
                         <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
-                    </div>                    
+                    </div>
                 </div>
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
@@ -357,7 +357,7 @@ $courseusers = das_course_users($courseid);
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
                     <p class="das-vertical-align das-p-overflow">Atividade 3</p>
@@ -367,7 +367,7 @@ $courseusers = das_course_users($courseid);
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="das-expansive-more">
                     <p class="das-subtitle">mais...</p>
                 </div>
@@ -430,13 +430,13 @@ $courseusers = das_course_users($courseid);
                 das_print_missing_users($courseusers, 0, 10);
                 das_print_missing_users($courseusers, 0, 60);
                 das_print_missing_users($courseusers, 60, 10000);
-                ?>           
+                ?>
                 <div class="das-box-buttons">
                 </div>
             </div>
         </div>
-        
-        
+
+
         <div id="das-user-column-3">
             <div id="das-status-class">
                 <img class="das-gear" src="assets/img/engrenagemcinza.png" alt="das-gear-img">
