@@ -58,13 +58,13 @@ function das_course_users($courseid) {
 }
 
 
-function das_missing_users ($users, $lowboundary, $highboundary){
+function das_missing_users($users, $lowboundary, $highboundary) {
     global $PAGE;
     $limitedusers = array();
     $now = time();
     foreach ($users as $user) {
         $days = ($now - $user->lastaccess) / 3600 / 24;
-        if($days >= $lowboundary && $days < $highboundary) {
+        if ($days >= $lowboundary && $days < $highboundary) {
                 $user->days = floor($days);
                 $userpicture = new user_picture($user);
                 $url = $userpicture->get_url($PAGE);
@@ -78,7 +78,7 @@ function das_missing_users ($users, $lowboundary, $highboundary){
 
 function das_print_today_users($courseusers) {
     $beginofday = strtotime("midnight", time());
-    foreach ($courseusers AS $user) {
+    foreach ($courseusers as $user) {
         if ($beginofday < $user->lastaccess) {
             ?><div class="das-item-default-header">
             <img class="das-user-small-image das-vertical-align" src="<?php echo $user->pictureurl;?>" alt="User-Image">
@@ -87,7 +87,7 @@ function das_print_today_users($courseusers) {
             </div><?php
         }
     }
-}            
+}
 
 
 function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000) {
@@ -96,19 +96,17 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
     }
     ?><div class="das-missing-users-period">
     <p class="das-subtitle"><?php
-    if($highboundary < 10000) {
+    if ($highboundary < 10000) {
         echo "Entre $lowboundary e $highboundary dias";
-    }
-    else {
+    } else {
         echo "$lowboundary dias ou mais";
     }
     $color = 1;
-    foreach($missingusers As $user) {
-        if($color++ % 2) {
-           ?> <div class="das-missing-user-color-grey"> <?php
-        }
-        else {
-           ?> <div class="das-missing-user-color-white"> <?php
+    foreach ($missingusers As $user) {
+        if ($color++ % 2) {
+            ?> <div class="das-missing-user-color-grey"> <?php
+        } else {
+            ?> <div class="das-missing-user-color-white"> <?php
         }
         ?><img class="das-user-small-image" src="<?php echo $user->pictureurl;?>" alt="User-Image">
         <p class="das-vertical-align das-p-overflow"><?php echo "$user->firstname";?></p>
