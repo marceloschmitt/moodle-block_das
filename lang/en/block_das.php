@@ -28,6 +28,6 @@ $string['missingusers'] = 'Usuários ausentes';
 
 
 
-// Privacy
+// Privacy.
 $string['privacy:metadata'] = 'The Analytics Graphs block only displays existing calendar data.';
 
