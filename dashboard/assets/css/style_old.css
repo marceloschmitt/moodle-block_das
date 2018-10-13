@@ -148,7 +148,7 @@ ul#menu-vertical{
     padding: 0;
 }
 
-.menu a{	
+.menu a{
     text-decoration: none;
     color: white;
 }
@@ -191,7 +191,7 @@ ul#menu-vertical li#noprazo{
     background: url('../img/post.png') no-repeat;
     background-position: 15% 50%;
     background-size: 10%;
-    padding-left:80px;  
+    padding-left:80px;
 }
 
 ul#menu-vertical li#fora{
@@ -213,7 +213,7 @@ ul#menu-vertical li#status{
     padding-left:80px;
 }
 ul#menu-vertical li#acesso{
-    background: url('../img/topicos.png') no-repeat; 
+    background: url('../img/topicos.png') no-repeat;
     background-position: 15% 50%;
     background-size: 10%;
     padding-left:80px;
