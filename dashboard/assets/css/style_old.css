@@ -135,111 +135,111 @@ p{
 }
 
 .menu{
-	background-color: rgb(153,153,153);
-	font-family: Verdana;
-	border-radius:10px;
-	display: block;
-	font-size: 14px;
+    background-color: rgb(153,153,153);
+    font-family: Verdana;
+    border-radius:10px;
+    display: block;
+    font-size: 14px;
 }
 
 ul#menu-vertical{
-	list-style:none;
-	margin: 0;
+    list-style:none;
+    margin: 0;
     padding: 0;
 }
 
-.menu a{	
-	text-decoration: none;
-	color: white;
+.menu a{    
+    text-decoration: none;
+    color: white;
 }
 
 ul#menu-vertical li{
-	border-bottom: 1px solid #ffffff;
-	padding:20px;
-	position: relative;
-	
+    border-bottom: 1px solid #ffffff;
+    padding:20px;
+    position: relative;
+    
 }
 ul#menu-vertical li#ativos{
-	background: url('../img/globo.png') no-repeat; 
-	background-position: 15% 50%;  
-	background-size: 10%;
-	padding-left:80px;
+    background: url('../img/globo.png') no-repeat; 
+    background-position: 15% 50%;  
+    background-size: 10%;
+    padding-left:80px;
 }
 
 ul#menu-vertical li#evasao{
-	background: url('../img/evasão.png') no-repeat; 
-	background-position: 15% 50%;  
-	background-size: 10%;
-	padding-left:80px;
-	
+    background: url('../img/evasão.png') no-repeat; 
+    background-position: 15% 50%;  
+    background-size: 10%;
+    padding-left:80px;
+    
 }
 
 ul#menu-vertical li#antecip{
-	background: url('../img/postagensadiantadas.png') no-repeat; 
-	background-position: 15% 50%;  
-	background-size: 10%;
-	padding-left:80px;
+    background: url('../img/postagensadiantadas.png') no-repeat; 
+    background-position: 15% 50%;  
+    background-size: 10%;
+    padding-left:80px;
 }
 
 ul#menu-vertical li#aviso{
-	background: url('../img/svisopreventivo.png') no-repeat; 
-	background-position: 15% 50%;  
-	background-size: 10%;
-	padding-left:80px;
+    background: url('../img/svisopreventivo.png') no-repeat; 
+    background-position: 15% 50%;  
+    background-size: 10%;
+    padding-left:80px;
 }
 
 ul#menu-vertical li#noprazo{
-	background: url('../img/post.png') no-repeat; 
-	background-position: 15% 50%;  
-	background-size: 10%;
-	padding-left:80px;	
+    background: url('../img/post.png') no-repeat; 
+    background-position: 15% 50%;  
+    background-size: 10%;
+    padding-left:80px;  
 }
 
 ul#menu-vertical li#fora{
-	background: url('../img/tempo.png') no-repeat; 
-	background-position: 15% 50%;  
-	background-size: 10%;
-	padding-left:80px;
+    background: url('../img/tempo.png') no-repeat; 
+    background-position: 15% 50%;  
+    background-size: 10%;
+    padding-left:80px;
 }
 ul#menu-vertical li#repost{
-	background: url('../img/repostagem.png') no-repeat; 
-	background-position: 15% 50%;  
-	background-size: 15%;
-	padding-left:80px;
+    background: url('../img/repostagem.png') no-repeat; 
+    background-position: 15% 50%;  
+    background-size: 15%;
+    padding-left:80px;
 }
 ul#menu-vertical li#status{
-	background: url('../img/status.png') no-repeat; 
-	background-position: 15% 50%;  
-	background-size: 7%;
-	padding-left:80px;
+    background: url('../img/status.png') no-repeat; 
+    background-position: 15% 50%;  
+    background-size: 7%;
+    padding-left:80px;
 }
 ul#menu-vertical li#acesso{
-	background: url('../img/topicos.png') no-repeat; 
-	background-position: 15% 50%;  
-	background-size: 10%;
-	padding-left:80px;
+    background: url('../img/topicos.png') no-repeat; 
+    background-position: 15% 50%;  
+    background-size: 10%;
+    padding-left:80px;
 }
 ul#menu-vertical li#recursos{
-	background: url('../img/top.png') no-repeat; 
-	background-position: 15% 50%;  
-	background-size: 10%;
-	padding-left:80px;
+    background: url('../img/top.png') no-repeat; 
+    background-position: 15% 50%;  
+    background-size: 10%;
+    padding-left:80px;
 }
 ul#menu-vertical li#bottom{
-	background: url('../img/bottom.png') no-repeat; 
-	background-position: 15% 50%;  
-	background-size: 10%;
-	padding-left:80px;
+    background: url('../img/bottom.png') no-repeat; 
+    background-position: 15% 50%;  
+    background-size: 10%;
+    padding-left:80px;
 }
 ul#menu-vertical li#tempo{
-	background: url('../img/tempo.png') no-repeat; 
-	background-position: 15% 50%;  
-	background-size: 10%;
-	padding-left:80px;
+    background: url('../img/tempo.png') no-repeat; 
+    background-position: 15% 50%;  
+    background-size: 10%;
+    padding-left:80px;
 }
 ul#menu-vertical li#graficos{
-	background: url('../img/grafico.png') no-repeat; 
-	background-position: 15% 50%;  
-	background-size: 10%;
-	padding-left:80px;
+    background: url('../img/grafico.png') no-repeat; 
+    background-position: 15% 50%;  
+    background-size: 10%;
+    padding-left:80px;
 }

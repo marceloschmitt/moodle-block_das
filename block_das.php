@@ -39,9 +39,8 @@ class block_das extends block_base {
         $this->content = new stdClass;
         // $this->content->text = get_string('graphs', 'block_das');
         $this->content->text = "";
-        $this->content->text .= "<li> <a href= {$CFG->wwwroot}/blocks/das/dashboard/index.php?id={$course->id} 
+        $this->content->text .= "<li> <a href= {$CFG->wwwroot}/blocks/das/dashboard/index.php?id={$course->id}
                           target=_blank>" . get_string('das', 'block_das') . "</a>";
-      
         $this->content->footer = '<hr/>';
         return $this->content;
     }

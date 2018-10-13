@@ -1,3 +1,19 @@
+<?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+?>
 <!DOCTYPE html>
 <?php 
 require_once("../../../config.php");
@@ -25,7 +41,8 @@ $courseusers = das_course_users($courseid);
         $(function() {
 
             var menu = Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-            var blockNames = Array("das-activity-deliver", "das-preventive-notice", "das-on-time", "das-out-of-time", "das-remail", "das-online-users-box", "das-missing-users-box", "das-status-class", "das-acess-activity", "das-resources", "das-permanence-course");
+            var blockNames = Array("das-activity-deliver", "das-preventive-notice", "das-on-time", "das-out-of-time", "das-remail", "das-online-users-box", "das-missing-users-box",
+            						"das-status-class", "das-acess-activity", "das-resources", "das-permanence-course");
             var columns = Array(1,1,1,1);
 
             function reorganizeSkeleton() {

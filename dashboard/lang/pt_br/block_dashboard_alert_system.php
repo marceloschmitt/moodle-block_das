@@ -1,11 +1,9 @@
 <?php
-
-
 $string['pluginname'] = 'Sistema de Alerta com Dashboard';
 $string['dashboard_alert_system'] = 'Sistema de Alerta com Dashboard';
 $string['das'] = 'SAD';
 
-//Menu
+// Menu
 
 $string['teste1'] = 'Relatório de Evasão';
 
