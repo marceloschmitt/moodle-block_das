@@ -13,7 +13,6 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-
 require_once("../../../config.php");
 require('../lib.php');
 $courseid = required_param('id', PARAM_INT);
@@ -24,7 +23,6 @@ $courseusers = das_course_users($courseid);
 ?>
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
     <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -35,31 +33,25 @@ $courseusers = das_course_users($courseid);
     <title>Dash Fluxo de Caixas</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
     <script>
         $(function() {
-
             var menu = Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
             var blockNames = Array("das-activity-deliver", "das-preventive-notice", "das-on-time", "das-out-of-time", "das-remail", "das-online-users-box", "das-missing-users-box",
                                     "das-status-class", "das-acess-activity", "das-resources", "das-permanence-course");
             var columns = Array(1,1,1,1);
-
             function reorganizeSkeleton() {
                 var cont = 0;
                 var someTag;
-
                 if (menu[0] + menu[1] + menu[2] + menu[3] + menu[4] == 0) {
                     columns[1] = 0;
                 } else {
                     columns[1] = 1;
                 }
-
                 if (menu[5] + menu[6] == 0) {
                     columns[2] = 0;
                 } else {
                     columns[2] = 1;
                 }
-
                 for (var i = 0; i <= 12; i++) {
                     cont = cont + menu[i];
                     someTag = "das-item-menu" + i;
@@ -72,10 +64,8 @@ $courseusers = das_course_users($courseid);
                     }
                 }
             }
-
             function clickMenu(event) {
                 var data = event.data;
-
                 if (data.menu[data.i] == 0) {
                     data.menu[data.i] = 1;
                 } else {
@@ -83,7 +73,6 @@ $courseusers = das_course_users($courseid);
                 }
                 reorganizeSkeleton();
             }
-
             for (var i = 0; i <= 12; i++) {
                 var someTag = "a.das-item-menu" + i;
                 $(someTag).on('click', {
@@ -91,14 +80,12 @@ $courseusers = das_course_users($courseid);
                     i
                 }, clickMenu);
             }
-
             $("a.das-check-buttom").on('click', function() {
                 for (var i = 0; i <= 12; i++) {
                     menu[i] = 1;
                 }
                 reorganizeSkeleton();
             });
-
             $("a.das-uncheck-buttom").on('click', function() {
                 for (var i = 0; i <= 12; i++) {
                     menu[i] = 0;
@@ -181,13 +168,9 @@ $courseusers = das_course_users($courseid);
                 }
             });               
         });
-
     </script>
-
 </head>
-
 <body>
-
     <div class="row" style="margin-left: 0; margin-right: 0;">
         <div id="das-col-menu">
             <ul id="das-menu-vertical">
@@ -257,7 +240,6 @@ $courseusers = das_course_users($courseid);
                     </li>
                 </a>
             </ul>
-
             <div class="das-select-buttons">
                 <div class="das-select-buttons-division">
                     <a href="#" class="das-check-buttom">
@@ -274,15 +256,11 @@ $courseusers = das_course_users($courseid);
             </div>
         </div>
 
-
-
         <div id="das-user-column-1">
             <div id="das-activity-deliver">
                 <img class="das-gear" src="assets/img/engrenagemcinza.png" alt="das-gear-img">
                 <p class="das-title">Atividades Entregues </p>
-
                 <p class="das-subtitle">Educação</p>
-
                 <div class="das-item-default">
                     <div class="das-item-default-header">
                         <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
@@ -299,7 +277,6 @@ $courseusers = das_course_users($courseid);
                         <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                     </div>                    
                 </div>
-
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
                     <p class="das-vertical-align das-p-overflow">Integração de Mídias da Educação</p>
@@ -309,7 +286,6 @@ $courseusers = das_course_users($courseid);
                         </div>
                     </div>
                 </div>
-
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
                     <p class="das-vertical-align das-p-overflow">Fórum Geral - Atualizado</p>
@@ -319,9 +295,7 @@ $courseusers = das_course_users($courseid);
                         </div>
                     </div>
                 </div>
-
                 <p class="das-subtitle"> Integração de Mídias na Educação</p>
-
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
                     <p class="das-vertical-align das-p-overflow">Atividade 1</p>
@@ -331,7 +305,6 @@ $courseusers = das_course_users($courseid);
                         </div>
                     </div>
                 </div>
-
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
                     <p class="das-vertical-align das-p-overflow">Atividade 2</p>
@@ -341,7 +314,6 @@ $courseusers = das_course_users($courseid);
                         </div>
                     </div>
                 </div>
-
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
                     <p class="das-vertical-align das-p-overflow">Atividade 3</p>
@@ -353,13 +325,10 @@ $courseusers = das_course_users($courseid);
                 </div>
             </div>
 
-
             <div id="das-preventive-notice">
                 <img class="das-gear" src="assets/img/engrenagemcinza.png" alt="das-gear-img">
                 <p class="das-title">Aviso Preventivo</p>
-
                 <p class="das-subtitle">Educação</p>
-
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
                     <p class="das-vertical-align das-p-overflow">Atividade Texto Online</p>
@@ -369,9 +338,7 @@ $courseusers = das_course_users($courseid);
                         </div>
                     </div>
                 </div>
-
                 <p class="das-subtitle"> Interação Mídias da Educação</p>
-
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
                     <p class="das-vertical-align das-p-overflow">Atividade 1</p>
@@ -381,7 +348,6 @@ $courseusers = das_course_users($courseid);
                         </div>
                     </div>
                 </div>
-
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
                     <p class="das-vertical-align das-p-overflow">Atividade 2</p>
@@ -407,13 +373,9 @@ $courseusers = das_course_users($courseid);
                 </div>
             </div>
 
-
             <div id="das-on-time">
-
                 <p class="das-title"> Dentro do Prazo</p>
-
                 <p class="das-subtitle">Integração Mídias da Educação</p>
-
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
                     <p class="das-vertical-align das-p-overflow">Atividade 1</p>
@@ -423,9 +385,7 @@ $courseusers = das_course_users($courseid);
                         </div>
                     </div>
                 </div>
-
             </div>
-
             <div id="das-out-of-time">
                 <p class="das-title">Fora do Prazo</p>
                 <p class="das-subtitle"> Educação</p>
@@ -439,7 +399,6 @@ $courseusers = das_course_users($courseid);
                     </div>
                 </div>
             </div>
-
             <div id="das-remail">
                 <p class="das-title"> Reenvio de Atividade</p>
                 <p class="das-subtitle">Educação</p>
@@ -453,9 +412,7 @@ $courseusers = das_course_users($courseid);
                     </div>
                 </div>
             </div>
-
         </div>
-
         <div id="das-user-column-2">
             <div id="das-online-users-box">
                 <p class="das-title"><?php echo get_string('todayusers', 'block_das');?></p>
@@ -463,10 +420,8 @@ $courseusers = das_course_users($courseid);
                 das_print_today_users($courseusers);
                 ?>
                 <div class="das-box-buttons">
-
                 </div>
             </div>
-
             <div id="das-missing-users-box">
                 <img class="das-gear" src="assets/img/engrenagemcinza.png" alt="das-gear-img">
                 <p class="das-title"><?php echo get_string('missingusers', 'block_das');?></p>
@@ -488,19 +443,15 @@ $courseusers = das_course_users($courseid);
                 <p class="das-title"> Status da Turma</p>
                 <img class="das-status-class-graphic" src="assets/img/acesso-alunos.png" alt="status-class">
             </div>
-
             <div id="das-acess-activity">
                 <p class="das-title"> Acesso por Atividade</p>
                 <img class="das-acess-activity-graphic" src="assets/img/interacao-por-topico-na-turma.png" alt="acess-activity">
             </div>
-
             <div id="das-resources">
                 <p class="das-title"> Recursos</p>
                 <p class="das-top-bottom">Top 10 x Bottom 10</p>
                 <img class="das-resources-graphic" src="assets/img/recursos.png" alt="resources">
-
             </div>
-
             <div id="das-permanence-course">
                 <p class="das-title"> Tempo Médio no Curso </p>
                 <img class="das-permanence-course-graphic" src="assets/img/permanencia-no-curso.png" alt="permanence-course">
