@@ -48,7 +48,7 @@ $capabilities = array(
         ),
         'clonepermissionsfrom' => 'moodle/site:manageblocks'
     ),
-    
+
     'block/das:myaddinstance' => array(
         'riskbitmask' => RISK_SPAM | RISK_XSS,
         'captype' => 'write',
@@ -57,7 +57,6 @@ $capabilities = array(
             'editingteacher' => CAP_ALLOW,
             'manager' => CAP_ALLOW
         ),
-    'clonepermissionsfrom' => 'moodle/site:manageblocks'
-
-),
+    	'clonepermissionsfrom' => 'moodle/site:manageblocks'
+	),
 );

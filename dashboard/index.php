@@ -13,17 +13,16 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-?>
-<!DOCTYPE html>
-<?php 
+
 require_once("../../../config.php");
-include '../lib.php';
+include('../lib.php');
 $courseid = required_param('id', PARAM_INT);
 require_login($courseid);
 $context = context_course::instance($courseid);
 require_capability('block/analytics_graphs:viewpages', $context);
 $courseusers = das_course_users($courseid);
 ?>
+<!DOCTYPE html>
 <html lang="pt">
 
 <head>
@@ -42,7 +41,7 @@ $courseusers = das_course_users($courseid);
 
             var menu = Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
             var blockNames = Array("das-activity-deliver", "das-preventive-notice", "das-on-time", "das-out-of-time", "das-remail", "das-online-users-box", "das-missing-users-box",
-            						"das-status-class", "das-acess-activity", "das-resources", "das-permanence-course");
+                                    "das-status-class", "das-acess-activity", "das-resources", "das-permanence-course");
             var columns = Array(1,1,1,1);
 
             function reorganizeSkeleton() {
@@ -459,8 +458,8 @@ $courseusers = das_course_users($courseid);
 
         <div id="das-user-column-2">
             <div id="das-online-users-box">
-                <p class="das-title"><?php echo get_string('todayusers','block_das');?></p>
-                <?php 
+                <p class="das-title"><?php echo get_string('todayusers', 'block_das');?></p>
+                <?php
                 das_print_today_users($courseusers);
                 ?>
                 <div class="das-box-buttons">
@@ -470,8 +469,8 @@ $courseusers = das_course_users($courseid);
 
             <div id="das-missing-users-box">
                 <img class="das-gear" src="assets/img/engrenagemcinza.png" alt="das-gear-img">
-                <p class="das-title"><?php echo get_string('missingusers','block_das');?></p>
-                <?php 
+                <p class="das-title"><?php echo get_string('missingusers', 'block_das');?></p>
+                <?php
                 das_print_missing_users($courseusers, 0, 6);
                 das_print_missing_users($courseusers, 0, 10);
                 das_print_missing_users($courseusers, 0, 60);
