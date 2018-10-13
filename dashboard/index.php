@@ -36,8 +36,9 @@ $courseusers = das_course_users($courseid);
     <script>
         $(function() {
             var menu = Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-            var blockNames = Array("das-activity-deliver", "das-preventive-notice", "das-on-time", "das-out-of-time", "das-remail", "das-online-users-box", "das-missing-users-box",
-                                    "das-status-class", "das-acess-activity", "das-resources", "das-permanence-course");
+            var blockNames = Array("das-activity-deliver", "das-preventive-notice", "das-on-time", "das-out-of-time", "das-remail",
+                                    "das-online-users-box", "das-missing-users-box", "das-status-class", "das-acess-activity",
+                                    "das-resources", "das-permanence-course");
             var columns = Array(1,1,1,1);
             function reorganizeSkeleton() {
                 var cont = 0;
@@ -180,17 +181,20 @@ $courseusers = das_course_users($courseid);
                     </li>
                 </a>
                 <a class="das-item-menu1" href="#">
-                    <li id="das-item-menu1"><img src="assets/img/repostagem.png" alt="Imagem de item do menu" class="das-image-menu">
+                    <li id="das-item-menu1"><img src="assets/img/repostagem.png" alt="Imagem de item do menu"
+                        class="das-image-menu">
                         <p id="das-name-menu1">Repostagem da atividade</p>
                     </li>
                 </a>
                 <a class="das-item-menu2" href="#">
-                    <li id="das-item-menu2"><img src="assets/img/postagensadiantadas.png" alt="Imagem de item do menu" class="das-image-menu">
+                    <li id="das-item-menu2"><img src="assets/img/postagensadiantadas.png" alt="Imagem de item do menu"
+                        class="das-image-menu">
                         <p id="das-name-menu2">Postagens Antecipadas</p>
                     </li>
                 </a>
                 <a class="das-item-menu3" href="#">
-                    <li id="das-item-menu3"><img src="assets/img/svisopreventivo.png" alt="Imagem de item do menu" class="das-image-menu">
+                    <li id="das-item-menu3"><img src="assets/img/svisopreventivo.png" alt="Imagem de item do menu"
+                        class="das-image-menu">
                         <p id="das-name-menu3">Aviso Preventivo</p>
                     </li>
                 </a>
@@ -263,7 +267,8 @@ $courseusers = das_course_users($courseid);
                 <p class="das-subtitle">Educação</p>
                 <div class="das-item-default">
                     <div class="das-item-default-header">
-                        <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
+                        <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
+                            alt="activity-img">
                         <p class="das-vertical-align das-p-overflow">Atividades Texto Online</p>
                         <div class="das-activity-number">
                             <div style="">
