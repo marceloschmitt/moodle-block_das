@@ -393,6 +393,7 @@ $courseusers = das_course_users($courseid);
             <div id="das-out-of-time">
                 <p class="das-title">Fora do Prazo</p>
                 <p class="das-subtitle"> Educação</p>
+                <img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;">
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
                     <p class="das-vertical-align das-p-overflow">Atividade Texto Online</p>
