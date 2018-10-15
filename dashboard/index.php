@@ -264,7 +264,7 @@ $courseusers = das_course_users($courseid);
             <div id="das-activity-deliver">
                 <p class="das-title">Atividades Entregues </p>
    
-                    <p class="das-subtitle"><b>Educação</b></div>
+                    <p class="das-subtitle"><b>Educação</b>
                 <div class="das-item-default">
                     <div class="das-item-default-header">
                         <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
