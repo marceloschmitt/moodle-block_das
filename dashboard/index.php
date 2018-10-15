@@ -263,10 +263,8 @@ $courseusers = das_course_users($courseid);
         <div id="das-user-column-1">
             <div id="das-activity-deliver">
                 <p class="das-title">Atividades Entregues </p>
-                <div class="das-box-email">
+   
                     <p class="das-subtitle"><b>Educação</b></div>
-                    <img class="das-activity-check" src="assets/img/email.jpeg" alt="img-activity-email">
-                </div>
                 <div class="das-item-default">
                     <div class="das-item-default-header">
                         <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
