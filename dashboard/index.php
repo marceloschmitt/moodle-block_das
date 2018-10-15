@@ -426,7 +426,6 @@ $courseusers = das_course_users($courseid);
                 </div>
             </div>
             <div id="das-missing-users-box">
-                <img class="das-gear" src="assets/img/engrenagemcinza.png" alt="das-gear-img">
                 <p class="das-title"><?php echo get_string('missingusers', 'block_das');?></p>
                 <?php
                 das_print_missing_users($courseusers, 0, 6);
