@@ -262,7 +262,6 @@ $courseusers = das_course_users($courseid);
 
         <div id="das-user-column-1">
             <div id="das-activity-deliver">
-                <img class="das-gear" src="assets/img/engrenagemcinza.png" alt="das-gear-img">
                 <p class="das-title">Atividades Entregues </p>
                 <p class="das-subtitle">Educação</p>
                 <div class="das-item-default">
@@ -331,7 +330,6 @@ $courseusers = das_course_users($courseid);
             </div>
 
             <div id="das-preventive-notice">
-                <img class="das-gear" src="assets/img/engrenagemcinza.png" alt="das-gear-img">
                 <p class="das-title">Aviso Preventivo</p>
                 <p class="das-subtitle">Educação</p>
                 <div class="das-item-default-header">
@@ -444,7 +442,6 @@ $courseusers = das_course_users($courseid);
 
         <div id="das-user-column-3">
             <div id="das-status-class">
-                <img class="das-gear" src="assets/img/engrenagemcinza.png" alt="das-gear-img">
                 <p class="das-title"> Status da Turma</p>
                 <img class="das-status-class-graphic" src="assets/img/acesso-alunos.png" alt="status-class">
             </div>
