@@ -402,15 +402,22 @@ $courseusers = das_course_users($courseid);
             <div id="das-out-of-time">
                 <p class="das-title">Fora do Prazo</p>
                 <p class="das-subtitle"> Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></p>
-                 <div class="das-item-default-header">
+<?php
+    $das_ontime_activities = das_late_activities(/*$id_curso*/);
+    foreach($das_late_activities As $activities){
+?> 
+                
+                <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
-                    <p class="das-vertical-align das-p-overflow">Atividade Texto Online</p>
+                    <p class="das-vertical-align das-p-overflow"><?php echo "$activities";?></p>
                     <div class="das-activity-number">
                         <div style="">
                             <p>4</p>
                         </div>
                     </div>
                 </div>
+<?php }
+?>
             </div>
             <div id="das-remail">
                 <p class="das-title"> Reenvio de Atividade</p>
