@@ -388,7 +388,7 @@ $courseusers = das_course_users($courseid);
  ?>
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
-                    <p class="das-vertical-align das-p-overflow"><?php echo "$activities;?>"</p>
+                    <p class="das-vertical-align das-p-overflow"><?php echo "$activities";?></p>
                     <div class="das-activity-number">
                         <div style="">
                             <p>1</p>
