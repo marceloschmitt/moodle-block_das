@@ -118,3 +118,11 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
     ?> </div>
     <?php
 }
+
+function das_ontime_activities($id_curso){
+	return array('Atividade 1', 'Atividade 2', 'Atividade 3');
+}
+	
+function das_late_activities($id_curso){
+	return array('Atividade 1', 'Atividade 2', 'Atividade 3');
+}
