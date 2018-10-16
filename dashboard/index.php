@@ -376,13 +376,17 @@ $courseusers = das_course_users($courseid);
                     <p class="das-subtitle">mais...</p>
                 </div>
             </div>
-
+            
+  <?php
+    $das_ontime_activities = das_ontime_activities($id_curso);
+    foreach($das_ontime_activities As $activities){
+  ?>
             <div id="das-on-time">
                 <p class="das-title"> Dentro do Prazo</p>
                 <p class="das-subtitle">Integração Mídias da Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></p>
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
-                    <p class="das-vertical-align das-p-overflow">Atividade 1</p>
+                    <p class="das-vertical-align das-p-overflow"><?php echo "$activities;?>"</p>
                     <div class="das-activity-number">
                         <div style="">
                             <p>1</p>
@@ -390,6 +394,8 @@ $courseusers = das_course_users($courseid);
                     </div>
                 </div>
             </div>
+ <?php } 
+ ?>
             <div id="das-out-of-time">
                 <p class="das-title">Fora do Prazo</p>
                 <p class="das-subtitle"> Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></p>
