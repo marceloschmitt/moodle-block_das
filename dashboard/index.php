@@ -383,7 +383,7 @@ $courseusers = das_course_users($courseid);
                 
                 <p class="das-subtitle">Integração Mídias da Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></p>
  <?php
-    $das_ontime_activities = das_ontime_activities($id_curso);
+    $das_ontime_activities = das_ontime_activities(/*$id_curso*/);
     foreach($das_ontime_activities As $activities){
  ?>
                 <div class="das-item-default-header">
