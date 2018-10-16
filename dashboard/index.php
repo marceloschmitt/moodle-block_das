@@ -395,9 +395,10 @@ $courseusers = das_course_users($courseid);
                         </div>
                     </div>
                 </div>
+                <?php } 
+                ?>
             </div>
- <?php } 
- ?>
+ 
             <div id="das-out-of-time">
                 <p class="das-title">Fora do Prazo</p>
                 <p class="das-subtitle"> Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></p>
