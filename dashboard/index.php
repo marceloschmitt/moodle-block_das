@@ -403,7 +403,7 @@ $courseusers = das_course_users($courseid);
                 <p class="das-title">Fora do Prazo</p>
                 <p class="das-subtitle"> Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></p>
 <?php
-    $das_ontime_activities = das_late_activities(/*$id_curso*/);
+    $das_late_activities = das_late_activities(/*$id_curso*/);
     foreach($das_late_activities As $activities){
 ?> 
                 
