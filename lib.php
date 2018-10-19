@@ -119,25 +119,82 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
     <?php
 }
 
-function das_ontime_activities(/*$id_curso*/){
-	return array('Atividade 1', 'Atividade 2', 'Atividade 3');
+function das_print_late_assign($activities) {
+    ?><div id="das-out-of-time">
+    <p class="das-title">Fora do Prazo</p>
+    <p class="das-subtitle"> Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></p>
+    <?php
+    foreach($activities as $activity){
+        if(time() > $activity['duedate']) {
+            ?>
+            <div class="das-item-default-header">
+            <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
+            <p class="das-vertical-align das-p-overflow"><?php echo "$activity[assign]";?></p>
+            <div class="das-activity-number">
+            <div style="">
+            <p><?php echo $activity['numberoflatesubmissions'] + $activity['numberofnosubmissions'];?></p>
+            </div>
+            </div>
+            </div>
+            <?php
+        }
+    }
+    ?>
+    </div>
+    <?php
 }
 
 
-function das_late_activities($students/*$id_curso*/){
+function das_print_ontime_assign($activities) {
+    ?><div id="das-on-time">
+    <p class="das-title"> Dentro do Prazo</p>
+    <p class="das-subtitle">Integração Mídias da Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></p>
+    <?php
+    foreach($activities as $activity){
+        if($activity['numberofintimesubmissions']) {
+            ?>
+            <div class="das-item-default-header">
+            <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
+            <p class="das-vertical-align das-p-overflow"><?php echo "$activity[assign]";?></p>
+            <div class="das-activity-number">
+            <div style="">
+            <p><?php echo $activity['numberofintimesubmissions'];?></p>
+            </div>
+            </div>
+            </div>
+            <?php
+        }
+    }
+    ?>
+    </div>
+    <?php
+}
+
+
+function das_activities($students/*$id_curso*/){
     global $DB;
     $course = 194;
+    require('das_submission.php');
+
+    foreach ($students as $tuple) {
+        $inclause[] = $tuple->id;
+    }
+    list($insql, $inparams) = $DB->get_in_or_equal($inclause);
     $assign = $DB->get_record('modules', array('name' => 'assign'), 'id');
-    $params = array($student, $assign->id, $course);
-    $sql = "SELECT  a.id, name, COALESCE(duedate, 0) as duedate, COALESCE(s.timemodified,0) as timecreated
+    $params = array_merge(array($assign->id, $course), $inparams);
+    $sql = "SELECT a.id+(COALESCE(s.id,1)*1000000)as id, a.id as assignment, name, duedate, cutoffdate,
+                s.userid, usr.firstname, usr.lastname, usr.email, s.timemodified as timecreated
                 FROM {assign} a
-                LEFT JOIN {assign_submission} s on a.id = s.assignment AND s.status = 'submitted' AND s.userid = ?
+                LEFT JOIN {assign_submission} s on a.id = s.assignment AND s.status = 'submitted'
+                LEFT JOIN {user} usr ON usr.id = s.userid
                 LEFT JOIN {course_modules} cm on cm.instance = a.id AND cm.module = ?
-                WHERE a.course = ? and nosubmissions = 0 AND cm.visible=1
-                ORDER BY name";
-    $result = $DB->get_records_sql($sql, $params);
+                WHERE a.course = ? and nosubmissions = 0 AND (s.userid IS NULL OR s.userid $insql)
+                    AND cm.visible = 1
+                ORDER BY duedate, name, firstname";
+     $result = $DB->get_records_sql($sql, $params);
 
-    print_r $resuly ; exit;
 
-	return array('Atividade 1', 'Atividade 2', 'Atividade 3');
+$submissions = new das_submission($course);
+$submissions->create_array($result,$students);
+        return($submissions->get_array());
 }
