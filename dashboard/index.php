@@ -263,7 +263,7 @@ $courseusers = das_course_users($courseid);
         <div id="das-user-column-1">
             <div id="das-activity-deliver">
                 <p class="das-title">Atividades Entregues </p>
-   
+
                     <p class="das-subtitle"><b>Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></b>
                 <div class="das-item-default">
                     <div class="das-item-default-header">
@@ -376,11 +376,11 @@ $courseusers = das_course_users($courseid);
                     <p class="das-subtitle">mais...</p>
                 </div>
             </div>
-            
-  
+
+
             <div id="das-on-time">
                 <p class="das-title"> Dentro do Prazo</p>
-                
+
                 <p class="das-subtitle">Integração Mídias da Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></p>
  <?php
     $das_ontime_activities = das_ontime_activities(/*$id_curso*/);
@@ -395,18 +395,18 @@ $courseusers = das_course_users($courseid);
                         </div>
                     </div>
                 </div>
-                <?php } 
+                <?php }
                 ?>
             </div>
- 
+
             <div id="das-out-of-time">
                 <p class="das-title">Fora do Prazo</p>
                 <p class="das-subtitle"> Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></p>
 <?php
-    $das_late_activities = das_late_activities(/*$id_curso*/);
+    $das_late_activities = das_late_activities($courseusers/*$id_curso*/);
     foreach($das_late_activities As $activities){
-?> 
-                
+?>
+
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
                     <p class="das-vertical-align das-p-overflow"><?php echo "$activities";?></p>

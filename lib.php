@@ -122,6 +122,22 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
 function das_ontime_activities(/*$id_curso*/){
 	return array('Atividade 1', 'Atividade 2', 'Atividade 3');
 }
-function das_late_activities(/*$id_curso*/){
+
+
+function das_late_activities($students/*$id_curso*/){
+    global $DB;
+    $course = 194;
+    $assign = $DB->get_record('modules', array('name' => 'assign'), 'id');
+    $params = array($student, $assign->id, $course);
+    $sql = "SELECT  a.id, name, COALESCE(duedate, 0) as duedate, COALESCE(s.timemodified,0) as timecreated
+                FROM {assign} a
+                LEFT JOIN {assign_submission} s on a.id = s.assignment AND s.status = 'submitted' AND s.userid = ?
+                LEFT JOIN {course_modules} cm on cm.instance = a.id AND cm.module = ?
+                WHERE a.course = ? and nosubmissions = 0 AND cm.visible=1
+                ORDER BY name";
+    $result = $DB->get_records_sql($sql, $params);
+
+    print_r $resuly ; exit;
+
 	return array('Atividade 1', 'Atividade 2', 'Atividade 3');
 }
