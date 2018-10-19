@@ -140,16 +140,16 @@ class das_submission {
                 $this->statistics[$counter]['no_submissions'] = $arrayofstudents;
             } else if ($numberoflatesubmissions == 0) {
                 $this->statistics[$counter]['no_submissions'] =
-                    block_analytics_graphs_subtract_student_arrays($arrayofstudents,
+                    das_subtract_student_arrays($arrayofstudents,
                     $this->statistics[$counter]['in_time_submissions']);
             } else if ($numberofintimesubmissions == 0) {
                 $this->statistics[$counter]['no_submissions'] =
-                    block_analytics_graphs_subtract_student_arrays($arrayofstudents,
+                    das_subtract_student_arrays($arrayofstudents,
                     $this->statistics[$counter]['latesubmissions']);
             } else {
                 $this->statistics[$counter]['no_submissions'] =
-                    block_analytics_graphs_subtract_student_arrays(
-                    block_analytics_graphs_subtract_student_arrays($arrayofstudents,
+                    das_subtract_student_arrays(
+                    das_subtract_student_arrays($arrayofstudents,
                         $this->statistics[$counter]['in_time_submissions']),
                     $this->statistics[$counter]['latesubmissions']);
             }
