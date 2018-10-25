@@ -315,7 +315,7 @@ $courseusers = das_course_users($courseid);
                         </div>
                     </div>
                 </div>
-                <p class="das-subtitle"> Integração de Mídias na Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></p>
+                <p class="das-subtitle"> Integração de Mídias na Educação<a href="das-message.php"><img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></a></p>
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
                     <p class="das-vertical-align das-p-overflow">Atividade 1</p>
@@ -347,7 +347,7 @@ $courseusers = das_course_users($courseid);
 
             <div id="das-preventive-notice">
                 <p class="das-title">Aviso Preventivo</p>
-                <p class="das-subtitle">Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></p>
+                <p class="das-subtitle">Educação<a href="das-message.php"><img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></a></p>
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
                     <p class="das-vertical-align das-p-overflow">Atividade Texto Online</p>
@@ -357,7 +357,7 @@ $courseusers = das_course_users($courseid);
                         </div>
                     </div>
                 </div>
-                <p class="das-subtitle"> Interação Mídias da Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></p>
+                <p class="das-subtitle"> Interação Mídias da Educação<a href="das-message.php"><img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></a></p>
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
                     <p class="das-vertical-align das-p-overflow">Atividade 1</p>
@@ -401,7 +401,7 @@ $courseusers = das_course_users($courseid);
 
             <div id="das-remail">
                 <p class="das-title"> Reenvio de Atividade</p>
-                <p class="das-subtitle">Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;">
+                <p class="das-subtitle">Educação<a href="das-message.php"><img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></a>
 </p>
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
