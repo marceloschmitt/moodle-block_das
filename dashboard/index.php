@@ -169,6 +169,19 @@ $courseusers = das_course_users($courseid);
                 }
             });
         });
+        
+        function dasUsersActivities(a){
+
+                var x;
+                x = document.getElementById(a);
+
+                if(x.style.display != 'none'){
+                    x.style.display ='none';
+                }
+                else{
+                    x.style.display = 'block';
+                }
+        }
     </script>
 </head>
 <body>
@@ -269,18 +282,20 @@ $courseusers = das_course_users($courseid);
                     <div class="das-item-default-header">
                         <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
                             alt="activity-img">
-                        <p class="das-vertical-align das-p-overflow">Atividades Texto Online</p>
+                        <p class="das-vertical-align das-p-overflow" onclick="dasUsersActivities('userNone');">Atividades Texto Online</p>
                         <div class="das-activity-number">
-                            <div style="">
+                            <div style="" onclick="dasUsersActivities('userNone');">
                                 <p>5</p>
                             </div>
                         </div>
                     </div>
-                    <div class="das-item-default-expansive">
+                    
+                   <div class="das-item-default-expansive" id='userNone' style="display: none">
                         <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
                         <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
                         <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                     </div>
+                    
                 </div>
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
