@@ -204,29 +204,31 @@ function das_print_delivered_assigns($activities) {
     <?php
     $counter = 0;
     foreach($activities as $activity){
-        $expansiveid = "delivered$counter";
+        $expansiveid = "delivered$counter++";
         ?><div class="das-item-default-header">
                         <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
                             alt="activity-img">
-                        <p class="das-vertical-align das-p-overflow"><?php echo $expansiveid ?></p>
+                        <p class="das-vertical-align das-p-overflow" onclick = "$('.<?php echo $expansiveid ?>').toggle();">
+                            <?php echo $expansiveid ?>
+                        </p>
                         <div class="das-activity-number">
                             <div style="">
                                 <p>5</p>
                             </div>
                         </div>
            </div>
-           <div class="das-item-default-expansive " style="display: none">
+           <div class="das-item-default-expansive <?php echo $expansiveid ?>" style="display: none">
                         <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
                         <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
                         <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
            </div>
-           <div class="das-item-default-expansive " style="display: none">
+           <div class="das-item-default-expansive <?php echo $expansiveid ?>" style="display: none">
 
                         <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
                         <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
                         <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                     </div>
-                    <div class="das-item-default-expansive " style="display: none">
+                    <div class="das-item-default-expansive <?php echo $expansiveid ?>" style="display: none">
 
                         <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
                         <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
