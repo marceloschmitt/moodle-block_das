@@ -169,7 +169,7 @@ $courseusers = das_course_users($courseid);
                 }
             });
         });
-        
+
         function dasUsersActivities(a){
 
                 var x;
@@ -289,13 +289,14 @@ $courseusers = das_course_users($courseid);
                             </div>
                         </div>
                     </div>
-                    
+
                    <div class="das-item-default-expansive" id='userNone' style="display: none">
+                        <p class="das-vertical-align das-p-overflow">
                         <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
-                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
+                        Anita Raquel da Silva</p>
                         <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                     </div>
-                    
+
                 </div>
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
