@@ -291,9 +291,11 @@ $courseusers = das_course_users($courseid);
                     </div>
 
                    <div class="das-item-default-expansive" id='userNone' style="display: none">
+                        <?php> das_print_today_users($courseusers); ?>
                         <p class="das-vertical-align das-p-overflow">
-                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+                        <p><img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
                         Anita Raquel da Silva</p>
+                        </p>
                         <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                     </div>
 

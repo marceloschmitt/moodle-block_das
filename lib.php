@@ -76,6 +76,19 @@ function das_missing_users($users, $lowboundary, $highboundary) {
 }
 
 
+function das_print_users($courseusers) {
+    $beginofday = strtotime("midnight", time());
+    foreach ($courseusers as $user) {
+        if ($beginofday < $user->lastaccess) {
+            ?><div class="das-item-default-header">
+            <img class="das-user-small-image das-vertical-align" src="<?php echo $user->pictureurl;?>" alt="User-Image">
+            <p class="das-vertical-align das-p-overflow"><?php echo "$user->firstname $user->lastname"; ?></p>
+            <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+            </div><?php
+        }
+    }
+}
+
 function das_print_today_users($courseusers) {
     $beginofday = strtotime("midnight", time());
     foreach ($courseusers as $user) {
@@ -122,7 +135,8 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
 function das_print_late_assign($activities) {
     ?><div id="das-out-of-time">
     <p class="das-title">Fora do Prazo</p>
-    <p class="das-subtitle"> Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></p>
+    <p class="das-subtitle"> Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;
+        position: absolute;right: 12px;"></p>
     <?php
     foreach($activities as $activity){
         if(time() > $activity['duedate']) {
@@ -133,6 +147,9 @@ function das_print_late_assign($activities) {
             <div class="das-activity-number">
             <div style="">
             <p><?php echo $activity['numberoflatesubmissions'] + $activity['numberofnosubmissions'];?></p>
+            <div class="das-item-default-expansive" id='userNone' style="display: none">
+            Marcelo
+            </div>
             </div>
             </div>
             </div>
