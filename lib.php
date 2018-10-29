@@ -197,6 +197,52 @@ function das_print_ontime_assign($activities) {
     <?php
 }
 
+function das_print_delivered_assigns($activities) {
+    ?><div id="das-on-time">
+    <p class="das-title"> Dentro do Prazo</p>
+    <p class="das-subtitle">Integração Mídias da Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></p>
+    <?php
+    foreach($activities as $activity){
+        ?><div class="das-item-default-header">
+                        <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
+                            alt="activity-img">
+                        <p class="das-vertical-align das-p-overflow">Atividades Texto Online</p>
+                        <div class="das-activity-number">
+                            <div style="">
+                                <p>5</p>
+                            </div>
+                        </div>
+                    </div>
+
+                   <div class="das-item-default-expansive " style="display: none">
+
+                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
+                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+                    </div>
+                    <div class="das-item-default-expansive " style="display: none">
+
+                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
+                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+                    </div>
+                    <div class="das-item-default-expansive " style="display: none">
+
+                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
+                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+                    </div>
+
+                </div>
+<?php
+        
+    }
+    ?>
+    </div>
+    <?php
+}
+
+
 
 function das_activities($students/*$id_curso*/){
     global $DB;
