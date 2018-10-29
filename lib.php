@@ -208,7 +208,7 @@ function das_print_delivered_assigns($activities) {
         ?><div class="das-item-default-header">
                         <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
                             alt="activity-img">
-                        <p class="das-vertical-align das-p-overflow" onclick = "$('.<?php echo $expansiveid ?>').toggle();">
+                        <p class="das-vertical-align" onclick = "$('.<?php echo $expansiveid ?>').toggle();">
                             <?php echo $expansiveid ?>
                         </p>
                         <div class="das-activity-number">
