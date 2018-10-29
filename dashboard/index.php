@@ -398,7 +398,6 @@ $courseusers = das_course_users($courseid);
 <?php
     $activities = das_activities($courseusers);
     das_print_ontime_assign($activities);
-    das_print_assign($activities);
 ?>
 
             <div id="das-remail">
