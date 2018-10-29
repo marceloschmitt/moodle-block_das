@@ -142,17 +142,27 @@ function das_print_late_assign($activities) {
         if(time() > $activity['duedate']) {
             ?>
             <div class="das-item-default-header">
-            <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
-            <p class="das-vertical-align das-p-overflow"><?php echo "$activity[assign]";?></p>
-            <div class="das-activity-number">
-            <div style="">
-            <p><?php echo $activity['numberoflatesubmissions'] + $activity['numberofnosubmissions'];?></p>
+                <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
+                <p class="das-vertical-align das-p-overflow"><?php echo "$activity[assign]";?></p>
+                <div class="das-activity-number">
+                    <div style="">
+                    <p><?php echo $activity['numberoflatesubmissions'] + $activity['numberofnosubmissions'];?></p>
+                    </div>
+                </div>
+                <div class="das-activity-number">
+                    <div style="" onclick="dasUsersActivities('userNone');">
+                        <p>5</p>
+                    </div>
+                </div>
+            </div>
             <div class="das-item-default-expansive" id='userNone' style="display: none">
-            Marcelo
-            </div>
-            </div>
-            </div>
-            </div>
+                        <?php> das_print_today_users($courseusers); ?>
+                        <p class="das-vertical-align das-p-overflow">
+                        <p><img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+                        Anita Raquel da Silva</p>
+                        </p>
+                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+                    </div>
             <?php
         }
     }
