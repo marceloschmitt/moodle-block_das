@@ -237,7 +237,7 @@ function das_print_delivered_assigns($activities) {
         
 <?php
         
-    //}
+    }
     ?>
     </div>
     <?php
