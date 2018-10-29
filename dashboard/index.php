@@ -291,7 +291,6 @@ $courseusers = das_course_users($courseid);
                     </div>
 
                    <div class="das-item-default-expansive" id='userNone' style="display: none">
-                        <?php> das_print_today_users($courseusers); ?>
                         <p class="das-vertical-align das-p-overflow">
                         <p><img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
                         Anita Raquel da Silva</p>
@@ -399,7 +398,7 @@ $courseusers = das_course_users($courseid);
 <?php
     $activities = das_activities($courseusers);
     das_print_ontime_assign($activities);
-    das_print_late_assign($activities);
+    das_print_assign($activities);
 ?>
 
             <div id="das-remail">
