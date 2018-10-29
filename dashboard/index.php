@@ -461,6 +461,7 @@ $courseusers = das_course_users($courseid);
 
 <?php
     $activities = das_activities($courseusers);
+            das_print_delivered_assigns($courseusers);
     das_print_ontime_assign($activities);
 ?>
 
