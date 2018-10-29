@@ -274,8 +274,7 @@ $courseusers = das_course_users($courseid);
         <div id="das-user-column-1">
             <div id="das-activity-deliver">
                 <p class="das-title">Atividades Entregues </p>
-
-                    <p class="das-subtitle"><b>Educação<a href="das-message.php"><img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></b></a>
+                <p class="das-subtitle"><b>Educação</b></a>
                 <div class="das-item-default">
                     <div class="das-item-default-header">
                         <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
@@ -289,26 +288,21 @@ $courseusers = das_course_users($courseid);
                     </div>
 
                    <div class="das-item-default-expansive " style="display: none">
-
                         <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
                         <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
                         <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                     </div>
                     <div class="das-item-default-expansive " style="display: none">
-
                         <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
                         <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
                         <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                     </div>
                     <div class="das-item-default-expansive " style="display: none">
-
                         <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
                         <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
                         <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                     </div>
                 </div>
-                
-                
                 
                 <div class="das-item-default"
                     <div class="das-item-default-header">
@@ -319,8 +313,7 @@ $courseusers = das_course_users($courseid);
                                 <p>8</p>
                             </div>
                         </div>
-                    </div
-                
+                    </div>
                     <div class="das-item-default-expansive " style="display: none">
                         <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
                         <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
@@ -337,6 +330,7 @@ $courseusers = das_course_users($courseid);
                         <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                     </div>
                 </div>
+            </div>
  
 
             <div id="das-preventive-notice">
