@@ -32,6 +32,7 @@ $courseusers = das_course_users($courseid);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dash Fluxo de Caixas</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script>
         $(function() {
@@ -169,19 +170,16 @@ $courseusers = das_course_users($courseid);
                 }
             });
         });
+    $(document).ready(function(){
+                $(".das-activity-number").click(function(){
+                $(".das-item-default-expansive").toggle();
+                });
 
-        function dasUsersActivities(a){
-
-                var x;
-                x = document.getElementById(a);
-
-                if(x.style.display != 'none'){
-                    x.style.display ='none';
-                }
-                else{
-                    x.style.display = 'block';
-                }
-        }
+                $("p.das-p-overflow").click(function(){
+                $(".das-item-default-expansive").toggle();
+                });
+     });
+        
     </script>
 </head>
 <body>
@@ -282,19 +280,30 @@ $courseusers = das_course_users($courseid);
                     <div class="das-item-default-header">
                         <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
                             alt="activity-img">
-                        <p class="das-vertical-align das-p-overflow" onclick="dasUsersActivities('userNone');">Atividades Texto Online</p>
+                        <p class="das-vertical-align das-p-overflow">Atividades Texto Online</p>
                         <div class="das-activity-number">
-                            <div style="" onclick="dasUsersActivities('userNone');">
+                            <div style="">
                                 <p>5</p>
                             </div>
                         </div>
                     </div>
 
-                   <div class="das-item-default-expansive" id='userNone' style="display: none">
-                        <p class="das-vertical-align das-p-overflow">
-                        <p><img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
-                        Anita Raquel da Silva</p>
-                        </p>
+                   <div class="das-item-default-expansive " style="display: none">
+
+                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
+                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+                    </div>
+                    <div class="das-item-default-expansive " style="display: none">
+
+                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
+                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+                    </div>
+                    <div class="das-item-default-expansive " style="display: none">
+
+                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
                         <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                     </div>
 
@@ -308,6 +317,61 @@ $courseusers = das_course_users($courseid);
                         </div>
                     </div>
                 </div>
+                
+                <div class="das-item-default-expansive " style="display: none">
+
+                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
+                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+                    </div>
+                    <div class="das-item-default-expansive " style="display: none">
+
+                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
+                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+                    </div>
+                    <div class="das-item-default-expansive " style="display: none">
+
+                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
+                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+                    </div>
+                <div class="das-item-default-expansive " style="display: none">
+
+                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
+                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+                    </div>
+                    <div class="das-item-default-expansive " style="display: none">
+
+                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
+                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+                    </div>
+                    <div class="das-item-default-expansive " style="display: none">
+
+                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
+                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+                    </div>
+                <div class="das-item-default-expansive " style="display: none">
+
+                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
+                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+                    </div>
+                    <div class="das-item-default-expansive " style="display: none">
+
+                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
+                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+                    </div>
+                    <div class="das-item-default-expansive " style="display: none">
+
+                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
+                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
+                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+                    </div>
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
                     <p class="das-vertical-align das-p-overflow">Fórum Geral - Atualizado</p>
