@@ -212,7 +212,7 @@ function das_print_delivered_assigns($activities) {
                                 <p>5</p>
                             </div>
                         </div>
-                    </div>
+           </div>
 
                    <div class="das-item-default-expansive " style="display: none">
 
@@ -233,8 +233,8 @@ function das_print_delivered_assigns($activities) {
                         <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                     </div>
 
-                </div>
-        </div>
+                
+        
 <?php
         
     //}
