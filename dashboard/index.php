@@ -379,7 +379,7 @@ $courseusers = das_course_users($courseid);
                     <p class="das-subtitle">mais...</p>
                 </div>
             </div>
-        </div>
+       
 
 
 <?php
