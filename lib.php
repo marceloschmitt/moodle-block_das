@@ -198,7 +198,7 @@ function das_print_ontime_assign($activities) {
 }
 
 function das_print_delivered_assigns($activities, $courseusers) {
-    ?><div id="das-on-time">
+    ?>
     <p class="das-title">Atividades Entregues</p>
     <p class="das-subtitle">Tópico ?</p>
     <?php
