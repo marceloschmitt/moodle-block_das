@@ -198,11 +198,11 @@ function das_print_delivered_assigns($activities, $courseusers) {
             $expansiveid = "delivered" . ++$counter;
             if($activity['numberofintimesubmissions']) {
                 das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid,
-                                        activity['assign'], $activity['numberofintimesubmissions']);
+                                        $activity['assign'], $activity['numberofintimesubmissions']);
             }
             if($activity['numberoflatesubmissions']) {
                 das_print_student_list($courseusers, $activity['latesubmissions'], $expansiveid,
-                                        activity['assign'], $activity['numberoflatesubmissions']);
+                                        $activity['assign'], $activity['numberoflatesubmissions']);
             }
         }
     ?></div><?php
