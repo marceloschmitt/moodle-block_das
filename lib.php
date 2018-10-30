@@ -172,29 +172,32 @@ function das_print_late_assign($activities) {
 }
 
 
-function das_print_ontime_assign($activities) {
+function das_print_ontime_assign($courseusers, $activities) {
     ?><div id="das-on-time">
-    <p class="das-title"> Dentro do Prazo</p>
-    <p class="das-subtitle">Integração Mídias da Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></p>
-    <?php
-    foreach($activities as $activity){
-        if($activity['numberofintimesubmissions']) {
-            ?>
-            <div class="das-item-default-header">
-            <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
-            <p class="das-vertical-align das-p-overflow"><?php echo "$activity[assign]";?></p>
-            <div class="das-activity-number">
-            <div style="">
-            <p><?php echo $activity['numberofintimesubmissions'];?></p>
-            </div>
-            </div>
-            </div>
-            <?php
+        <p class="das-title"> Dentro do Prazo</p>
+        <p class="das-subtitle">Tópico</p>
+        <?php
+        $counter = 0;
+        foreach($activities as $activity){
+            if($activity['numberofintimesubmissions']) {
+                $expansiveid = "ontime" . ++$counter;
+                ?><div class="das-item-default-header">
+                    <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
+                        alt="activity-img">
+                    <p class="das-vertical-align" onclick = "$('.<?php echo $expansiveid ?>').toggle();">
+                        <?php echo $activity['assign']?>
+                    </p>
+                    <div class="das-activity-number">
+                        <div style="">
+                            <p><?php echo $activity['numberofintimesubmissions'];?></p>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid);
+            }
         }
-    }
-    ?>
-    </div>
-    <?php
+    ?></div><?php
 }
 
 function das_print_delivered_assigns($activities, $courseusers) {

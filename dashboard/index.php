@@ -329,7 +329,7 @@ $courseusers = das_course_users($courseid);
 
 <?php
 
-    das_print_ontime_assign($activities);
+    das_print_ontime_assign($courseusers,$activities);
     das_print_late_assign($activities);
 ?>
 
