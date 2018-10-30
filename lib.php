@@ -210,11 +210,11 @@ function das_print_delivered_assigns($activities, $courseusers) {
                         <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
                             alt="activity-img">
                         <p class="das-vertical-align" onclick = "$('.<?php echo $expansiveid ?>').toggle();">
-                            <?php echo $expansiveid ?>
+                            <?php echo $activity['assign']?>
                         </p>
                         <div class="das-activity-number">
                             <div style="">
-                                <p>5</p>
+                                <p><?php echo $activity['numberofintimesubmissions'] + $activity['numberoflatesubmissions'];?></p>
                             </div>
                         </div>
            </div>
