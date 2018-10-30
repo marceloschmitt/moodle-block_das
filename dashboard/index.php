@@ -170,7 +170,7 @@ $courseusers = das_course_users($courseid);
                 }
             });
         });
-    $(document).ready(function(){
+    /*$(document).ready(function(){
                 $(".das-activity-number").click(function(){
                 $(".das-item-default-expansive").toggle();
                 });
@@ -178,7 +178,7 @@ $courseusers = das_course_users($courseid);
                 $("p.das-p-overflow").click(function(){
                 $(".das-item-default-expansive").toggle();
                 });
-     });
+     });*/
 
     </script>
 </head>
@@ -273,64 +273,9 @@ $courseusers = das_course_users($courseid);
 
         <div id="das-user-column-1">
             <div id="das-activity-deliver">
-                <p class="das-title">Atividades Entregues </p>
-                <p class="das-subtitle"><b>Educação</b></a>
-                <div class="das-item-default">
-                    <div class="das-item-default-header">
-                        <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
-                            alt="activity-img">
-                        <p class="das-vertical-align das-p-overflow">Atividades Texto Online</p>
-                        <div class="das-activity-number">
-                            <div style="">
-                                <p>5</p>
-                            </div>
-                        </div>
-                    </div>
-
-                   <div class="das-item-default-expansive " style="display: none">
-                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
-                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
-                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
-                    </div>
-                    <div class="das-item-default-expansive " style="display: none">
-                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
-                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
-                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
-                    </div>
-                    <div class="das-item-default-expansive " style="display: none">
-                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
-                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
-                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
-                    </div>
-                </div>
-
-                <div class="das-item-default">
-                    <div class="das-item-default-header">
-                        <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
-                        <p class="das-vertical-align das-p-overflow">Integração de Mídias da Educação</p>
-                        <div class="das-activity-number">
-                            <div style="">
-                                <p>8</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="das-item-default-expansive " style="display: none">
-                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
-                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
-                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
-                    </div>
-                    <div class="das-item-default-expansive " style="display: none">
-                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
-                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
-                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
-                    </div>
-                    <div class="das-item-default-expansive " style="display: none">
-                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
-                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
-                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
-                    </div>
-                </div>
-            </div>
+            <?php
+            das_print_delivered_assigns($activities,$courseusers);
+            ?>
 
 
             <div id="das-preventive-notice">
@@ -384,7 +329,6 @@ $courseusers = das_course_users($courseid);
 
 <?php
     $activities = das_activities($courseusers);
-    das_print_delivered_assigns($activities,$courseusers);
     das_print_ontime_assign($activities);
     das_print_late_assign($activities);
 ?>
