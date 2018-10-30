@@ -272,12 +272,11 @@ $courseusers = das_course_users($courseid);
         </div>
 
         <div id="das-user-column-1">
-            <div id="das-activity-deliver">
+
             <?php
             $activities = das_activities($courseusers);
             das_print_delivered_assigns($activities,$courseusers);
             ?>
-            </div>
 
             <div id="das-preventive-notice">
                 <p class="das-title">Aviso Preventivo</p>

@@ -198,36 +198,34 @@ function das_print_ontime_assign($activities) {
 }
 
 function das_print_delivered_assigns($activities, $courseusers) {
-    ?>
-    <p class="das-title">Atividades Entregues</p>
-    <p class="das-subtitle">Tópico ?</p>
-    <?php
-    $counter = 0;
-    foreach($activities as $activity){
-        $expansiveid = "delivered" . ++$counter;
-        ?><div class="das-item-default-header">
-            <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
-                alt="activity-img">
-            <p class="das-vertical-align" onclick = "$('.<?php echo $expansiveid ?>').toggle();">
-                <?php echo $activity['assign']?>
-            </p>
-            <div class="das-activity-number">
-                <div style="">
-                    <p><?php echo $activity['numberofintimesubmissions'] + $activity['numberoflatesubmissions'];?></p>
+    ?><div id="das-activity-deliver">
+        <p class="das-title">Atividades Entregues</p>
+        <p class="das-subtitle">Tópico ?</p>
+        <?php
+        $counter = 0;
+        foreach($activities as $activity){
+            $expansiveid = "delivered" . ++$counter;
+            ?><div class="das-item-default-header">
+                <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
+                    alt="activity-img">
+                <p class="das-vertical-align" onclick = "$('.<?php echo $expansiveid ?>').toggle();">
+                    <?php echo $activity['assign']?>
+                </p>
+                <div class="das-activity-number">
+                    <div style="">
+                        <p><?php echo $activity['numberofintimesubmissions'] + $activity['numberoflatesubmissions'];?></p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <?php
-        if($activity['numberofintimesubmissions']) {
-            das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid);
+            <?php
+            if($activity['numberofintimesubmissions']) {
+                das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid);
+            }
+            if($activity['numberoflatesubmissions']) {
+                das_print_student_list($courseusers, $activity['latesubmissions'], $expansiveid);
+            }
         }
-        if($activity['numberoflatesubmissions']) {
-            das_print_student_list($courseusers, $activity['latesubmissions'], $expansiveid);
-        }
-    }
-    ?>
-    </div>
-    <?php
+    ?></div><?php
 }
 
 
