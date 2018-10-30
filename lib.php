@@ -150,7 +150,7 @@ function das_print_late_assign($activities) {
                     </div>
                 </div>
                 <div class="das-activity-number">
-                    <div style="" onclick="dasUsersActivities('userNone');">
+                    <div style="">
                         <p>5</p>
                     </div>
                 </div>
@@ -197,11 +197,12 @@ function das_print_ontime_assign($activities) {
     <?php
 }
 
-function das_print_delivered_assigns($activities) {
+function das_print_delivered_assigns($activities, $courseusers) {
     ?><div id="das-on-time">
     <p class="das-title">Atividades Entregues</p>
     <p class="das-subtitle">Tópico ?</p>
     <?php
+    print_r($courseusers);
     $counter = 0;
     foreach($activities as $activity){
         $expansiveid = "delivered" . $counter++;
@@ -235,10 +236,10 @@ function das_print_delivered_assigns($activities) {
                         <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                     </div>
 
-                
-        
+
+
 <?php
-        
+
     }
     ?>
     </div>

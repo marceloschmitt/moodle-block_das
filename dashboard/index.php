@@ -179,7 +179,7 @@ $courseusers = das_course_users($courseid);
                 $(".das-item-default-expansive").toggle();
                 });
      });
-        
+
     </script>
 </head>
 <body>
@@ -303,7 +303,7 @@ $courseusers = das_course_users($courseid);
                         <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                     </div>
                 </div>
-                
+
                 <div class="das-item-default">
                     <div class="das-item-default-header">
                         <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
@@ -331,7 +331,7 @@ $courseusers = das_course_users($courseid);
                     </div>
                 </div>
             </div>
- 
+
 
             <div id="das-preventive-notice">
                 <p class="das-title">Aviso Preventivo</p>
@@ -379,13 +379,14 @@ $courseusers = das_course_users($courseid);
                     <p class="das-subtitle">mais...</p>
                 </div>
             </div>
-       
+
 
 
 <?php
     $activities = das_activities($courseusers);
-            das_print_delivered_assigns($courseusers);
+    das_print_delivered_assigns($activities,$courseusers);
     das_print_ontime_assign($activities);
+    das_print_late_assign($activities);
 ?>
 
             <div id="das-remail">
