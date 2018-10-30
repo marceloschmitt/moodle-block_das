@@ -219,10 +219,10 @@ function das_print_delivered_assigns($activities, $courseusers) {
         </div>
         <?php
         if($activity['numberofintimesubmissions']) {
-            das_print_student_list($courseusers, $$activity['in_time_submissions'], $expansiveid);
+            das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid);
         }
         if($activity['numberoflatesubmissions']) {
-            das_print_student_list($courseusers, $$activity['latesubmissions'], $expansiveid);
+            das_print_student_list($courseusers, $activity['latesubmissions'], $expansiveid);
         }
     }
     ?>
