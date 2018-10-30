@@ -220,9 +220,8 @@ function das_print_delivered_assigns($activities, $courseusers) {
         <?php
         if($activity['numberofintimesubmissions']) {
             foreach($activity['in_time_submissions'] as $student) {
-                print_r($student);
                 ?><div class="das-item-default-expansive <?php echo $expansiveid ?>" style="display: none">
-                <p class="das-vertical-align das-p-overflow"><?php echo $student['userid']; ?></p>
+                <p class="das-vertical-align das-p-overflow"><?php echo $courseusers[$student['userid']]['fullname']; ?></p>
                 <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                 </div><?php
             }
@@ -236,30 +235,6 @@ function das_print_delivered_assigns($activities, $courseusers) {
                 </div><?php
             }
         }
-        ?>
-
-        <div class="das-item-default-expansive <?php echo $expansiveid ?>" style="display: none">
-                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
-                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
-                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
-           </div>
-           <div class="das-item-default-expansive <?php echo $expansiveid ?>" style="display: none">
-
-                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
-                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
-                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
-                    </div>
-                    <div class="das-item-default-expansive <?php echo $expansiveid ?>" style="display: none">
-
-                        <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
-                        <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
-                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
-                    </div>
-
-
-
-<?php
-
     }
     ?>
     </div>
