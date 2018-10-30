@@ -132,7 +132,7 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
     <?php
 }
 
-function das_print_late_assign($activities) {
+function das_print_late_assign($courseusers, $activities) {
     ?><div id="das-out-of-time">
     <p class="das-title">Fora do Prazo</p>
     <p class="das-subtitle">Tópico</p>
@@ -140,35 +140,12 @@ function das_print_late_assign($activities) {
     $counter = 0;
     foreach($activities as $activity){
         if(time() > $activity['duedate']) {
-            ?>
-            <div class="das-item-default-header">
-                <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
-                <p class="das-vertical-align das-p-overflow"><?php echo "$activity[assign]";?></p>
-                <div class="das-activity-number">
-                    <div style="">
-                    <p><?php echo $activity['numberoflatesubmissions'] + $activity['numberofnosubmissions'];?></p>
-                    </div>
-                </div>
-                <div class="das-activity-number">
-                    <div style="">
-                        <p>5</p>
-                    </div>
-                </div>
-            </div>
-            <div class="das-item-default-expansive" id='userNone' style="display: none">
-                        <?php> das_print_today_users($courseusers); ?>
-                        <p class="das-vertical-align das-p-overflow">
-                        <p><img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
-                        Anita Raquel da Silva</p>
-                        </p>
-                        <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
-                    </div>
-            <?php
+            $expansiveid = "no" . ++$counter;
+            das_print_student_list($courseusers, $activity['nosubmissions'], $expansiveid,
+                                        $activity['assign'], $activity['numberofnosubmissions']);
         }
     }
-    ?>
-    </div>
-    <?php
+    ?> </div> <?php
 }
 
 
