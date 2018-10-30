@@ -249,7 +249,7 @@ $courseusers = das_course_users($courseid);
                         <p id="das-name-menu11">Tempo Médio no Curso</p>
                     </li>
                 </a>
-                <a class="das-item-menu12" href="#">
+                <a class="das-item-menu12" href="das-general-report.php">
                     <li id="das-item-menu12"><img src="assets/img/report.png" alt="Imagem de item do menu" class="das-image-menu">
                         <p id="das-name-menu12">Relatório Geral das Atividades</p>
                     </li>
