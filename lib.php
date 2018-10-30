@@ -141,7 +141,7 @@ function das_print_late_assign($courseusers, $activities) {
     foreach($activities as $activity){
         if(time() > $activity['duedate']) {
             $expansiveid = "no" . ++$counter;
-            das_print_student_list($courseusers, $activity['nosubmissions'], $expansiveid,
+            das_print_student_list($courseusers, $activity['no_submissions'], $expansiveid,
                                         $activity['assign'], $activity['numberofnosubmissions']);
         }
     }
