@@ -207,18 +207,38 @@ function das_print_delivered_assigns($activities, $courseusers) {
         print_r($activity);
         $expansiveid = "delivered" . $counter++;
         ?><div class="das-item-default-header">
-                        <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
-                            alt="activity-img">
-                        <p class="das-vertical-align" onclick = "$('.<?php echo $expansiveid ?>').toggle();">
-                            <?php echo $activity['assign']?>
-                        </p>
-                        <div class="das-activity-number">
-                            <div style="">
-                                <p><?php echo $activity['numberofintimesubmissions'] + $activity['numberoflatesubmissions'];?></p>
-                            </div>
-                        </div>
-           </div>
-           <div class="das-item-default-expansive <?php echo $expansiveid ?>" style="display: none">
+            <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
+                alt="activity-img">
+            <p class="das-vertical-align" onclick = "$('.<?php echo $expansiveid ?>').toggle();">
+                <?php echo $activity['assign']?>
+            </p>
+            <div class="das-activity-number">
+                <div style="">
+                    <p><?php echo $activity['numberofintimesubmissions'] + $activity['numberoflatesubmissions'];?></p>
+                </div>
+            </div>
+        </div>
+        <?php
+        if($activity['numberofintimesubmissions']) {
+            foreach($activity['in_time_submissions'] as $student) {
+                ?><div class="das-item-default-expansive <?php echo $expansiveid ?>" style="display: none">
+                <p class="das-vertical-align das-p-overflow"><?php echo $student['userid']; ?></p>
+                <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+                </div><?php
+            }
+        }
+
+        if($activity['numberoflatesubmissions']) {
+            foreach($activity['latesubmissions'] as $student) {
+                ?><div class="das-item-default-expansive <?php echo $expansiveid ?>" style="display: none">
+                <p class="das-vertical-align das-p-overflow"><?php echo $student['userid']; ?></p>
+                <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+                </div><?php
+            }
+        }
+
+
+        <div class="das-item-default-expansive <?php echo $expansiveid ?>" style="display: none">
                         <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
                         <p class="das-vertical-align das-p-overflow">Anita Raquel da Silva</p>
                         <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
