@@ -204,7 +204,7 @@ function das_print_delivered_assigns($activities, $courseusers) {
     <?php
     $counter = 0;
     foreach($activities as $activity){
-        $expansiveid = "delivered" . $counter++;
+        $expansiveid = "delivered" . ++$counter;
         ?><div class="das-item-default-header">
             <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
                 alt="activity-img">
