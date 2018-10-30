@@ -202,7 +202,7 @@ function das_print_delivered_assigns($activities, $courseusers) {
             }
             if($activity['numberoflatesubmissions']) {
                 das_print_student_list($courseusers, $activity['latesubmissions'], $expansiveid,
-                                        activity['assign'], $activity['numberoflatesubmissions']););
+                                        activity['assign'], $activity['numberoflatesubmissions']);
             }
         }
     ?></div><?php
