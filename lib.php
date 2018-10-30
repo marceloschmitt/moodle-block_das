@@ -236,7 +236,7 @@ function das_print_delivered_assigns($activities, $courseusers) {
                 </div><?php
             }
         }
-
+        ?>
 
         <div class="das-item-default-expansive <?php echo $expansiveid ?>" style="display: none">
                         <img class="das-user-small-image das-vertical-align" src="assets/img/rosto1.jpg" alt="User-Image">
