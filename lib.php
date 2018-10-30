@@ -202,9 +202,9 @@ function das_print_delivered_assigns($activities, $courseusers) {
     <p class="das-title">Atividades Entregues</p>
     <p class="das-subtitle">Tópico ?</p>
     <?php
-    print_r($courseusers);
     $counter = 0;
     foreach($activities as $activity){
+        print_r($activity);
         $expansiveid = "delivered" . $counter++;
         ?><div class="das-item-default-header">
                         <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
