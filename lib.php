@@ -135,9 +135,9 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
 function das_print_late_assign($activities) {
     ?><div id="das-out-of-time">
     <p class="das-title">Fora do Prazo</p>
-    <p class="das-subtitle"> Educação<img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;
-        position: absolute;right: 12px;"></p>
+    <p class="das-subtitle">Tópico</p>
     <?php
+    $counter = 0;
     foreach($activities as $activity){
         if(time() > $activity['duedate']) {
             ?>
@@ -181,20 +181,8 @@ function das_print_ontime_assign($courseusers, $activities) {
         foreach($activities as $activity){
             if($activity['numberofintimesubmissions']) {
                 $expansiveid = "ontime" . ++$counter;
-                ?><div class="das-item-default-header">
-                    <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
-                        alt="activity-img">
-                    <p class="das-vertical-align" onclick = "$('.<?php echo $expansiveid ?>').toggle();">
-                        <?php echo $activity['assign']?>
-                    </p>
-                    <div class="das-activity-number">
-                        <div style="">
-                            <p><?php echo $activity['numberofintimesubmissions'];?></p>
-                        </div>
-                    </div>
-                </div>
-                <?php
-                das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid);
+                das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid,
+                                        $activity['assign'], $activity['numberofintimesubmissions']);
             }
         }
     ?></div><?php
@@ -208,24 +196,13 @@ function das_print_delivered_assigns($activities, $courseusers) {
         $counter = 0;
         foreach($activities as $activity){
             $expansiveid = "delivered" . ++$counter;
-            ?><div class="das-item-default-header">
-                <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
-                    alt="activity-img">
-                <p class="das-vertical-align" onclick = "$('.<?php echo $expansiveid ?>').toggle();">
-                    <?php echo $activity['assign']?>
-                </p>
-                <div class="das-activity-number">
-                    <div style="">
-                        <p><?php echo $activity['numberofintimesubmissions'] + $activity['numberoflatesubmissions'];?></p>
-                    </div>
-                </div>
-            </div>
-            <?php
             if($activity['numberofintimesubmissions']) {
-                das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid);
+                das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid,
+                                        activity['assign'], $activity['numberofintimesubmissions']);
             }
             if($activity['numberoflatesubmissions']) {
-                das_print_student_list($courseusers, $activity['latesubmissions'], $expansiveid);
+                das_print_student_list($courseusers, $activity['latesubmissions'], $expansiveid,
+                                        activity['assign'], $activity['numberoflatesubmissions']););
             }
         }
     ?></div><?php
@@ -262,7 +239,20 @@ $submissions->create_array($result,$students);
 }
 
 
-function das_print_student_list($courseusers, $students, $divid) {
+function das_print_student_list($courseusers, $students, $divid, $activityname, $number) {
+    ?><div class="das-item-default-header">
+        <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
+            alt="activity-img">
+        <p class="das-vertical-align" onclick = "$('.<?php echo $divid ?>').toggle();">
+            <?php echo $activityname; ?>
+        </p>
+        <div class="das-activity-number">
+            <div style="">
+                <p><?php echo $number;?></p>
+            </div>
+        </div>
+    </div>
+    <?php
     foreach($students as $student) {
                 ?><div class="das-item-default-expansive <?php echo $divid; ?>" style="display: none">
                  <img class="das-user-small-image das-vertical-align" src="<?php echo $courseusers[$student['userid']]->pictureurl;?>" alt="User-Image">
