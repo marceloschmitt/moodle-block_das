@@ -204,7 +204,6 @@ function das_print_delivered_assigns($activities, $courseusers) {
     <?php
     $counter = 0;
     foreach($activities as $activity){
-        print_r($activity);
         $expansiveid = "delivered" . $counter++;
         ?><div class="das-item-default-header">
             <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
@@ -221,6 +220,7 @@ function das_print_delivered_assigns($activities, $courseusers) {
         <?php
         if($activity['numberofintimesubmissions']) {
             foreach($activity['in_time_submissions'] as $student) {
+                print_r($student);
                 ?><div class="das-item-default-expansive <?php echo $expansiveid ?>" style="display: none">
                 <p class="das-vertical-align das-p-overflow"><?php echo $student['userid']; ?></p>
                 <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
