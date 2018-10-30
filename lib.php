@@ -221,7 +221,8 @@ function das_print_delivered_assigns($activities, $courseusers) {
         if($activity['numberofintimesubmissions']) {
             foreach($activity['in_time_submissions'] as $student) {
                 ?><div class="das-item-default-expansive <?php echo $expansiveid ?>" style="display: none">
-                <p class="das-vertical-align das-p-overflow"><?php echo $courseusers[$student['userid']]['fullname']; ?></p>
+                 <img class="das-user-small-image das-vertical-align" src="<?php echo $courseusers[$student['userid']]->pictureurl;?>" alt="User-Image">
+                <p class="das-vertical-align das-p-overflow"><?php echo $courseusers[$student['userid']]->fullname; ?></p>
                 <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                 </div><?php
             }
@@ -230,7 +231,8 @@ function das_print_delivered_assigns($activities, $courseusers) {
         if($activity['numberoflatesubmissions']) {
             foreach($activity['latesubmissions'] as $student) {
                 ?><div class="das-item-default-expansive <?php echo $expansiveid ?>" style="display: none">
-                <p class="das-vertical-align das-p-overflow"><?php echo $student['userid']; ?></p>
+                <img class="das-user-small-image das-vertical-align" src="<?php echo $courseusers[$student['userid']]->pictureurl;?>" alt="User-Image">
+                <p class="das-vertical-align das-p-overflow"><?php echo $courseusers[$student['userid']]->fullname; ?></p>
                 <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
                 </div><?php
             }
