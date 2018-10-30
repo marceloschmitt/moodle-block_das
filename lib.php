@@ -263,7 +263,7 @@ $submissions->create_array($result,$students);
 
 function das_print_student_list($courseusers, $students, $divid) {
     foreach($students as $student) {
-                ?><div class="das-item-default-expansive <?php echo divid ?>" style="display: none">
+                ?><div class="das-item-default-expansive <?php echo $divid; ?>" style="display: none">
                  <img class="das-user-small-image das-vertical-align" src="<?php echo $courseusers[$student['userid']]->pictureurl;?>" alt="User-Image">
                 <p class="das-vertical-align das-p-overflow"><?php echo $courseusers[$student['userid']]->fullname; ?></p>
                 <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
