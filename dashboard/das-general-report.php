@@ -2,13 +2,14 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Das - Relatório Geral de Notas</title>
+	<title>DAS - Relatório Geral de Notas</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="assets/css/das-general-report.css">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
+
 <body>
 <div class="das-general-report">	
 <p class="das-subtitle">Relatório Geral de notas do DAS</p>
@@ -76,131 +77,263 @@
 	</div>
 
 	<div class="das-table-select">
-		<table border="1" id="das-students-table">
+		<table border="1" id="das-table-students-col">
 			<tr>
-				<td>Aluno</td>
-				<th colspan="4">Integração de Mídias na Educação </th>
-				<td>Conceito</td>
+				<td><p class="das-title">Aluno</p></td>
+			</tr>
+
+			<tr><td>&nbsp;</td></tr>
+
+			<tr>
+				<td><p>Anita Raquel da Silva</p></td>
 			</tr>
 
 			<tr>
-				<td> </td>
+				<td><p>Antônio Marcondes Lima</p></td>
+			</tr>
+
+			<tr>
+				<td><p>Bruna Gomes</p></td>
+			</tr>
+
+			<tr>
+				<td><p>Cristiane de Souza Abreu</p></td>
+			</tr>
+
+			<tr>
+				<td><p>Daniela Guimarães Leal</p></td>
+			</tr>
+
+			<tr>
+				<td><p>Givaldo Batista Medeiros</p></td>
+			</tr>
+
+			<tr>
+				<td><p>Kelly Galarza</p></td>
+			</tr>
+
+			<tr>
+				<td><p>Liêge Barbosa</p></td>
+			</tr>
+
+			<tr>
+				<td><p>Magali Inês Passini</p></td>
+			</tr>
+
+			<tr>
+				<td><p>Raul Araújo Neto</p></td>
+			</tr>
+
+			<tr>
+				<td><p>Tássia Priscila Fagundes</p></td>
+			</tr>
+		</table>
+
+		<table border="1" id="das-students-table-col-notes">
+			<tr>
+				<th colspan="4"><p class="das-title">Integração de Mídias na Educação</p> </th>
+				<td><p class="das-title">Conceito</p></td>
+			</tr>
+
+			<tr>
 				<td>A1</td>
 				<td>A2</td>
 				<td>A3</td>
 				<td>A4</td>
-				<td> </td>
-			</tr>
-			
-			<tr>
-				<td>Anita Raquel da Silva</td>
-				<td>6</td>
-				<td>9</td>
-				<td>4</td>
-				<td>5</td>
-				<td>C</td>
-			</tr>
-			
-			<tr>
-				<td>Antônio Marcondes Lima</td>
-				<td>8</td>
-				<td>9</td>
-				<td>6</td>
-				<td>4</td>
-				<td>C</td>
-			</tr>
-			
-			<tr>
-				<td>Bruna Gomes</td>
-				<td>8</td>
-				<td>9</td>
-				<td>5</td>
-				<td>5</td>
-				<td>C</td>
+				<td>&nbsp;</td>
 			</tr>
 
 			<tr>
-				<td>Cristiane de Souza Abreu</td>
-				<td>4</td>
-				<td>9</td>
-				<td>4</td>
-				<td>3</td>
-				<td>D</td>
+				<td><p>6</p></td>
+				<td><p>9</p></td>
+				<td><p>4</p></td>
+				<td><p>5</p></td>
+				<td><p>C</p></td>
 			</tr>
 
 			<tr>
-				<td>Cristiane Koehler</td>
-				<td>8</td>
-				<td>9</td>
-				<td>7</td>
-				<td>5</td>
-				<td>B</td>
+				<td><p>8</p></td>
+				<td><p>9</p></td>
+				<td><p>6</p></td>
+				<td><p>4</p></td>
+				<td><p>C</p></td>
 			</tr>
 
 			<tr>
-				<td>Daniele Guimarães Leal</td>
-				<td>8</td>
-				<td>9</td>
-				<td>7</td>
-				<td>5</td>
-				<td>C</td>
+				<td><p>8</p></td>
+				<td><p>9</p></td>
+				<td><p>5</p></td>
+				<td><p>5</p></td>
+				<td><p>C</p></td>
 			</tr>
 
 			<tr>
-				<td>Givaldo Batista Medeiros</td>
-				<td>8</td>
-				<td>9</td>
-				<td>5</td>
-				<td>5</td>
-				<td>C</td>
+				<td><p>4</p></td>
+				<td><p>9</p></td>
+				<td><p>4</p></td>
+				<td><p>3</p></td>
+				<td><p><b>D</b></p></td>
 			</tr>
 
 			<tr>
-				<td>Kelly Galarza</td>
-				<td>7</td>
-				<td>9</td>
-				<td>7</td>
-				<td>5</td>
-				<td>C</td>
+				<td><p>8</p></td>
+				<td><p>9</p></td>
+				<td><p>7</p></td>
+				<td><p>5</p></td>
+				<td><p>B</p></td>
 			</tr>
 
 			<tr>
-				<td>Liége Barbosa</td>
-				<td>8</td>
-				<td>9</td>
-				<td>8</td>
-				<td>5</td>
-				<td>B</td>
+				<td><p>8</p></td>
+				<td><p>9</p></td>
+				<td><p>7</p></td>
+				<td><p>5</p></td>
+				<td><p>C</p></td>
 			</tr>
 
 			<tr>
-				<td>Magali Inês Passini</td>
-				<td>8</td>
-				<td>9</td>
-				<td>6</td>
-				<td>3</td>
-				<td>C</td>
-			</tr>
-			<tr>
-				<td>Raul Araújo Neto</td>
-				<td>8</td>
-				<td>9</td>
-				<td>7</td>
-				<td>5</td>
-				<td>C</td>
+				<td><p>8</p></td>
+				<td><p>9</p></td>
+				<td><p>5</p></td>
+				<td><p>5</p></td>
+				<td><p>C</p></td>
 			</tr>
 
 			<tr>
-				<td>Tássia Priscila Fagundes</td>
-				<td>8</td>
-				<td>9</td>
-				<td>6</td>
-				<td>5</td>
-				<td>C</td>
+				<td><p>7</p></td>
+				<td><p>9</p></td>
+				<td><p>7</p></td>
+				<td><p>5</p></td>
+				<td><p>C</p></td>
+			</tr>
+
+			<tr>
+				<td><p>8</p></td>
+				<td><p>9</p></td>
+				<td><p>8</p></td>
+				<td><p>5</p></td>
+				<td><p>B</p></td>
+			</tr>
+
+			<tr>
+				<td><p>8</p></td>
+				<td><p>9</p></td>
+				<td><p>6</p></td>
+				<td><p>3</p></td>
+				<td><p>C</p></td>
+			</tr>
+			<tr>
+				<td><p>8</p></td>
+				<td><p>9</p></td>
+				<td><p>6</p></td>
+				<td><p>5</p></td>
+				<td><p>C</p></td>
 			</tr>
 		</table>
-	</div>
 
+		<table border="1" id="das-students-table-col-notes">
+			<tr>
+				<th colspan="4"><p class="das-title">Projeto e Produção de Material</p> </th>
+				<td><p class="das-title">Conceito</p></td>
+			</tr>
+
+			<tr>
+				<td>A1</td>
+				<td>A2</td>
+				<td>A3</td>
+				<td>A4</td>
+				<td>&nbsp;</td>
+			</tr>
+
+			<tr>
+				<td><p>6</p></td>
+				<td><p>9</p></td>
+				<td><p>4</p></td>
+				<td><p>5</p></td>
+				<td><p>C</p></td>
+			</tr>
+
+			<tr>
+				<td><p>8</p></td>
+				<td><p>9</p></td>
+				<td><p>6</p></td>
+				<td><p>4</p></td>
+				<td><p>C</p></td>
+			</tr>
+
+			<tr>
+				<td><p>8</p></td>
+				<td><p>9</p></td>
+				<td><p>5</p></td>
+				<td><p>5</p></td>
+				<td><p>C</p></td>
+			</tr>
+
+			<tr>
+				<td><p>4</p></td>
+				<td><p>9</p></td>
+				<td><p>4</p></td>
+				<td><p>3</p></td>
+				<td><p><b>D</b></p></td>
+			</tr>
+
+			<tr>
+				<td><p>8</p></td>
+				<td><p>9</p></td>
+				<td><p>7</p></td>
+				<td><p>5</p></td>
+				<td><p>B</p></td>
+			</tr>
+
+			<tr>
+				<td><p>8</p></td>
+				<td><p>9</p></td>
+				<td><p>7</p></td>
+				<td><p>5</p></td>
+				<td><p>C</p></td>
+			</tr>
+
+			<tr>
+				<td><p>8</p></td>
+				<td><p>9</p></td>
+				<td><p>5</p></td>
+				<td><p>5</p></td>
+				<td><p>C</p></td>
+			</tr>
+
+			<tr>
+				<td><p>7</p></td>
+				<td><p>9</p></td>
+				<td><p>7</p></td>
+				<td><p>5</p></td>
+				<td><p>C</p></td>
+			</tr>
+
+			<tr>
+				<td><p>8</p></td>
+				<td><p>9</p></td>
+				<td><p>8</p></td>
+				<td><p>5</p></td>
+				<td><p>B</p></td>
+			</tr>
+
+			<tr>
+				<td><p>8</p></td>
+				<td><p>9</p></td>
+				<td><p>6</p></td>
+				<td><p>3</p></td>
+				<td><p>C</p></td>
+			</tr>
+			<tr>
+				<td><p>8</p></td>
+				<td><p>9</p></td>
+				<td><p>6</p></td>
+				<td><p>5</p></td>
+				<td><p>C</p></td>
+			</tr>
+		</table>
+
+	</div>
 </div>
 </body>
 </html>
