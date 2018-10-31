@@ -4,3 +4,7 @@
     justify-content: space-around;
     align-items: flex-end;
 }
+.das-table-select{
+    display: flex;
+    flex-direction: row;
+}
