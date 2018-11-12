@@ -3,21 +3,19 @@
 <head>
 	<meta charset="utf-8">
 	<title>Caixa de Mensagem - DAS</title>
-	 <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="assets/css/das-style-message.css">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
-<body>
-	<div class="das-message">
-	
+<body>	
 		<div class="das-header">
 			<img src="assets/img/message-icon.png" id="das-message-icon">
-			<p class="das-subtitle" style="margin: auto;">Nome do Curso ></p>
-			<p class="das-subtitle" style="margin: auto;">Nome do Bloco ></p>
-			<p class="das-subtitle" style="margin: auto;">Nome do Tópico ></p>
-			<p class="das-subtitle" style="margin: auto;">Nome da Atividade</p>			
+			<p class="das-subtitle-message" style="margin: auto;">Nome do Curso ></p>
+			<p class="das-subtitle-message" style="margin: auto;">Nome do Bloco ></p>
+			<p class="das-subtitle-message" style="margin: auto;">Nome do Tópico ></p>
+			<p class="das-subtitle-message" style="margin: auto;">Nome da Atividade</p>			
 		</div>
 
 		<div class="das-text-area">
@@ -44,9 +42,8 @@
 					
         <p id="das-check-text">Selecionar Tudo</p>
         <p id="das-uncheck-text">Deselecionar Tudo</p>
-		<input type="submit" name="Enviar">
+        <a href="#" class="das-button-send">Enviar</a>
 	
 	</div>
-</div>
 </body>
 </html>
