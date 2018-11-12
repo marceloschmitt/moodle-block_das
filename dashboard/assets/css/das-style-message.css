@@ -1,23 +1,30 @@
-.das-message{	
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    flex-direction: row;
-    justify-content: center;
-    margin: auto;
-}
+
 body{
-	margin:0px;
+	
+    margin: 0;
+    padding:0;
+
 }
 .das-header{
-	border-color: rgb(255, 102, 0);
+    border-color: #000;
     border-style: solid;
     border-width: 1px;
-    border-radius: 10px;
-    margin: 2em 0em 1em 0em;
+    border-radius: 5px;
     display: flex;
     flex-direction: row;
-    background: floralwhite;
+    background: #f2f2f2;
+    width: 760px;
+    margin: 0 auto;
+    padding: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+.das-subtitle-message {
+    color: rgb(255, 102, 0);
+    font-weight: bold;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
 }
 .das-text{
 	font-size: small;
@@ -36,14 +43,18 @@ body{
 }
 .das-text-area{
 	display: block;
-    border-color: rgb(255, 102, 0);
+    border-color: #000;
     border-style: solid;
     border-width: 1px;
-    border-radius: 12px;
-    margin: 1em 0em 1em 0em;
-    background: floralwhite;
-    top:50%;
-    left:50%;
+    border-radius: 5px;
+    background: #F2f2f2;
+    width: 760px;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+textarea{
+    outline: none;
+    resize: none;
 }
 
 
@@ -56,13 +67,45 @@ body{
 }
 
 .das-checkbox-users{
-	display: block;
-    border-color: rgb(255, 102, 0);
+    display: flex;
+    flex-direction: column;
+    border-color: #000;
     border-style: solid;
     border-width: 1px;
-    border-radius: 12px;
-    margin: 1em 0em 2em 0em;
-    background: floralwhite;
-    top:50%;
-    left:50%;	
+    border-radius: 5px;
+    background: #f2f2f2;
+    width: 760px;
+    margin: 0 auto;
+    padding: 10px;
+    margin-bottom: 1em;
+    align-items: baseline;
+}
+.das-check{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.das-button-send {
+    background-color: #ff6600;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Verdana;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.das-button-send:hover {
+    background-color:#cccccc;
+    text-decoration: none;
+    color: #fff;
+}
+.das-button-send:active {
+    position:relative;
+    top:1px;
 }
