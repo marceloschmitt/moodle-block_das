@@ -1,21 +1,111 @@
-.das-message{	
-	
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    flex-direction: row;
-    justify-content: center;
-    justify-items: auto;
-}
+
 body{
-	margin:0px;
+	
+    margin: 0;
+    padding:0;
+
 }
 .das-header{
-	width: 100%;
-    height: 100%;
+    border-color: #000;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    background: #f2f2f2;
+    width: 760px;
+    margin: 0 auto;
+    padding: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+.das-subtitle-message {
+    color: rgb(255, 102, 0);
+    font-weight: bold;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
 }
 .das-text{
 	font-size: small;
     font-family: Verdana;
     margin-bottom: 0.5em !important;
+}
+.das-title-message{
+	color: #282828;
+    font-weight: bold;
+    margin: 2em 1em 2em 0em;
+}
+#das-message-icon{
+	width: 5%;
+    height: 5%;
+    margin: auto;
+}
+.das-text-area{
+	display: block;
+    border-color: #000;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    background: #F2f2f2;
+    width: 760px;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+textarea{
+    outline: none;
+    resize: none;
+}
+
+
+#das-area{
+	margin: 0em 0em 1em 1em;
+}
+
+#das-text-message{
+	margin: 0em 0em 1em 1em;
+}
+
+.das-checkbox-users{
+    display: flex;
+    flex-direction: column;
+    border-color: #000;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    background: #f2f2f2;
+    width: 760px;
+    margin: 0 auto;
+    padding: 10px;
+    margin-bottom: 1em;
+    align-items: baseline;
+}
+.das-check{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.das-button-send {
+    background-color: #ff6600;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Verdana;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.das-button-send:hover {
+    background-color:#cccccc;
+    text-decoration: none;
+    color: #fff;
+}
+.das-button-send:active {
+    position:relative;
+    top:1px;
 }

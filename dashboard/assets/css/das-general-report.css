@@ -1,0 +1,58 @@
+.das-filter-users{
+	display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+p{
+	text-align: center;
+}
+.das-table-select{
+    display: flex;
+    flex-direction: row;
+}
+#das-table-students-col{
+	margin: 3em 0em 2em 3em;
+}
+#das-students-table-col-notes{
+	margin: 3em 0em 0em 0em;
+}
+#das-table-notes{
+	margin: 3em 1em 1em 3em;
+}
+
+.das-table-activities{
+    display: flex;
+    flex-direction: row;
+}
+#das-table-activities-names{
+	margin: 0em 3em 3em 1em;
+}
+
+.das-download-table{
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0em 0em 8em 0em;
+    align-items: baseline;
+}
+.das-color-orange{
+	background-color: rgb(255, 102, 0);
+	color: #fff;
+}
+.das-color-ccc{
+	background-color: #ccc;
+	color: #000;
+}
+.das-color-9{
+	background-color: #999;
+	color: rgb(255,102,0);
+}
+table{
+	border-color: #fff;
+}
+#das-select-download{
+	margin-right: 2em;
+}
+#das-download{	
+}
