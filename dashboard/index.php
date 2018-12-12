@@ -200,7 +200,7 @@ $courseusers = das_course_users($courseid);
                 <a class="das-item-menu2" href="#">
                     <li id="das-item-menu2"><img src="assets/img/postagensadiantadas.png" alt="Imagem de item do menu"
                         class="das-image-menu">
-                        <p id="das-name-menu2">Postagens Antecipadas</p>
+                        <p id="das-name-menu2">Postagens Antecipadaas</p>
                     </li>
                 </a>
                 <a class="das-item-menu3" href="#">
