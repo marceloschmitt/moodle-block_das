@@ -23,6 +23,13 @@ $string['das:viewpages'] = 'View graphs';
 $string['pluginname'] = 'DAS';
 $string['das'] = 'das';
 
+//second column.
+$string['anticipatedactivities'] = 'Atividades Antecipadas';
+$string['preventivenotice'] = 'Aviso Preventivo';
+$string['remissionnotice'] = 'Aviso de Reenvio';
+$string['deliveredontime'] = 'Entregue no Prazo';
+$string['deliveredoutoftime'] = 'Entregue Fora do Prazo';
+$string['undelivered'] = 'Não entregue';
 $string['todayusers'] = 'Usuários ativos no dia';
 $string['missingusers'] = 'Usuários ausentes';
 
