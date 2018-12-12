@@ -134,7 +134,7 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
 
 function das_print_late_assign($courseusers, $activities) {
     ?><div id="das-out-of-time">
-    <p class="das-title">Fora do Prazo</p>
+    <p class="das-title"><?php echo get_string('deliveredoutoftime', 'block_das');?></p>
     <p class="das-subtitle">Tópico</p>
     <?php
     $counter = 0;
@@ -151,7 +151,7 @@ function das_print_late_assign($courseusers, $activities) {
 
 function das_print_ontime_assign($courseusers, $activities) {
     ?><div id="das-on-time">
-        <p class="das-title"> Dentro do Prazo</p>
+        <p class="das-title"> <?php echo get_string('deliveredontime', 'block_das');?></p>
         <p class="das-subtitle">Tópico</p>
         <?php
         $counter = 0;
