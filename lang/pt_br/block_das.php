@@ -25,7 +25,7 @@ $string['das'] = 'DAS - clique aqui';
 
 //second column.
 $string['anticipatedactivities'] = 'Atividades Antecipadas';
-$string['preventivenotice'] = 'Aviso Preventivo';
+$string['missingusers'] = 'Usuários ausentes';
 $string['remissionnotice'] = 'Aviso de Reenvio';
 $string['deliveredontime'] = 'Entregue no Prazo';
 $string['deliveredoutoftime'] = 'Entregue Fora do Prazo';
