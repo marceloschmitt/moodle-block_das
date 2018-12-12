@@ -167,7 +167,7 @@ function das_print_ontime_assign($courseusers, $activities) {
 
 function das_print_delivered_assigns($activities, $courseusers) {
     ?><div id="das-activity-deliver">
-        <p class="das-title">Atividades Entregues</p>
+        <p class="das-title"><?php echo get_string('anticipatedactivities', 'block_das');?></p>
         <p class="das-subtitle">Tópico ?</p>
         <?php
         $counter = 0;
