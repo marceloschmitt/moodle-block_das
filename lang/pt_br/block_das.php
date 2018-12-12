@@ -23,6 +23,13 @@ $string['pluginname'] = 'Sistema de Alerta com Dashboard';
 $string['dashboard_alert_system'] = 'Sistema de Alerta com Dashboard';
 $string['das'] = 'DAS - clique aqui';
 
+//second column.
+$string['anticipatedactivities'] = 'Atividades Antecipadas';
+$string['preventivenotice'] = 'Aviso Preventivo';
+$string['remissionnotice'] = 'Aviso de Reenvio';
+$string['deliveredontime'] = 'Entregue no Prazo';
+$string['deliveredoutoftime'] = 'Entregue Fora do Prazo';
+$string['undelivered'] = 'Não entregue';
 
 // Middle column.
 $string['todayusers'] = 'Usuários ativos no dia';
