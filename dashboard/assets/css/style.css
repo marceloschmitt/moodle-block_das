@@ -206,7 +206,8 @@ ul#das-menu-vertical p {
 #das-status-class,
 #das-acess-activity,
 #das-resources,
-#das-permanence-course {
+#das-permanence-course,
+#das-undelivered{
     width: 100%;
     border: 1px solid #282828;
     border-radius: 10px;
