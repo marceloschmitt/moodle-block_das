@@ -325,15 +325,6 @@ $courseusers = das_course_users($courseid);
                     <p class="das-subtitle">mais...</p>
                 </div>
             </div>
-
-
-
-<?php
-
-    das_print_ontime_assign($courseusers,$activities);
-    das_print_late_assign($courseusers, $activities);
-?>
-
             <div id="das-remail">
                 <p class="das-title"> Reenvio de Atividade</p>
                 <p class="das-subtitle">Educação<a href="das-message.php"><img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></a>
@@ -348,6 +339,15 @@ $courseusers = das_course_users($courseid);
                     </div>
                 </div>
             </div>
+
+
+<?php
+
+    das_print_ontime_assign($courseusers,$activities);
+    das_print_late_assign($courseusers, $activities);
+?>
+
+
         </div>
         <div id="das-user-column-2">
             <div id="das-online-users-box">
