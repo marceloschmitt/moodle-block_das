@@ -234,7 +234,7 @@ function das_print_student_list($courseusers, $students, $divid, $activityname, 
                 ?><div class="das-item-default-expansive <?php echo $divid; ?>" style="display: none">
                  <img class="das-user-small-image das-vertical-align" src="<?php echo $courseusers[$student['userid']]->pictureurl;?>" alt="User-Image">
                 <p class="das-vertical-align das-p-overflow"><?php echo $courseusers[$student['userid']]->fullname; ?></p>
-                <img class="das-message-icon" src="assets/img/msg.png" alt="Message-Image">
+                <i class="icon fa fa-comment fa-fw " aria-hidden="true" title="Alternar menu de mensagens" aria-label="Alternar menu de mensagens"></i>
                 </div><?php
             }
 }
