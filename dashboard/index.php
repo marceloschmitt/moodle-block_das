@@ -326,7 +326,7 @@ $courseusers = das_course_users($courseid);
                 </div>
             </div>
             <div id="das-remail">
-                <p class="das-title"> Reenvio de Atividade</p>
+                <p class="das-title"><?php echo get_string('remissionnotice', 'block_das');?></p>
                 <p class="das-subtitle">Educação<a href="das-message.php"><img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></a>
 </p>
                 <div class="das-item-default-header">
