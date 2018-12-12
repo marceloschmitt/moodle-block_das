@@ -280,7 +280,7 @@ $courseusers = das_course_users($courseid);
             ?>
 
             <div id="das-preventive-notice">
-                <p class="das-title">Aviso Preventivo</p>
+                <p class="das-title"><?php echo get_string('preventivenotice', 'block_das');?></p>
                 <p class="das-subtitle">Educação<a href="das-message.php"><img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></a></p>
                 <div class="das-item-default-header">
                     <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
