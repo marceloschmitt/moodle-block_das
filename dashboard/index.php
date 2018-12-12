@@ -346,6 +346,20 @@ $courseusers = das_course_users($courseid);
     das_print_ontime_assign($courseusers,$activities);
     das_print_late_assign($courseusers, $activities);
 ?>
+            <div id="das-undelivered">
+                <p class="das-title"><?php echo get_string('undelivered', 'block_das');?></p>
+                <p class="das-subtitle">Educação<a href="das-message.php"><img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></a>
+</p>
+                <div class="das-item-default-header">
+                    <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
+                    <p class="das-vertical-align das-p-overflow">Atividade 1</p>
+                    <div class="das-activity-number">
+                        <div style="">
+                            <p>1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
         </div>
