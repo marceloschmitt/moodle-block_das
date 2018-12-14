@@ -10,10 +10,41 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
-<body>
+<body onLoad="hideAll()">
 <div class="das-general-report">	
 <p class="das-subtitle">Relatório Geral de notas do DAS</p>
+<script>
+		function selectOption(thisselect) { //recebe o id do select
+        var selected = thisselect.options[thisselect.selectedIndex].value;
+        displayRow(selected);
+    }
 
+    function displayRow(id) { //configura o display, se tiver block ou qualquer outra coisa, muda para none, se não, altera para block (alguma coisa)
+      var row = document.getElementById(id);
+      if (row.style.display == '') {
+        row.style.display = 'none';
+      }
+      else {
+         row.style.display = '';
+      }
+    }
+
+    function showRow(id) { //função para deixar as linhas ativas da tabela quando carrega a página
+      var row = document.getElementById(id);
+      row.style.display = '';
+    }
+
+    
+    function showRows() { //chama showRow para deixar setado como display block(ou alguma coisa) passando o id do select
+     showRow('A');
+     showRow('B');
+     showRow('C');
+	 showRow('D');
+	 showRow('FF');
+   }
+
+
+		</script>
 	<div class="das-filter-users">
 	<p>Selecionar filtro por:</p>
 		
@@ -30,13 +61,13 @@
 
 		<div class="das-select-concept">
 			<p>Conceito</p>
-			<select>
+			<select  id="das-select-notes" onchange="selectOption(this)">
 				<option>Selecionar...</option>
-				<option>A</option>
-				<option>B</option>
-				<option>C</option>
-				<option>D</option>
-				<option>FF</option>
+				<option value="A">A</option>
+				<option value="B">B</option>
+				<option value="C">C</option>
+				<option value="D">D</option>
+				<option value="FF">FF</option>
 			</select>
 		
 		</div>
@@ -78,80 +109,32 @@
 
 	<div class="das-table-select">
 		<table border="1" id="das-table-students-col">
-			<tr class="das-color-ccc">
-				<td><p class="das-title">Aluno</p></td>
-			</tr>
-
-			<tr class="das-color-9"><td>&nbsp;</td></tr>
-
-			<tr>
-				<td class="das-color-orange"><p>Anita Raquel da Silva</p></td>
-			</tr>
-
-			<tr>
-				<td class="das-color-orange"><p>Antônio Marcondes Lima</p></td>
-			</tr>
-
-			<tr>
-				<td class="das-color-orange"><p>Bruna Gomes</p></td>
-			</tr>
-
-			<tr>
-				<td class="das-color-orange"><p>Cristiane de Souza Abreu</p></td>
-			</tr>
-
-			<tr>
-				<td class="das-color-orange"><p>Daniela Guimarães Leal</p></td>
-			</tr>
-
-			<tr>
-				<td class="das-color-orange"><p>Givaldo Batista Medeiros</p></td>
-			</tr>
-
-			<tr>
-				<td class="das-color-orange"><p>Kelly Galarza</p></td>
-			</tr>
-
-			<tr>
-				<td class="das-color-orange"><p>Liêge Barbosa</p></td>
-			</tr>
-
-			<tr>
-				<td class="das-color-orange"><p>Magali Inês Passini</p></td>
-			</tr>
-
-			<tr>
-				<td class="das-color-orange"><p>Raul Araújo Neto</p></td>
-			</tr>
-
-			<tr>
-				<td class="das-color-orange"><p>Tássia Priscila Fagundes</p></td>
-			</tr>
-		</table>
-
-		<table border="1" id="das-students-table-col-notes">
-			<tr>
+   			<tr class="das-color-ccc"> 
+   				<td><p class="das-title">Aluno</td>
 				<th class="das-color-9" colspan="4"><p class="das-title">Integração de Mídias na Educação</p> </th>
-				<td class="das-color-ccc"><p class="das-title">Conceito</p></td>
+				<td><p class="das-title">Conceito</p></td>
 			</tr>
 
-			<tr>
-				<td class="das-color-ccc">A1</td>
-				<td class="das-color-ccc">A2</td>
-				<td class="das-color-ccc">A3</td>
-				<td class="das-color-ccc">A4</td>
+   			<tr class="das-color-ccc" >
+   				<td class="das-color-9">&nbsp;</td>
+				<td>A1</td>
+				<td>A2</td>
+				<td>A3</td>
+				<td>A4</td>
 				<td class="das-color-9">&nbsp;</td>
 			</tr>
 
-			<tr class="das-color-ccc">
+			<tr class="das-color-ccc" id="A"> <!-- Alunos -->
+   				<td class="das-color-orange"><p>Anita Raquel da Silva</p></td>
 				<td><p>6</p></td>
-				<td><p>9</p></td>
+				<td ><p>9</p></td>
 				<td><p>4</p></td>
 				<td><p>5</p></td>
 				<td class="das-color-orange"><p>C</p></td>
 			</tr>
 
-			<tr class="das-color-ccc">
+			<tr class="das-color-ccc" id="B">
+				<td class="das-color-orange"><p>Antônio Marcondes Lima</p></td>
 				<td><p>8</p></td>
 				<td><p>9</p></td>
 				<td><p>6</p></td>
@@ -159,7 +142,8 @@
 				<td class="das-color-orange"><p>C</p></td>
 			</tr>
 
-			<tr class="das-color-ccc">
+			<tr class="das-color-ccc" id="B">
+				<td class="das-color-orange"><p>Bruna Gomes</p></td>
 				<td><p>8</p></td>
 				<td><p>9</p></td>
 				<td><p>5</p></td>
@@ -167,7 +151,8 @@
 				<td class="das-color-orange"><p>C</p></td>
 			</tr>
 
-			<tr class="das-color-ccc">
+			<tr class="das-color-ccc" id="B">
+				<td class="das-color-orange"><p>Cristiane de Souza Abreu</p></td>
 				<td><p>4</p></td>
 				<td><p>9</p></td>
 				<td><p>4</p></td>
@@ -175,7 +160,8 @@
 				<td class="das-color-orange"><p><b>D</b></p></td>
 			</tr>
 
-			<tr class="das-color-ccc">
+			<tr class="das-color-ccc" id="C">
+				<td class="das-color-orange"><p>Daniela Guimarães Leal</p></td>
 				<td><p>8</p></td>
 				<td><p>9</p></td>
 				<td><p>7</p></td>
@@ -184,6 +170,7 @@
 			</tr>
 
 			<tr class="das-color-ccc">
+				<td class="das-color-orange"><p>Givaldo Batista Medeiros</p></td>
 				<td><p>8</p></td>
 				<td><p>9</p></td>
 				<td><p>7</p></td>
@@ -192,6 +179,7 @@
 			</tr>
 
 			<tr class="das-color-ccc"> 
+				<td class="das-color-orange"><p>Kelly Galarza</p></td>
 				<td><p>8</p></td>
 				<td><p>9</p></td>
 				<td><p>5</p></td>
@@ -200,6 +188,7 @@
 			</tr>
 
 			<tr class="das-color-ccc">
+				<td class="das-color-orange"><p>Liêge Barbosa</p></td>
 				<td><p>7</p></td>
 				<td><p>9</p></td>
 				<td><p>7</p></td>
@@ -208,6 +197,7 @@
 			</tr>
 
 			<tr class="das-color-ccc">
+				<td class="das-color-orange"><p>Magali Inês Passini</p></td>
 				<td><p>8</p></td>
 				<td><p>9</p></td>
 				<td><p>8</p></td>
@@ -216,21 +206,24 @@
 			</tr>
 
 			<tr class="das-color-ccc">
+				<td class="das-color-orange"><p>Raul Araújo Neto</p></td>
 				<td><p>8</p></td>
 				<td><p>9</p></td>
 				<td><p>6</p></td>
 				<td><p>3</p></td>
 				<td class="das-color-orange"><p>C</p></td>
 			</tr>
+			
 			<tr class="das-color-ccc">
+				<td class="das-color-orange"><p>Tássia Priscila Fagundes</p></td>
 				<td><p>8</p></td>
 				<td><p>9</p></td>
 				<td><p>6</p></td>
 				<td><p>5</p></td>
 				<td class="das-color-orange"><p>C</p></td>
 			</tr>
-		</table>
 
+			
 		<table border="1" id="das-students-table-col-notes">
 			<tr>
 				<th colspan="4" class="das-color-9"><p class="das-title">Projeto e Produção de Material</p> </th>
@@ -332,7 +325,7 @@
 				<td class="das-color-orange"><p>C</p></td>
 			</tr>
 		</table>
-
+-->
 		<table border="1" id="das-table-notes">
 			<tr>
 				<td class="das-color-orange">Nota</td>
