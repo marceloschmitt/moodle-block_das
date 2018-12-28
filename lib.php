@@ -151,19 +151,26 @@ function das_print_late_assign($courseusers, $activities) {
 
 function das_print_ontime_assign($courseusers, $activities) {
     ?><div id="das-on-time">
-        <p class="das-title"> <?php echo get_string('deliveredontime', 'block_das');?></p>
-        <p class="das-subtitle">Tópico</p>
-        <?php
-        $counter = 0;
-        foreach($activities as $activity){
-            if($activity['numberofintimesubmissions']) {
-                $expansiveid = "ontime" . ++$counter;
-                das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid,
-                                        $activity['assign'], $activity['numberofintimesubmissions']);
+    <p class="das-title"> <?php echo get_string('deliveredontime', 'block_das');?></p>
+    <?php
+    $sectionname = '';
+    $counter = 0;
+    foreach($activities as $activity){
+        if($activity['numberofintimesubmissions']) {
+            if($sectionname <> $activity['sectionname']) {
+                ?><p class="das-subtitle">Tópico <?php
+                echo $activity['sectionname'];
+                ?></p><?php
+                $sectionname = $activity['secionname'];
             }
+            $expansiveid = "ontime" . ++$counter;
+            das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid,
+            $activity['assign'], $activity['numberofintimesubmissions']);
         }
+    }
     ?></div><?php
 }
+
 
 function das_print_delivered_assigns($activities, $courseusers) {
     ?><div id="das-activity-deliver">
@@ -199,11 +206,12 @@ function das_activities($students/*$id_curso*/){
     $assign = $DB->get_record('modules', array('name' => 'assign'), 'id');
     $params = array_merge(array($assign->id, $course), $inparams);
     $sql = "SELECT a.id+(COALESCE(s.id,1)*1000000)as id, a.id as assignment, name, duedate, cutoffdate,
-                s.userid, usr.firstname, usr.lastname, usr.email, s.timemodified as timecreated
+                s.userid, usr.firstname, usr.lastname, usr.email, s.timemodified as timecreated, cs.section as sectionnumber
                 FROM {assign} a
                 LEFT JOIN {assign_submission} s on a.id = s.assignment AND s.status = 'submitted'
                 LEFT JOIN {user} usr ON usr.id = s.userid
                 LEFT JOIN {course_modules} cm on cm.instance = a.id AND cm.module = ?
+                LEFT JOIN {course_sections} cs on cs.id = cm.section
                 WHERE a.course = ? and nosubmissions = 0 AND (s.userid IS NULL OR s.userid $insql)
                     AND cm.visible = 1
                 ORDER BY duedate, name, firstname";

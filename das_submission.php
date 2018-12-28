@@ -52,6 +52,11 @@ class das_submission {
         foreach ($result as $tuple) {
             if ($assignmentid == 0) { // First time in loop.
                 $this->statistics[$counter]['assign'] = $tuple->name;
+                if($tuple->sectionname) {
+                    $this->statistics[$counter]['sectionname'] = $tuple->sectionname;
+                } else {
+                    $this->statistics[$counter]['sectionname'] = $tuple->sectionnumber;
+                }
                 $this->statistics[$counter]['duedate'] = $tuple->duedate;
                 $this->statistics[$counter]['cutoffdate'] = $tuple->cutoffdate;
                 if (isset($tuple->userid)) { // If a student submitted.
@@ -110,6 +115,11 @@ class das_submission {
                     $numberofintimesubmissions = 0;
                     $numberoflatesubmissions = 0;
                     $this->statistics[$counter]['assign'] = $tuple->name;
+                    if($tuple->sectionname) {
+                        $this->statistics[$counter]['sectionname'] = $tuple->sectionname;
+                    } else {
+                        $this->statistics[$counter]['sectionname'] = $tuple->sectionnumber;
+                    }
                     $this->statistics[$counter]['duedate'] = $tuple->duedate;
                     $this->statistics[$counter]['cutoffdate'] = $tuple->cutoffdate;
                     $assignmentid = $tuple->assignment;
