@@ -214,7 +214,8 @@ function das_print_no_assign($courseusers, $activities) {
     $counter = 0;
     $oldsection = '';
     foreach($activities as $activity){
-        if($activity['numberofnosubmissions']) {
+        $time = $activity['duedate'] - time();
+        if($activity['numberofnosubmissions'] && $time < 0) {
             $oldsection = das_print_section($activity, $oldsection);
             $expansiveid = "no" . ++$counter;
             das_print_student_list($courseusers, $activity['no_submissions'], $expansiveid,
