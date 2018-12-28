@@ -279,72 +279,14 @@ $courseusers = das_course_users($courseid);
             das_print_delivered_assigns($activities,$courseusers);
             ?>
 
-            <div id="das-preventive-notice">
-                <p class="das-title"><?php echo get_string('preventivenotice', 'block_das');?></p>
-                <p class="das-subtitle">Educação<a href="das-message.php"><img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></a></p>
-                <div class="das-item-default-header">
-                    <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
-                    <p class="das-vertical-align das-p-overflow">Atividade Texto Online</p>
-                    <div class="das-activity-number">
-                        <div style="">
-                            <p>5</p>
-                        </div>
-                    </div>
-                </div>
-                <p class="das-subtitle"> Interação Mídias da Educação<a href="das-message.php"><img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></a></p>
-                <div class="das-item-default-header">
-                    <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
-                    <p class="das-vertical-align das-p-overflow">Atividade 1</p>
-                    <div class="das-activity-number">
-                        <div style="">
-                            <p>4</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="das-item-default-header">
-                    <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
-                    <p class="das-vertical-align das-p-overflow">Atividade 2</p>
-                    <div class="das-activity-number">
-                        <div style="">
-                            <p>9</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="das-item-default-header">
-                    <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
-                    <p class="das-vertical-align das-p-overflow">Atividade 3</p>
-                    <div class="das-activity-number">
-                        <div style="">
-                            <p>1</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="das-expansive-more">
-                    <p class="das-subtitle">mais...</p>
-                </div>
-            </div>
-            <div id="das-remail">
-                <p class="das-title"><?php echo get_string('remissionnotice', 'block_das');?></p>
-                <p class="das-subtitle">Educação<a href="das-message.php"><img src="assets/img/email.jpeg" alt="img-activity-email" style="height: 20px;width: 20px;position: absolute;right: 12px;"></a>
-</p>
-                <div class="das-item-default-header">
-                    <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
-                    <p class="das-vertical-align das-p-overflow">Atividade 1</p>
-                    <div class="das-activity-number">
-                        <div style="">
-                            <p>1</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
 <?php
 
-    das_print_preventivenotice_assign($courseusers,$activities);
     das_print_alert_assign($courseusers, $activities);
+    das_print_preventivenotice_assign($courseusers,$activities);
     das_print_resent_assign($courseusers, $activities);
 
     das_print_ontime_assign($courseusers,$activities);
