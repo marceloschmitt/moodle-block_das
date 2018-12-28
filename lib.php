@@ -140,7 +140,7 @@ function das_print_late_assign($courseusers, $activities) {
     $counter = 0;
     foreach($activities as $activity){
         if(time() > $activity['duedate']) {
-            if($sectionname <> $activity['sectionname']) {
+            if($sectionname != $activity['sectionname']) {
                 ?><p class="das-subtitle">Tópico <?php
                 echo $activity['sectionname'];
                 ?></p><?php
@@ -163,7 +163,7 @@ function das_print_ontime_assign($courseusers, $activities) {
     $counter = 0;
     foreach($activities as $activity){
         if($activity['numberofintimesubmissions']) {
-            if($sectionname <> $activity['sectionname']) {
+            if($sectionname != $activity['sectionname']) {
                 ?><p class="das-subtitle">Tópico <?php
                 echo $activity['sectionname'];
                 ?></p><?php
