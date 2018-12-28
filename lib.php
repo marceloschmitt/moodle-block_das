@@ -136,16 +136,11 @@ function das_print_late_assign($courseusers, $activities) {
     ?><div id="das-out-of-time">
     <p class="das-title"><?php echo get_string('deliveredoutoftime', 'block_das');?></p>
     <?php
-    $sectionname = '';
     $counter = 0;
+    $oldsection = '';
     foreach($activities as $activity){
         if(time() > $activity['duedate']) {
-            if($sectionname != $activity['sectionname']) {
-                ?><p class="das-subtitle">Tópico <?php
-                echo $activity['sectionname'];
-                ?></p><?php
-                $sectionname = $activity['sectionname'];
-            }
+            $oldsection = das_print_section($activities, $oldsection);
             $expansiveid = "no" . ++$counter;
             das_print_student_list($courseusers, $activity['no_submissions'], $expansiveid,
                                         $activity['assign'], $activity['numberofnosubmissions']);
@@ -159,16 +154,11 @@ function das_print_ontime_assign($courseusers, $activities) {
     ?><div id="das-on-time">
     <p class="das-title"> <?php echo get_string('deliveredontime', 'block_das');?></p>
     <?php
-    $sectionname = '';
     $counter = 0;
+    $oldsection = '';
     foreach($activities as $activity){
         if($activity['numberofintimesubmissions']) {
-            if($sectionname != $activity['sectionname']) {
-                ?><p class="das-subtitle">Tópico <?php
-                echo $activity['sectionname'];
-                ?></p><?php
-                $sectionname = $activity['sectionname'];
-            }
+            $oldsection = das_print_section($activities, $oldsection);
             $expansiveid = "ontime" . ++$counter;
             das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid,
             $activity['assign'], $activity['numberofintimesubmissions']);
@@ -252,4 +242,14 @@ function das_print_student_list($courseusers, $students, $divid, $activityname, 
                 <img class="das-message-icon" src="assets/img/comment-solid.png" alt="Message-Image">
                 </div><?php
             }
+}
+
+
+function das_print_section($activity,$oldsection = '') {
+    if($oldsection != $activity['sectionname']) {
+        ?><p class="das-subtitle">Tópico <?php
+        echo $activity['sectionname'];
+        ?></p><?php
+        return $activity['sectionname'];
+    }
 }
