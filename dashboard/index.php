@@ -345,6 +345,7 @@ $courseusers = das_course_users($courseid);
 
     das_print_ontime_assign($courseusers,$activities);
     das_print_late_assign($courseusers, $activities);
+    das_print_no_assign($courseusers, $activities);
 ?>
             <div id="das-undelivered">
                 <p class="das-title"><?php echo get_string('undelivered', 'block_das');?></p>
