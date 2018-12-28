@@ -133,16 +133,16 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
 }
 
 
-function das_print_antecipated_assign($courseusers, $activities) {
-    ?><div id="das-on-time">
-    <p class="das-title"> <?php echo get_string('deliveredontime', 'block_das');?></p>
+function das_print_preventivenotice_assign($courseusers, $activities) {
+    ?><div id="das-preventive-notice">
+    <p class="das-title"><?php echo get_string('preventivenotice', 'block_das');?></p>
     <?php
     $counter = 0;
     $oldsection = '';
     foreach($activities as $activity){
         if($activity['numberofintimesubmissions']) {
             $oldsection = das_print_section($activity, $oldsection);
-            $expansiveid = "ontime" . ++$counter;
+            $expansiveid = "preventivenotice" . ++$counter;
             das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid,
             $activity['assign'], $activity['numberofintimesubmissions']);
         }

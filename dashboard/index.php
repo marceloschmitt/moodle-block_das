@@ -343,7 +343,7 @@ $courseusers = das_course_users($courseid);
 
 <?php
 
-    das_print_antecipated_assign($courseusers,$activities);
+    das_print_preventivenotice_assign($courseusers,$activities);
     das_print_alert_assign($courseusers, $activities);
     das_print_resent_assign($courseusers, $activities);
 
