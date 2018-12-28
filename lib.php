@@ -221,7 +221,7 @@ function das_activities($students/*$id_curso*/){
                 LEFT JOIN {course_sections} cs on cs.id = cm.section
                 WHERE a.course = ? and nosubmissions = 0 AND (s.userid IS NULL OR s.userid $insql)
                     AND cm.visible = 1
-                ORDER BY duedate, name, firstname";
+                ORDER BY sectionnumber, name, firstname";
      $result = $DB->get_records_sql($sql, $params);
 
 
