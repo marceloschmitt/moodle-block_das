@@ -225,27 +225,6 @@ function das_print_no_assign($courseusers, $activities) {
     ?></div><?php
 }
 
-function das_print_delivered_assigns($activities, $courseusers) {
-    ?><div id="das-activity-deliver">
-        <p class="das-title"><?php echo get_string('anticipatedactivities', 'block_das');?></p>
-        <p class="das-subtitle">Tópico ?</p>
-        <?php
-        $counter = 0;
-        foreach($activities as $activity){
-            $expansiveid = "delivered" . ++$counter;
-            if($activity['numberofintimesubmissions']) {
-                das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid,
-                                        $activity['assign'], $activity['numberofintimesubmissions']);
-            }
-            if($activity['numberoflatesubmissions']) {
-                das_print_student_list($courseusers, $activity['latesubmissions'], $expansiveid,
-                                        $activity['assign'], $activity['numberoflatesubmissions']);
-            }
-        }
-    ?></div><?php
-}
-
-
 
 function das_activities($students/*$id_curso*/){
     global $DB;
