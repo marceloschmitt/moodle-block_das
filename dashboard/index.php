@@ -274,25 +274,15 @@ $courseusers = das_course_users($courseid);
 
         <div id="das-user-column-1">
 
-            <?php
-            $activities = das_activities($courseusers);
-            das_print_delivered_assigns($activities,$courseusers);
-            ?>
-
-
-
-
-
-<?php
-
-    das_print_alert_assign($courseusers, $activities);
+    <?php
+    $activities = das_activities($courseusers);
+    das_print_delivered_assigns($activities,$courseusers);
     das_print_preventivenotice_assign($courseusers,$activities);
     das_print_resent_assign($courseusers, $activities);
-
     das_print_ontime_assign($courseusers,$activities);
     das_print_late_assign($courseusers, $activities);
     das_print_no_assign($courseusers, $activities);
-?>
+    ?>
 
 
 
