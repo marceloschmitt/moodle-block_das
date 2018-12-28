@@ -144,7 +144,7 @@ function das_print_late_assign($courseusers, $activities) {
                 ?><p class="das-subtitle">Tópico <?php
                 echo $activity['sectionname'];
                 ?></p><?php
-                $sectionname = $activity['secionname'];
+                $sectionname = $activity['sectionname'];
             }
             $expansiveid = "no" . ++$counter;
             das_print_student_list($courseusers, $activity['no_submissions'], $expansiveid,
@@ -167,7 +167,7 @@ function das_print_ontime_assign($courseusers, $activities) {
                 ?><p class="das-subtitle">Tópico <?php
                 echo $activity['sectionname'];
                 ?></p><?php
-                $sectionname = $activity['secionname'];
+                $sectionname = $activity['sectionname'];
             }
             $expansiveid = "ontime" . ++$counter;
             das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid,
