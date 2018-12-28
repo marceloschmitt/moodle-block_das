@@ -168,8 +168,9 @@ function das_print_ontime_assign($courseusers, $activities) {
 }
 
 function das_print_no_assign($courseusers, $activities) {
-    ?><div id="das-on-time">
-    <p class="das-title"> <?php echo get_string('deliveredontime', 'block_das');?></p>
+    ?>
+    <div id="das-undelivered">
+    <p class="das-title"><?php echo get_string('undelivered', 'block_das');?></p>
     <?php
     $counter = 0;
     $oldsection = '';
