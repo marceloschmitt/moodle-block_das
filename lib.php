@@ -141,7 +141,8 @@ function das_print_preventivenotice_assign($courseusers, $activities) {
     $counter = 0;
     $oldsection = '';
     foreach($activities as $activity){
-        if($activity['numberofnosubmissions'] && ($activity['duedate'] - time()) > 0) {
+        $time = $activity['duedate'] - time();
+        if($activity['numberofnosubmissions'] && $time > 0 && $time < (60*60*24)) {
             $oldsection = das_print_section($activity, $oldsection);
             $expansiveid = "preventivenotice" . ++$counter;
             das_print_student_list($courseusers, $activity['no_submissions'], $expansiveid,
