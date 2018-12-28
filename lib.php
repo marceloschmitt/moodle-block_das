@@ -132,6 +132,60 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
     <?php
 }
 
+
+function das_print_ontime_assign($courseusers, $activities) {
+    ?><div id="das-on-time">
+    <p class="das-title"> <?php echo get_string('deliveredontime', 'block_das');?></p>
+    <?php
+    $counter = 0;
+    $oldsection = '';
+    foreach($activities as $activity){
+        if($activity['numberofintimesubmissions']) {
+            $oldsection = das_print_section($activity, $oldsection);
+            $expansiveid = "ontime" . ++$counter;
+            das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid,
+            $activity['assign'], $activity['numberofintimesubmissions']);
+        }
+    }
+    ?></div><?php
+}
+
+
+function das_print_alert_assign($courseusers, $activities) {
+    ?><div id="das-on-time">
+    <p class="das-title"> <?php echo get_string('deliveredontime', 'block_das');?></p>
+    <?php
+    $counter = 0;
+    $oldsection = '';
+    foreach($activities as $activity){
+        if($activity['numberofintimesubmissions']) {
+            $oldsection = das_print_section($activity, $oldsection);
+            $expansiveid = "ontime" . ++$counter;
+            das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid,
+            $activity['assign'], $activity['numberofintimesubmissions']);
+        }
+    }
+    ?></div><?php
+}
+
+function das_print_resent_assign($courseusers, $activities) {
+    ?><div id="das-on-time">
+    <p class="das-title"> <?php echo get_string('deliveredontime', 'block_das');?></p>
+    <?php
+    $counter = 0;
+    $oldsection = '';
+    foreach($activities as $activity){
+        if($activity['numberofintimesubmissions']) {
+            $oldsection = das_print_section($activity, $oldsection);
+            $expansiveid = "ontime" . ++$counter;
+            das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid,
+            $activity['assign'], $activity['numberofintimesubmissions']);
+        }
+    }
+    ?></div><?php
+}
+
+
 function das_print_late_assign($courseusers, $activities) {
     ?><div id="das-out-of-time">
     <p class="das-title"><?php echo get_string('deliveredoutoftime', 'block_das');?></p>
