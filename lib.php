@@ -139,11 +139,11 @@ function das_print_late_assign($courseusers, $activities) {
     $counter = 0;
     $oldsection = '';
     foreach($activities as $activity){
-        if(time() > $activity['duedate']) {
+        if($activity['numberlatesubmissions'])) {
             $oldsection = das_print_section($activity, $oldsection);
-            $expansiveid = "no" . ++$counter;
-            das_print_student_list($courseusers, $activity['no_submissions'], $expansiveid,
-                                        $activity['assign'], $activity['numberofnosubmissions']);
+            $expansiveid = "late" . ++$counter;
+            das_print_student_list($courseusers, $activity['latesubmissions'], $expansiveid,
+                                        $activity['assign'], $activity['numberoflatesubmissions']);
         }
     }
     ?> </div> <?php
@@ -177,7 +177,7 @@ function das_print_no_assign($courseusers, $activities) {
     foreach($activities as $activity){
         if($activity['numberofnosubmissions']) {
             $oldsection = das_print_section($activity, $oldsection);
-            $expansiveid = "ontime" . ++$counter;
+            $expansiveid = "no" . ++$counter;
             das_print_student_list($courseusers, $activity['no_submissions'], $expansiveid,
             $activity['assign'], $activity['numberofnosubmissions']);
         }
