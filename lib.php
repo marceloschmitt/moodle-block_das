@@ -135,11 +135,17 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
 function das_print_late_assign($courseusers, $activities) {
     ?><div id="das-out-of-time">
     <p class="das-title"><?php echo get_string('deliveredoutoftime', 'block_das');?></p>
-    <p class="das-subtitle">Tópico</p>
     <?php
+    $sectionname = '';
     $counter = 0;
     foreach($activities as $activity){
         if(time() > $activity['duedate']) {
+            if($sectionname <> $activity['sectionname']) {
+                ?><p class="das-subtitle">Tópico <?php
+                echo $activity['sectionname'];
+                ?></p><?php
+                $sectionname = $activity['secionname'];
+            }
             $expansiveid = "no" . ++$counter;
             das_print_student_list($courseusers, $activity['no_submissions'], $expansiveid,
                                         $activity['assign'], $activity['numberofnosubmissions']);
