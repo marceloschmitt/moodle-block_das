@@ -139,7 +139,7 @@ function das_print_late_assign($courseusers, $activities) {
     $counter = 0;
     $oldsection = '';
     foreach($activities as $activity){
-        if($activity['numberlatesubmissions'])) {
+        if($activity['numberlatesubmissions']) {
             $oldsection = das_print_section($activity, $oldsection);
             $expansiveid = "late" . ++$counter;
             das_print_student_list($courseusers, $activity['latesubmissions'], $expansiveid,
