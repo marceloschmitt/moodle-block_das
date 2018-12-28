@@ -175,11 +175,11 @@ function das_print_no_assign($courseusers, $activities) {
     $counter = 0;
     $oldsection = '';
     foreach($activities as $activity){
-        if($activity['numberofintimesubmissions']) {
+        if($activity['numberofnosubmissions']) {
             $oldsection = das_print_section($activity, $oldsection);
             $expansiveid = "ontime" . ++$counter;
-            das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid,
-            $activity['assign'], $activity['numberofintimesubmissions']);
+            das_print_student_list($courseusers, $activity['no_submissions'], $expansiveid,
+            $activity['assign'], $activity['numberofnosubmissions']);
         }
     }
     ?></div><?php
