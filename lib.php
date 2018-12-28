@@ -133,7 +133,7 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
 }
 
 
-function das_print_ontime_assign($courseusers, $activities) {
+function das_print_antecipated_assign($courseusers, $activities) {
     ?><div id="das-on-time">
     <p class="das-title"> <?php echo get_string('deliveredontime', 'block_das');?></p>
     <?php
