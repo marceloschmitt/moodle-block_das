@@ -205,7 +205,7 @@ function das_activities($students/*$id_curso*/){
     list($insql, $inparams) = $DB->get_in_or_equal($inclause);
     $assign = $DB->get_record('modules', array('name' => 'assign'), 'id');
     $params = array_merge(array($assign->id, $course), $inparams);
-    $sql = "SELECT a.id+(COALESCE(s.id,1)*1000000)as id, a.id as assignment, name, duedate, cutoffdate,
+    $sql = "SELECT a.id+(COALESCE(s.id,1)*1000000)as id, a.id as assignment, a.name as name, duedate, cutoffdate,
                 s.userid, usr.firstname, usr.lastname, usr.email, s.timemodified as timecreated, cs.section as sectionnumber
                 FROM {assign} a
                 LEFT JOIN {assign_submission} s on a.id = s.assignment AND s.status = 'submitted'
