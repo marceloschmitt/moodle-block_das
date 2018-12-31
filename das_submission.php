@@ -50,9 +50,15 @@ class das_submission {
         $numberoflatesubmissions = 0;
         $assignmentid = 0;
         foreach ($result as $tuple) {
+            $temparray = array(
+                        'userid' => $tuple->userid,
+                        'nome' => $tuple->firstname." ".$tuple->lastname,
+                        'email' => $tuple->email,
+                        'submissiontime' => $tuple->submissiontime,
+                        'gradetime' => $tuple->gradetime);
             if ($assignmentid == 0) { // First time in loop.
                 $this->statistics[$counter]['assign'] = $tuple->name;
-                if($tuple->sectionname) {
+                if($tuple->sectionname) { //Section name.
                     $this->statistics[$counter]['sectionname'] = $tuple->sectionname;
                 } else {
                     $this->statistics[$counter]['sectionname'] = $tuple->sectionnumber;
@@ -60,30 +66,22 @@ class das_submission {
                 $this->statistics[$counter]['duedate'] = $tuple->duedate;
                 $this->statistics[$counter]['cutoffdate'] = $tuple->cutoffdate;
                 if (isset($tuple->userid)) { // If a student submitted.
-                    if ($tuple->duedate >= $tuple->timecreated || $tuple->duedate == 0) { // In the right time.
-                        $this->statistics[$counter]['in_time_submissions'][] = array('userid'  => $tuple->userid,
-                            'nome'  => $tuple->firstname." ".$tuple->lastname,
-                            'email'  => $tuple->email, 'timecreated'  => $tuple->timecreated);
+                    if ($tuple->duedate >= $tuple->submissiontime || $tuple->duedate == 0) { // In the right time.
+                        $this->statistics[$counter]['in_time_submissions'][] = $temparray;
                         $numberofintimesubmissions++;
                     } else { // Late.
-                        $this->statistics[$counter]['latesubmissions'][] = array('userid'  => $tuple->userid,
-                            'nome'  => $tuple->firstname." ".$tuple->lastname, 'email'  => $tuple->email,
-                            'timecreated'  => $tuple->timecreated);
+                        $this->statistics[$counter]['latesubmissions'][] = $temparray;
                         $numberoflatesubmissions++;
                     }
                 }
                 $assignmentid = $tuple->assignment;
             } else { // Not first time in loop.
                 if ($assignmentid == $tuple->assignment and $tuple->userid) { // Same task -> add student.
-                    if ($tuple->duedate >= $tuple->timecreated || $tuple->duedate == 0) { // Right time.
-                        $this->statistics[$counter]['in_time_submissions'][] = array('userid'  => $tuple->userid,
-                            'nome'  => $tuple->firstname." ".$tuple->lastname,
-                            'email'  => $tuple->email, 'timecreated'  => $tuple->timecreated);
+                    if ($tuple->duedate >= $tuple->submissiontime || $tuple->duedate == 0) { // Right time.
+                        $this->statistics[$counter]['in_time_submissions'][] = $temprray;
                         $numberofintimesubmissions++;
                     } else { // Late.
-                        $this->statistics[$counter]['latesubmissions'][] = array('userid'  => $tuple->userid,
-                            'nome'  => $tuple->firstname." ".$tuple->lastname,
-                            'email'  => $tuple->email, 'timecreated'  => $tuple->timecreated);
+                        $this->statistics[$counter]['latesubmissions'][] = $temparray;
                         $numberoflatesubmissions++;
                     }
                 }
@@ -124,15 +122,11 @@ class das_submission {
                     $this->statistics[$counter]['cutoffdate'] = $tuple->cutoffdate;
                     $assignmentid = $tuple->assignment;
                     if ($tuple->userid) { // If a user has submitted
-                        if ($tuple->duedate >= $tuple->timecreated || $tuple->duedate == 0) { // Right time.
-                            $this->statistics[$counter]['in_time_submissions'][] = array('userid'  => $tuple->userid,
-                                'nome' => $tuple->firstname." ".$tuple->lastname,
-                                'email' => $tuple->email, 'timecreated'  => $tuple->timecreated);
+                         if ($tuple->duedate >= $tuple->submissiontime || $tuple->duedate == 0) { // Right time.
+                            $this->statistics[$counter]['in_time_submissions'][] = $temparray;
                             $numberofintimesubmissions = 1;
                         } else { // Late.
-                            $this->statistics[$counter]['latesubmissions'][] = array('userid'  => $tuple->userid,
-                                'nome'  => $tuple->firstname." ".$tuple->lastname,
-                                'email'  => $tuple->email, 'timecreated'  => $tuple->timecreated);
+                            $this->statistics[$counter]['latesubmissions'][] = $temparray;
                             $numberoflatesubmissions = 1;
                         }
                     }
