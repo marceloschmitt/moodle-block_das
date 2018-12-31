@@ -78,7 +78,7 @@ class das_submission {
             } else { // Not first time in loop.
                 if ($assignmentid == $tuple->assignment and $tuple->userid) { // Same task -> add student.
                     if ($tuple->duedate >= $tuple->submissiontime || $tuple->duedate == 0) { // Right time.
-                        $this->statistics[$counter]['in_time_submissions'][] = $temprray;
+                        $this->statistics[$counter]['in_time_submissions'][] = $temparray;
                         $numberofintimesubmissions++;
                     } else { // Late.
                         $this->statistics[$counter]['latesubmissions'][] = $temparray;
