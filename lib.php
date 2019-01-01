@@ -144,7 +144,7 @@ function das_print_second_column_window($courseusers, $activities, $type, $numbe
             $oldsection = das_print_section($activity, $oldsection);
             $expansiveid = $type . ++$counter;
             das_print_student_list($courseusers, $activity[$type], $expansiveid,
-            $activity['assign'], $activity[$numberoftype]);
+            $activity[id], $activity['assign'], $activity[$numberoftype]);
         }
     }
     ?></div><?php
@@ -182,9 +182,9 @@ function das_activities($students/*$id_curso*/){
 }
 
 
-function das_print_student_list($courseusers, $students, $divid, $activityname, $number) {
+function das_print_student_list($courseusers, $students, $divid, $activityid, $activityname, $number) {
     ?><div class="das-item-default-header">
-        <a href="?php echo $CFG->wwwroot;?>mod/assign/view.php?id=3191">
+        <a href="?php echo $CFG->wwwroot;?>/mod/assign/view.php?id=3191">
             <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
         </a>
         <p class="das-vertical-align" onclick = "$('.<?php echo $divid ?>').toggle();">
