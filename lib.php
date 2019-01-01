@@ -200,7 +200,7 @@ function das_print_student_list($courseusers, $students, $divid, $activityname, 
                 ?><div class="das-item-default-expansive <?php echo $divid; ?>" style="display: none">
                 <img class="das-user-small-image das-vertical-align" src="<?php echo $courseusers[$student['userid']]->pictureurl;?>" alt="User-Image">
                 <p class="das-vertical-align das-p-overflow"><?php echo $courseusers[$student['userid']]->fullname; ?></p>
-                <a href="message/id=3"><img class="das-message-icon" src="assets/img/comment-solid.png" alt="Message-Image"></a>
+                <a href="message?id=3"><img class="das-message-icon" src="assets/img/comment-solid.png" alt="Message-Image"></a>
                 </div><?php
             }
 }
