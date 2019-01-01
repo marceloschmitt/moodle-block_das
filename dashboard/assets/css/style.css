@@ -199,15 +199,15 @@ ul#das-menu-vertical p {
 }
 
 #das-activity-deliver,
-#das-preventive-notice,
-#das-on-time,
-#das-out-of-time,
-#das-remail,
+#das-alerts,
+#das-intimesubmissions,
+#das-latesubmissions,
+#das-resubmissions,
 #das-status-class,
 #das-acess-activity,
 #das-resources,
 #das-permanence-course,
-#das-undelivered{
+#das-nosubmissions{
     width: 100%;
     border: 1px solid #282828;
     border-radius: 10px;

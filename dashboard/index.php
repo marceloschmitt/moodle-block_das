@@ -38,8 +38,8 @@ $courseusers = das_course_users($courseid);
     <script>
         $(function() {
             var menu = Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-            var blockNames = Array("das-activity-deliver", "das-preventive-notice", "das-on-time", "das-out-of-time", "das-remail",
-                                    "das-online-users-box", "das-missing-users-box", "das-status-class", "das-acess-activity",
+            var blockNames = Array("das-activity-deliver", "das-nosubmissions", "das-intimesubmissions", "das-latsubmissions", "das-resubmissions",
+                                    "das-online-users-box", "das-missing-users-box", "das-status-class", "das-acess-activity", "das-alerts",
                                     "das-resources", "das-permanence-course");
             var columns = Array(1,1,1,1);
             function reorganizeSkeleton() {
@@ -276,11 +276,13 @@ $courseusers = das_course_users($courseid);
 
     <?php
     $activities = das_activities($courseusers);
-    das_print_preventivenotice_assign($courseusers,$activities);
-    das_print_resent_assign($courseusers, $activities);
-    das_print_ontime_assign($courseusers,$activities);
-    das_print_late_assign($courseusers, $activities);
-    das_print_no_assign($courseusers, $activities);
+
+    das_print_second_column_window($courseusers, $activities,'alerts','numberofalerts'); 
+    das_print_second_column_window($courseusers, $activities,'resubmissions','numberofresubmissions'); 
+    das_print_second_column_window($courseusers, $activities,'intimesubmissions','numberofintimesubmissions'); 
+    das_print_second_column_window($courseusers, $activities,'latesubmissions','numberoflatesubmissions'); 
+    das_print_second_column_window($courseusers, $activities,'nosubmissions','numberofnosubmissions'); 
+   
     ?>
 
 

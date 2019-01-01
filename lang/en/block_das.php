@@ -25,11 +25,11 @@ $string['das'] = 'das';
 
 //second column.
 $string['anticipatedactivities'] = 'Atividades Antecipadas';
-$string['preventivenotice'] = 'Aviso Preventivo';
-$string['remissionnotice'] = 'Aviso de Reenvio';
-$string['deliveredontime'] = 'Entregue no Prazo';
-$string['deliveredoutoftime'] = 'Entregue Fora do Prazo';
-$string['undelivered'] = 'Não entregue';
+$string['alerts'] = 'Aviso Preventivo';
+$string['resubmissions'] = 'Aviso de Reenvio';
+$string['intimesubmissions'] = 'Entregue no Prazo';
+$string['latesubmissions'] = 'Entregue Fora do Prazo';
+$string['nosubmissions'] = 'Não entregue';
 $string['todayusers'] = 'Usuários ativos no dia';
 $string['missingusers'] = 'Usuários ausentes';
 

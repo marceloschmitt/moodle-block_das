@@ -133,93 +133,18 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
 }
 
 
-
-function das_print_preventivenotice_assign($courseusers, $activities) {
-    ?><div id="das-preventive-notice">
-    <p class="das-title"><?php echo get_string('preventivenotice', 'block_das');?></p>
+function das_print_second_column_window($courseusers, $activities, $type, $numberoftype) {
+    ?><div id="<?php echo 'das-'.$type ?>">
+    <p class="das-title"><?php echo get_string($type, 'block_das');?></p>
     <?php
     $counter = 0;
     $oldsection = '';
     foreach($activities as $activity){
-        $time = $activity['duedate'] - time();
-        if($activity['numberofnosubmissions'] && $time > 0 && $time < (60*60*24)) {
+        if($activity[$numberoftype]) {
             $oldsection = das_print_section($activity, $oldsection);
-            $expansiveid = "preventivenotice" . ++$counter;
-            das_print_student_list($courseusers, $activity['no_submissions'], $expansiveid,
-            $activity['assign'], $activity['numberofnosubmissions']);
-        }
-    }
-    ?></div><?php
-}
-
-
-function das_print_resent_assign($courseusers, $activities) {
-    ?><div id="das-remail">
-    <p class="das-title"><?php echo get_string('remissionnotice', 'block_das');?></p>
-    <?php
-    $counter = 0;
-    $oldsection = '';
-    foreach($activities as $activity){
-        if($activity['numberofintimesubmissions']) {
-            $oldsection = das_print_section($activity, $oldsection);
-            $expansiveid = "ontime" . ++$counter;
-            das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid,
-            $activity['assign'], $activity['numberofintimesubmissions']);
-        }
-    }
-    ?></div><?php
-}
-
-
-function das_print_late_assign($courseusers, $activities) {
-    ?><div id="das-out-of-time">
-    <p class="das-title"><?php echo get_string('deliveredoutoftime', 'block_das');?></p>
-    <?php
-    $counter = 0;
-    $oldsection = '';
-    foreach($activities as $activity){
-        if($activity['numberoflatesubmissions']) {
-            $oldsection = das_print_section($activity, $oldsection);
-            $expansiveid = "late" . ++$counter;
-            das_print_student_list($courseusers, $activity['latesubmissions'], $expansiveid,
-                                        $activity['assign'], $activity['numberoflatesubmissions']);
-        }
-    }
-    ?> </div> <?php
-}
-
-
-function das_print_ontime_assign($courseusers, $activities) {
-    ?><div id="das-on-time">
-    <p class="das-title"> <?php echo get_string('deliveredontime', 'block_das');?></p>
-    <?php
-    $counter = 0;
-    $oldsection = '';
-    foreach($activities as $activity){
-        if($activity['numberofintimesubmissions']) {
-            $oldsection = das_print_section($activity, $oldsection);
-            $expansiveid = "ontime" . ++$counter;
-            das_print_student_list($courseusers, $activity['in_time_submissions'], $expansiveid,
-            $activity['assign'], $activity['numberofintimesubmissions']);
-        }
-    }
-    ?></div><?php
-}
-
-function das_print_no_assign($courseusers, $activities) {
-    ?>
-    <div id="das-undelivered">
-    <p class="das-title"><?php echo get_string('undelivered', 'block_das');?></p>
-    <?php
-    $counter = 0;
-    $oldsection = '';
-    foreach($activities as $activity){
-        $time = $activity['duedate'] - time();
-        if($activity['numberofnosubmissions'] && $time < 0) {
-            $oldsection = das_print_section($activity, $oldsection);
-            $expansiveid = "no" . ++$counter;
-            das_print_student_list($courseusers, $activity['no_submissions'], $expansiveid,
-            $activity['assign'], $activity['numberofnosubmissions']);
+            $expansiveid = $type . ++$counter;
+            das_print_student_list($courseusers, $activity[$type], $expansiveid,
+            $activity['assign'], $activity[$numberoftype]);
         }
     }
     ?></div><?php
@@ -238,22 +163,22 @@ function das_activities($students/*$id_curso*/){
     $assign = $DB->get_record('modules', array('name' => 'assign'), 'id');
     $params = array_merge(array($assign->id, $course), $inparams);
     $sql = "SELECT a.id+(COALESCE(s.id,1)*1000000)as id, a.id as assignment, a.name as name, duedate, cutoffdate,
-                s.userid, usr.firstname, usr.lastname, usr.email, s.timemodified as timecreated,
+                s.userid, usr.firstname, usr.lastname, usr.email, s.timemodified as submissiontime, g.timemodified as gradetime,
                 cs.section as sectionnumber, cs.name as sectionname
                 FROM {assign} a
                 LEFT JOIN {assign_submission} s on a.id = s.assignment AND s.status = 'submitted'
+                LEFT JOIN {assign_grades} g on a.id = g.assignment AND s.status = 'submitted' AND g.userid = s.userid
                 LEFT JOIN {user} usr ON usr.id = s.userid
                 LEFT JOIN {course_modules} cm on cm.instance = a.id AND cm.module = ?
                 LEFT JOIN {course_sections} cs on cs.id = cm.section
                 WHERE a.course = ? and nosubmissions = 0 AND (s.userid IS NULL OR s.userid $insql)
-                    AND cm.visible = 1
+                    AND cm.visible = 1 
                 ORDER BY sectionnumber, name, firstname";
      $result = $DB->get_records_sql($sql, $params);
 
-
-$submissions = new das_submission($course);
-$submissions->create_array($result,$students);
-        return($submissions->get_array());
+    $submissions = new das_submission($course);
+    $submissions->create_array($result,$students);
+   return($submissions->get_array());
 }
 
 

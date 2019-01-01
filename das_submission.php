@@ -48,6 +48,8 @@ class das_submission {
         $counter = 0;
         $numberofintimesubmissions = 0;
         $numberoflatesubmissions = 0;
+        $numberofresubmissions = 0;
+        $numberofassessed = 0;
         $assignmentid = 0;
         foreach ($result as $tuple) {
             $temparray = array(
@@ -66,8 +68,14 @@ class das_submission {
                 $this->statistics[$counter]['duedate'] = $tuple->duedate;
                 $this->statistics[$counter]['cutoffdate'] = $tuple->cutoffdate;
                 if (isset($tuple->userid)) { // If a student submitted.
-                    if ($tuple->duedate >= $tuple->submissiontime || $tuple->duedate == 0) { // In the right time.
-                        $this->statistics[$counter]['in_time_submissions'][] = $temparray;
+                    if($temparray['gradetime'] > $temparray['submissiontime']) {
+                        $this->statistics[$counter]['assessed'][] = $temparray;
+                        $numberofassessed++;
+                    } else if($temparray['gradetime'] > 0 && $temparray['submissiontime'] > $temparray['gradetime']) {
+                        $this->statistics[$counter]['resubmissions'][] = $temparray;
+                        $numberofresubmissions++;
+                    } else if ($tuple->duedate >= $tuple->submissiontime || $tuple->duedate == 0) { // In the right time.
+                        $this->statistics[$counter]['intimesubmissions'][] = $temparray;
                         $numberofintimesubmissions++;
                     } else { // Late.
                         $this->statistics[$counter]['latesubmissions'][] = $temparray;
@@ -75,10 +83,17 @@ class das_submission {
                     }
                 }
                 $assignmentid = $tuple->assignment;
+                $duedate = $tuple->duedate;
             } else { // Not first time in loop.
                 if ($assignmentid == $tuple->assignment and $tuple->userid) { // Same task -> add student.
-                    if ($tuple->duedate >= $tuple->submissiontime || $tuple->duedate == 0) { // Right time.
-                        $this->statistics[$counter]['in_time_submissions'][] = $temparray;
+                    if($temparray['gradetime'] > $temparray['submissiontime']) {
+                        $this->statistics[$counter]['assessed'][] = $temparray;
+                        $numberofassessed++;
+                    } else if($temparray['gradetime'] > 0 && $temparray['submissiontime'] > $temparray['gradetime']) {
+                        $this->statistics[$counter]['resubmissions'][] = $temparray;
+                        $numberofresubmissions++;
+                    } else if ($tuple->duedate >= $tuple->submissiontime || $tuple->duedate == 0) { // Right time.
+                        $this->statistics[$counter]['intimesubmissions'][] = $temparray;
                         $numberofintimesubmissions++;
                     } else { // Late.
                         $this->statistics[$counter]['latesubmissions'][] = $temparray;
@@ -88,30 +103,60 @@ class das_submission {
                 if ($assignmentid != $tuple->assignment) { // Another task -> finish previous and start.
                     $this->statistics[$counter]['numberofintimesubmissions'] = $numberofintimesubmissions;
                     $this->statistics[$counter]['numberoflatesubmissions'] = $numberoflatesubmissions;
-                    $this->statistics[$counter]['numberofnosubmissions'] =
-                            $numberofstudents - $numberofintimesubmissions - $numberoflatesubmissions;
-                    if ($this->statistics[$counter]['numberofnosubmissions'] > 0) {
-                        if ($this->statistics[$counter]['numberofnosubmissions'] == $numberofstudents) {
-                            $this->statistics[$counter]['no_submissions'] = $arrayofstudents;
-                        } else if ($numberoflatesubmissions == 0) {
-                            $this->statistics[$counter]['no_submissions'] =
-                                das_subtract_student_arrays($arrayofstudents,
-                                $this->statistics[$counter]['in_time_submissions']);
-                        } else if ($numberofintimesubmissions == 0) {
-                            $this->statistics[$counter]['no_submissions'] =
-                                das_subtract_student_arrays($arrayofstudents,
-                                $this->statistics[$counter]['latesubmissions']);
-                        } else {
-                            $this->statistics[$counter]['no_submissions'] =
-                                das_subtract_student_arrays(
-                                das_subtract_student_arrays($arrayofstudents,
-                                    $this->statistics[$counter]['in_time_submissions']),
-                                $this->statistics[$counter]['latesubmissions']);
+                    $this->statistics[$counter]['numberofresubmissions'] = $numberofresubmissions;
+                    $this->statistics[$counter]['numberofassessed'] = $numberofassessed;
+                    $interval = $duedate - time();
+
+
+                    if ($interval > 60*60*24) {
+                        $this->statistics[$counter]['numberofnosubmissions'] = 0;
+                        $this->statistics[$counter]['numberofalerts'] = 0;
+                    } else if ($interval > 0) {
+
+                        $this->statistics[$counter]['numberofnosubmissions'] = 0;
+                        $this->statistics[$counter]['numberofalerts'] =
+                            $numberofstudents - $numberofintimesubmissions - $numberoflatesubmissions - $numberofresubmissions - $numbrofassessed;
+                        if ($this->statistics[$counter]['numberofalerts'] > 0) {
+                            if ($this->statistics[$counter]['numberofalerts'] == $numberofstudents) {
+                                $this->statistics[$counter]['alerts'] = $arrayofstudents;
+                            } else {
+                                $this->statistics[$counter]['alerts'] =
+                                    das_subtract_student_arrays(
+                                        das_subtract_student_arrays(
+                                            das_subtract_student_arrays(
+                                                das_subtract_student_arrays($arrayofstudents,
+                                                    $this->statistics[$counter]['intimesubmissions']),
+                                                $this->statistics[$counter]['latesubmissions']),
+                                            $this->statistics[$counter]['resubmissions']),
+                                        $this->statistics[$counter]['assessed']);
+                            }
+                        }
+                    }
+                    else {
+                        $this->statistics[$counter]['numberofalerts'] = 0;
+                        $this->statistics[$counter]['numberofnosubmissions'] =
+                            $numberofstudents - $numberofintimesubmissions - $numberoflatesubmissions - $numberofresubmissions - $numberofassessed;
+                        if ($this->statistics[$counter]['numberofnosubmissions'] > 0) {
+                            if ($this->statistics[$counter]['numberofnosubmissions'] == $numberofstudents) {
+                                $this->statistics[$counter]['nosubmissions'] = $arrayofstudents;
+                            } else {
+                                $this->statistics[$counter]['nosubmissions'] =
+                                    das_subtract_student_arrays(
+                                        das_subtract_student_arrays(
+                                            das_subtract_student_arrays(
+                                                das_subtract_student_arrays($arrayofstudents,
+                                                    $this->statistics[$counter]['intimesubmissions']),
+                                                $this->statistics[$counter]['latesubmissions']), 
+                                            $this->statistics[$counter]['resubmissions']),
+                                        $this->statistics[$counter]['assessed']);
+                            }
                         }
                     }
                     $counter++;
                     $numberofintimesubmissions = 0;
                     $numberoflatesubmissions = 0;
+                    $numberofresubmissions = 0;
+                    $numberofassessed = 0;
                     $this->statistics[$counter]['assign'] = $tuple->name;
                     if($tuple->sectionname) {
                         $this->statistics[$counter]['sectionname'] = $tuple->sectionname;
@@ -121,9 +166,16 @@ class das_submission {
                     $this->statistics[$counter]['duedate'] = $tuple->duedate;
                     $this->statistics[$counter]['cutoffdate'] = $tuple->cutoffdate;
                     $assignmentid = $tuple->assignment;
+                    $duedate = $tuple->duedate;
                     if ($tuple->userid) { // If a user has submitted
-                         if ($tuple->duedate >= $tuple->submissiontime || $tuple->duedate == 0) { // Right time.
-                            $this->statistics[$counter]['in_time_submissions'][] = $temparray;
+                        if($temparray['gradetime'] > $temparray['submissiontime']) {
+                            $this->statistics[$counter]['assessed'][] = $temparray;
+                            $numberofassessed++;
+                        } else if($temparray['gradetime'] > 0 && $temparray['submissiontime'] > $temparray['gradetime']) {
+                            $this->statistics[$counter]['resubmissions'][] = $temparray;
+                            $numberofresubmissions++;
+                        } else if ($tuple->duedate >= $tuple->submissiontime || $tuple->duedate == 0) { // Right time.
+                            $this->statistics[$counter]['intimesubmissions'][] = $temparray;
                             $numberofintimesubmissions = 1;
                         } else { // Late.
                             $this->statistics[$counter]['latesubmissions'][] = $temparray;
@@ -135,34 +187,62 @@ class das_submission {
         }
         // Finishing of last access.
 
-        $this->statistics[$counter]['numberofintimesubmissions'] = $numberofintimesubmissions;
-        $this->statistics[$counter]['numberoflatesubmissions'] = $numberoflatesubmissions;
-        $this->statistics[$counter]['numberofnosubmissions'] = $numberofstudents - $numberofintimesubmissions -
-            $numberoflatesubmissions;
-        if ($this->statistics[$counter]['numberofnosubmissions'] > 0) {
-            if ($this->statistics[$counter]['numberofnosubmissions'] == $numberofstudents) {
-                $this->statistics[$counter]['no_submissions'] = $arrayofstudents;
-            } else if ($numberoflatesubmissions == 0) {
-                $this->statistics[$counter]['no_submissions'] =
-                    das_subtract_student_arrays($arrayofstudents,
-                    $this->statistics[$counter]['in_time_submissions']);
-            } else if ($numberofintimesubmissions == 0) {
-                $this->statistics[$counter]['no_submissions'] =
-                    das_subtract_student_arrays($arrayofstudents,
-                    $this->statistics[$counter]['latesubmissions']);
-            } else {
-                $this->statistics[$counter]['no_submissions'] =
-                    das_subtract_student_arrays(
-                    das_subtract_student_arrays($arrayofstudents,
-                        $this->statistics[$counter]['in_time_submissions']),
-                    $this->statistics[$counter]['latesubmissions']);
+       $this->statistics[$counter]['numberofintimesubmissions'] = $numberofintimesubmissions;
+       $this->statistics[$counter]['numberoflatesubmissions'] = $numberoflatesubmissions;
+       $this->statistics[$counter]['numberofresubmissions'] = $numberofresubmissions;
+       $this->statistics[$counter]['numberofassessed'] = $numberofassessed;
+       $interval = $duedate - time();
+       if ($interval > 60*60*24) {
+           $this->statistics[$counter]['numberofnosubmissions'] = 0;
+           $this->statistics[$counter]['numberofalerts'] = 0;
+       } else if ($interval > 0) {
+           $this->statistics[$counter]['numberofnosubmissions'] = 0;
+           $this->statistics[$counter]['numberofalerts'] = 
+               $numberofstudents - $numberofintimesubmissions - $numberoflatesubmissions - $numberofresubmissions - $numbrofassessed;
+           if ($this->statistics[$counter]['numberofalerts'] > 0) {
+                if ($this->statistics[$counter]['numberofalerts'] == $numberofstudents) {
+                    $this->statistics[$counter]['alerts'] = $arrayofstudents;
+                } else {
+                    $this->statistics[$counter]['alerts'] =
+                        das_subtract_student_arrays(
+                           das_subtract_student_arrays(
+                              das_subtract_student_arrays(
+                                 das_subtract_student_arrays($arrayofstudents,
+                                     $this->statistics[$counter]['intimesubmissions']),
+                                 $this->statistics[$counter]['latesubmissions']),
+                             $this->statistics[$counter]['resubmissions']),
+                          $this->statistics[$counter]['assessed']);
+               }
+           }
+       } else {
+           $this->statistics[$counter]['numberofalerts'] = 0;
+           $this->statistics[$counter]['numberofnosubmissions'] =
+             $numberofstudents - $numberofintimesubmissions - $numberoflatesubmissions - $numberofresubmissions - $numbrofassessed;
+            if ($this->statistics[$counter]['numberofnosubmissions'] > 0) {
+                if ($this->statistics[$counter]['numberofnosubmissions'] == $numberofstudents) {
+                    $this->statistics[$counter]['nosubmissions'] = $arrayofstudents;
+                } else {
+                    $this->statistics[$counter]['nosubmissions'] =
+                        $this->statistics[$counter]['nosubmissions'] =
+                                das_subtract_student_arrays(
+                                    das_subtract_student_arrays(
+                                        das_subtract_student_arrays(
+                                            das_subtract_student_arrays($arrayofstudents,
+                                                $this->statistics[$counter]['intimesubmissions']),
+                                            $this->statistics[$counter]['latesubmissions']),
+                                        $this->statistics[$counter]['resubmissions']),
+                                    $this->statistics[$counter]['assessed']);
+                }
             }
         }
         foreach ($this->statistics as $tuple) {
             $arrayofassignments[] = $tuple['assign'];
             $arrayofintimesubmissions[] = $tuple['numberofintimesubmissions'];
             $arrayoflatesubmissions[] = $tuple['numberoflatesubmissions'];
+            $arrayofresubmissions[] = $tuple['numberofresubmissions'];
+            $arrayofassessed[] = $tuple['numberofassessed'];
             $arrayofnosubmissions[] = $tuple['numberofnosubmissions'];
+            $arrayofalerts[] = $tuple['numberofalerts'];
             $arrayofduedates[] = $tuple['duedate'];
             $arrayofcutoffdates[] = $tuple['cutoffdate']; // For future use.
         }
