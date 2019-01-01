@@ -172,7 +172,7 @@ function das_activities($students/*$id_curso*/){
                 LEFT JOIN {course_modules} cm on cm.instance = a.id AND cm.module = ?
                 LEFT JOIN {course_sections} cs on cs.id = cm.section
                 WHERE a.course = ? and nosubmissions = 0 AND (s.userid IS NULL OR s.userid $insql)
-                    AND cm.visible = 1 
+                    AND cm.visible = 1
                 ORDER BY sectionnumber, name, firstname";
      $result = $DB->get_records_sql($sql, $params);
 
@@ -198,9 +198,9 @@ function das_print_student_list($courseusers, $students, $divid, $activityname, 
     <?php
     foreach($students as $student) {
                 ?><div class="das-item-default-expansive <?php echo $divid; ?>" style="display: none">
-                 <img class="das-user-small-image das-vertical-align" src="<?php echo $courseusers[$student['userid']]->pictureurl;?>" alt="User-Image">
+                <img class="das-user-small-image das-vertical-align" src="<?php echo $courseusers[$student['userid']]->pictureurl;?>" alt="User-Image">
                 <p class="das-vertical-align das-p-overflow"><?php echo $courseusers[$student['userid']]->fullname; ?></p>
-                <img class="das-message-icon" src="assets/img/comment-solid.png" alt="Message-Image">
+                <a href="message/id=3"><img class="das-message-icon" src="assets/img/comment-solid.png" alt="Message-Image"></a>
                 </div><?php
             }
 }
