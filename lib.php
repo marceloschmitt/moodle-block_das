@@ -184,8 +184,9 @@ function das_activities($students/*$id_curso*/){
 
 function das_print_student_list($courseusers, $students, $divid, $activityname, $number) {
     ?><div class="das-item-default-header">
-        <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png"
-            alt="activity-img">
+        <a href="?php echo $CFG->wwwroot;?>mod/assign/view.php?id=3191">
+            <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
+        </a>
         <p class="das-vertical-align" onclick = "$('.<?php echo $divid ?>').toggle();">
             <?php echo $activityname; ?>
         </p>
