@@ -144,7 +144,7 @@ function das_print_second_column_window($courseusers, $activities, $type, $numbe
             $oldsection = das_print_section($activity, $oldsection);
             $expansiveid = $type . ++$counter;
             das_print_student_list($courseusers, $activity[$type], $expansiveid,
-            $activity[id], $activity['assign'], $activity[$numberoftype]);
+                $activity['modid'], $activity['assign'], $activity[$numberoftype]);
         }
     }
     ?></div><?php
@@ -164,7 +164,7 @@ function das_activities($students/*$id_curso*/){
     $params = array_merge(array($assign->id, $course), $inparams);
     $sql = "SELECT a.id+(COALESCE(s.id,1)*1000000)as id, a.id as assignment, a.name as name, duedate, cutoffdate,
                 s.userid, usr.firstname, usr.lastname, usr.email, s.timemodified as submissiontime, g.timemodified as gradetime,
-                cs.section as sectionnumber, cs.name as sectionname
+                cs.section as sectionnumber, cs.name as sectionname, cm.id as modid
                 FROM {assign} a
                 LEFT JOIN {assign_submission} s on a.id = s.assignment AND s.status = 'submitted'
                 LEFT JOIN {assign_grades} g on a.id = g.assignment AND s.status = 'submitted' AND g.userid = s.userid
@@ -182,9 +182,9 @@ function das_activities($students/*$id_curso*/){
 }
 
 
-function das_print_student_list($courseusers, $students, $divid, $activityid, $activityname, $number) {
+function das_print_student_list($courseusers, $students, $divid, $modid, $activityname, $number) {
     ?><div class="das-item-default-header">
-        <a href="<?php echo $CFG->wwwroot;?>/mod/assign/view.php?id=<?php echo activityid;?>">
+        <a href="<?php echo $CFG->wwwroot;?>/mod/assign/view.php?id=<?php echo $modid;?>">
             <img class="das-activity-deliver-img das-vertical-align" src="assets/img/postlaranja.png" alt="activity-img">
         </a>
         <p class="das-vertical-align" onclick = "$('.<?php echo $divid ?>').toggle();">

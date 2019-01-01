@@ -59,6 +59,7 @@ class das_submission {
                         'submissiontime' => $tuple->submissiontime,
                         'gradetime' => $tuple->gradetime);
             if ($assignmentid == 0) { // First time in loop.
+                $this->statistics[$counter]['modid'] = $tuple->modid;
                 $this->statistics[$counter]['assign'] = $tuple->name;
                 if($tuple->sectionname) { //Section name.
                     $this->statistics[$counter]['sectionname'] = $tuple->sectionname;
@@ -146,7 +147,7 @@ class das_submission {
                                             das_subtract_student_arrays(
                                                 das_subtract_student_arrays($arrayofstudents,
                                                     $this->statistics[$counter]['intimesubmissions']),
-                                                $this->statistics[$counter]['latesubmissions']), 
+                                                $this->statistics[$counter]['latesubmissions']),
                                             $this->statistics[$counter]['resubmissions']),
                                         $this->statistics[$counter]['assessed']);
                             }
@@ -157,6 +158,7 @@ class das_submission {
                     $numberoflatesubmissions = 0;
                     $numberofresubmissions = 0;
                     $numberofassessed = 0;
+                    $this->statistics[$counter]['modid'] = $tuple->modid;
                     $this->statistics[$counter]['assign'] = $tuple->name;
                     if($tuple->sectionname) {
                         $this->statistics[$counter]['sectionname'] = $tuple->sectionname;
@@ -197,7 +199,7 @@ class das_submission {
            $this->statistics[$counter]['numberofalerts'] = 0;
        } else if ($interval > 0) {
            $this->statistics[$counter]['numberofnosubmissions'] = 0;
-           $this->statistics[$counter]['numberofalerts'] = 
+           $this->statistics[$counter]['numberofalerts'] =
                $numberofstudents - $numberofintimesubmissions - $numberoflatesubmissions - $numberofresubmissions - $numbrofassessed;
            if ($this->statistics[$counter]['numberofalerts'] > 0) {
                 if ($this->statistics[$counter]['numberofalerts'] == $numberofstudents) {
