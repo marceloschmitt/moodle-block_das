@@ -8,60 +8,32 @@
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 
-<body onLoad="hideAll()">
-<div class="das-general-report">	
+<body>
+<div class="das-general-report">
 <p class="das-subtitle">Relatório Geral de notas do DAS</p>
-<script>
-		function selectOption(thisselect) { //recebe o id do select
-        var selected = thisselect.options[thisselect.selectedIndex].value;
-        displayRow(selected);
-    }
 
-    function displayRow(id) { //configura o display, se tiver block ou qualquer outra coisa, muda para none, se não, altera para block (alguma coisa)
-      var row = document.getElementById(id);
-      if (row.style.display == '') {
-        row.style.display = 'none';
-      }
-      else {
-         row.style.display = '';
-      }
-    }
-
-    function showRow(id) { //função para deixar as linhas ativas da tabela quando carrega a página
-      var row = document.getElementById(id);
-      row.style.display = '';
-    }
-
-    
-    function showRows() { //chama showRow para deixar setado como display block(ou alguma coisa) passando o id do select
-     showRow('A');
-     showRow('B');
-     showRow('C');
-	 showRow('D');
-	 showRow('FF');
-   }
-
-
-		</script>
+<form method="GET" action="">
 	<div class="das-filter-users">
 	<p>Selecionar filtro por:</p>
 		
 		<div class="das-select-topic">
 			<p>Tópico</p> 
-			<select name="das-select-topic-user">
+			<select name="das-select-topic-user" onchange='this.form.submit()'>
 				<option>Selecionar...</option>
-				<option>Tópico 1</option>
+				<option value="Tópico1">Tópico 1</option>
 				<option>Tópico 2</option>
 				<option>Tópico 3</option>
 				<option>Tópico 4</option>
 			</select>
+			<noscript><input type="submit" value="Submit"></noscript>
 		</div>
 
 		<div class="das-select-concept">
 			<p>Conceito</p>
-			<select  id="das-select-notes" onchange="selectOption(this)">
+			<select name="das-select-notes" onchange='this.form.submit()'>
 				<option>Selecionar...</option>
 				<option value="A">A</option>
 				<option value="B">B</option>
@@ -74,7 +46,7 @@
 
 		<div class="das-select-note">
 		<p>Nota</p> 
-			<select>
+			<select name="das-select-note" onchange='this.form.submit()'>
 				<option>Selecionar...</option>
 				<option>1</option>
 				<option>2</option>
@@ -92,7 +64,7 @@
 
 		<div class="das-select-period">
 		<p>Período</p>
-			<select>
+			<select name="das-select-period" onchange='this.form.submit()'>
 				<option>Selecionar...</option>
 				<option>1 dia</option>
 				<option>2 dias</option>
@@ -104,8 +76,10 @@
 				<option>2 semanas</option>
 			</select>
 		</div>
+	
 
 	</div>
+	</form>
 
 	<div class="das-table-select">
 		<table border="1" id="das-table-students-col">
@@ -325,7 +299,6 @@
 				<td class="das-color-orange"><p>C</p></td>
 			</tr>
 		</table>
--->
 		<table border="1" id="das-table-notes">
 			<tr>
 				<td class="das-color-orange">Nota</td>
