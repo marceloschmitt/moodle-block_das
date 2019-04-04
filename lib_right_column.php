@@ -13,7 +13,7 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-require_once("../../../config.php");
+require_once("../../config.php");
 require('../lib.php');
 global $DB;
 $courseid = required_param('id', PARAM_INT);
