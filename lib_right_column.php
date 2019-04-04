@@ -34,9 +34,8 @@ $dedicationratio = $totaldedication / $numberofstudents;
 $numberofweeks = ($maxtime - $mintime) / (7*24*3600);
 $dedicationbyweek = $dedicationratio / $numberofweeks;
 $dedicationbyweek = $dedicationbyweek / 3600;
+?>
 
-
-<!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 
