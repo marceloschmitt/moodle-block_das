@@ -35,6 +35,7 @@ $courseusers = das_course_users($courseid);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    <?php include("../lib_right_column.php"); ?>
     <script>
         $(function() {
             var menu = Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
@@ -314,20 +315,21 @@ $courseusers = das_course_users($courseid);
         <div id="das-user-column-3">
             <div id="das-status-class">
                 <p class="das-title"> Status da Turma</p>
-                <img class="das-status-class-graphic" src="assets/img/acesso-alunos.png" alt="status-class">
+    		<div id="pie_div"></div>
             </div>
             <div id="das-acess-activity">
                 <p class="das-title"> Acesso por Atividade</p>
-                <img class="das-acess-activity-graphic" src="assets/img/interacao-por-topico-na-turma.png" alt="acess-activity">
+		<div id="top_x_div"></div>
             </div>
             <div id="das-resources">
                 <p class="das-title"> Recursos</p>
                 <p class="das-top-bottom">Top 10 x Bottom 10</p>
-                <img class="das-resources-graphic" src="assets/img/recursos.png" alt="resources">
+		<div id="chart_column"></div>
+		<div id="chart_reversed"></div>
             </div>
             <div id="das-permanence-course">
-                <p class="das-title"> Tempo Médio no Curso </p>
-                <img class="das-permanence-course-graphic" src="assets/img/permanencia-no-curso.png" alt="permanence-course">
+                <p class="das-title"> Tempo Médio por Semana </p>
+		<div id="chart_gauge"></div>
             </div>
         </div>
     </div>
