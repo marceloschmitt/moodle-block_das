@@ -13,11 +13,8 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-require_once("../../config.php");
-require('../lib.php');
 global $DB;
 $courseid = required_param('id', PARAM_INT);
-require_login($courseid);
 $context = context_course::instance($courseid);
 require_capability('block/analytics_graphs:viewpages', $context);
 $courseusers = das_course_users($courseid);
