@@ -123,6 +123,9 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
         }
         ?><img class="das-user-small-image" src="<?php echo $user->pictureurl;?>" alt="User-Image">
         <p class="das-vertical-align das-p-overflow"><?php echo "$user->firstname";?></p>
+        <a href="<?php echo $CFG->wwwroot;?>/message?id=<?php echo $user->userid; ?>">
+                    <img class="das-message-icon" src="assets/img/comment-solid.png" alt="Message-Image">
+                </a>
         <div class="das-missing-user-days-white">
         <div style="width: 18px;text-align: center;" n><?php echo "$user->days"?></div>
         </div>
