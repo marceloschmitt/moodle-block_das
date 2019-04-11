@@ -190,7 +190,7 @@ function das_print_student_list($courseusers, $students, $divid, $modid, $activi
         <p class="das-vertical-align" onclick = "$('.<?php echo $divid ?>').toggle();">
             <?php echo $activityname; ?>
         </p>
-        <div class="das-activity-number" onclick = "$('.<?php echo $divid ?>').toggle();>
+        <div class="das-activity-number">
             <div style="">
                 <p><?php echo $number;?></p>
             </div>
