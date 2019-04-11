@@ -108,6 +108,7 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
     if (!($missingusers = das_missing_users($courseusers, $lowboundary, $highboundary))) {
         return;
     }
+    print($missingusers)
     ?><div class="das-missing-users-period">
     <p class="das-subtitle"><?php
     if ($highboundary < 10000) {
@@ -127,7 +128,7 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
         <p class="das-vertical-align das-p-overflow">
         <?php echo "$user->fullname";?>
         </p>
-        <a href="<?php echo $CFG->wwwroot;?>/message?id=i<?php echo $user->userid;?>">
+        <a href="<?php echo $CFG->wwwroot;?>/message?id=i<?php echo $user->id;?>">
         <div class="das-missing-user-days-white">
         <div style="width: 18px;text-align: center;" n><?php echo "$user->days"?></div>
         </div>
