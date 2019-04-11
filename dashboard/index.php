@@ -20,6 +20,13 @@ require_login($courseid);
 $context = context_course::instance($courseid);
 require_capability('block/analytics_graphs:viewpages', $context);
 $courseusers = das_course_users($courseid);
+
+
+
+$blockrecord = $DB->get_record('block_instances', array('blockname' => 'das', 'parentcontextid' => $context->id), '*', MUST_EXIST);
+$blockinstance = block_instance('das', $blockrecord);
+var_dump($blockinstance);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -278,12 +285,12 @@ $courseusers = das_course_users($courseid);
     <?php
     $activities = das_activities($courseusers);
 
-    das_print_second_column_window($courseusers, $activities,'alerts','numberofalerts'); 
-    das_print_second_column_window($courseusers, $activities,'resubmissions','numberofresubmissions'); 
-    das_print_second_column_window($courseusers, $activities,'intimesubmissions','numberofintimesubmissions'); 
-    das_print_second_column_window($courseusers, $activities,'latesubmissions','numberoflatesubmissions'); 
-    das_print_second_column_window($courseusers, $activities,'nosubmissions','numberofnosubmissions'); 
-   
+    das_print_second_column_window($courseusers, $activities,'alerts','numberofalerts');
+    das_print_second_column_window($courseusers, $activities,'resubmissions','numberofresubmissions');
+    das_print_second_column_window($courseusers, $activities,'intimesubmissions','numberofintimesubmissions');
+    das_print_second_column_window($courseusers, $activities,'latesubmissions','numberoflatesubmissions');
+    das_print_second_column_window($courseusers, $activities,'nosubmissions','numberofnosubmissions');
+
     ?>
 
 
