@@ -127,7 +127,7 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
         <p class="das-vertical-align das-p-overflow">
         <?php echo "$user->fullname";?>
         </p>
-        <a href="<?php echo $CFG->wwwroot;?>/message?id=i<?php echo $user->id;?>">
+        <a href="<?php echo $CFG->wwwroot;?>/message?id=<?php echo $user->id;?>">
         <div class="das-missing-user-days-white">
         <div style="width: 18px;text-align: center;" n><?php echo "$user->days"?></div>
         </div>
