@@ -1,6 +1,6 @@
 <?php
 
-class block_simplehtml_edit_form extends block_edit_form {
+class block_das_edit_form extends block_edit_form {
 
     protected function specific_definition($mform) {
 
@@ -12,5 +12,6 @@ class block_simplehtml_edit_form extends block_edit_form {
         $mform->setDefault('config_text', 'default value');
         $mform->setType('config_text', PARAM_RAW);
 
+    }
     }
     ?>
