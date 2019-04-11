@@ -20,13 +20,6 @@ require_login($courseid);
 $context = context_course::instance($courseid);
 require_capability('block/analytics_graphs:viewpages', $context);
 $courseusers = das_course_users($courseid);
-
-
-
-$blockrecord = $DB->get_record('block_instances', array('blockname' => 'das', 'parentcontextid' => $context->id), '*', MUST_EXIST);
-$blockinstance = block_instance('das', $blockrecord);
-var_dump($blockinstance);
-
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -308,10 +301,15 @@ var_dump($blockinstance);
             <div id="das-missing-users-box">
                 <p class="das-title"><?php echo get_string('missingusers', 'block_das');?></p>
                 <?php
-                das_print_missing_users($courseusers, 0, 6);
-                das_print_missing_users($courseusers, 0, 10);
-                das_print_missing_users($courseusers, 0, 60);
-                das_print_missing_users($courseusers, 60, 10000);
+
+                $blockrecord = $DB->get_record('block_instances', array('blockname' => 'das',
+                    'parentcontextid' => $context->id), '*', MUST_EXIST);
+                $block = block_instance('das', $blockrecord);
+
+                das_print_missing_users($courseusers, $block->config->beginoffirstgap, $block->config->beginofsecondgap - 1);
+                das_print_missing_users($courseusers, $block->config->beginofsecondgap, $block->config->beginofthirdgap - 1);
+                das_print_missing_users($courseusers, $block->config->beginofthirdgap, $block->config->beginofforthgap - 1);
+                das_print_missing_users($courseusers, $block->config->beginofforthgap, 10000);
                 ?>
                 <div class="das-box-buttons">
                 </div>
