@@ -104,6 +104,7 @@ function das_print_today_users($courseusers) {
 
 
 function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000) {
+    global $CFG;
     if (!($missingusers = das_missing_users($courseusers, $lowboundary, $highboundary))) {
         return;
     }
@@ -121,11 +122,14 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
         } else {
             ?> <div class="das-missing-user-color-white"> <?php
         }
-        ?><img class="das-user-small-image" src="<?php echo $user->pictureurl;?>" alt="User-Image">
+        ?>
+        <img class="das-user-small-image" src="<?php echo $user->pictureurl;?>" alt="User-Image">
         <p class="das-vertical-align das-p-overflow"><?php echo "$user->firstname";?></p>
-        <a href="<?php echo $CFG->wwwroot;?>/message?id=<?php echo $user->userid; ?>">
+
+        <a href="<?php echo $CFG->wwwroot;?>/message?id=133">
                     <img class="das-message-icon" src="assets/img/comment-solid.png" alt="Message-Image">
-                </a>
+        </a>
+
         <div class="das-missing-user-days-white">
         <div style="width: 18px;text-align: center;" n><?php echo "$user->days"?></div>
         </div>
