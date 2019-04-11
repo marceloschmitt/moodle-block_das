@@ -108,7 +108,6 @@ function das_print_missing_users($courseusers, $lowboundary, $highboundary=10000
     if (!($missingusers = das_missing_users($courseusers, $lowboundary, $highboundary))) {
         return;
     }
-    print($missingusers)
     ?><div class="das-missing-users-period">
     <p class="das-subtitle"><?php
     if ($highboundary < 10000) {
