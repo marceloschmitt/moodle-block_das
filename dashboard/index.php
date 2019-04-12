@@ -40,7 +40,7 @@ $courseusers = das_course_users($courseid);
         $(function() {
             var menu = Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
             var blockNames = Array("das-alerts", "das-resubmissions", "das-intimesubmissions", "das-latesubmissions", "das-nosubmissions",
-                                    "das-online-users-box", "das-missing-users-box", "das-status-class", "das-acess-activity", "das-alerts",
+                                    "das-online-users-box", "das-missing-users-box", "das-status-class", "das-acess-activity", "das-resources",
                                     "das-resources", "das-permanence-course");
             var columns = Array(1,1,1,1);
             function reorganizeSkeleton() {
