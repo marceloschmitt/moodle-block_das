@@ -190,30 +190,30 @@ $courseusers = das_course_users($courseid);
             <ul id="das-menu-vertical">
                 <a class="das-item-menu0" href="#">
                     <li id="das-item-menu0"><img src="assets/img/tempo.png" alt="Imagem de item do menu" class="das-image-menu">
-                        <p id="das-name-menu0">Postagens Fora do Prazo</p>
+                        <p id="das-name-menu0">Aviso Preventivo</p>
                     </li>
                 </a>
                 <a class="das-item-menu1" href="#">
                     <li id="das-item-menu1"><img src="assets/img/repostagem.png" alt="Imagem de item do menu"
                         class="das-image-menu">
-                        <p id="das-name-menu1">Repostagem da atividade</p>
+                        <p id="das-name-menu1">Aviso de Reenvio</p>
                     </li>
                 </a>
                 <a class="das-item-menu2" href="#">
                     <li id="das-item-menu2"><img src="assets/img/postagensadiantadas.png" alt="Imagem de item do menu"
                         class="das-image-menu">
-                        <p id="das-name-menu2">Postagens Antecipadas</p>
+                        <p id="das-name-menu2">Entregue no Prazo</p>
                     </li>
                 </a>
                 <a class="das-item-menu3" href="#">
                     <li id="das-item-menu3"><img src="assets/img/svisopreventivo.png" alt="Imagem de item do menu"
                         class="das-image-menu">
-                        <p id="das-name-menu3">Aviso Preventivo</p>
+                        <p id="das-name-menu3">Entregue Fora do Prazo</p>
                     </li>
                 </a>
                 <a class="das-item-menu4" href="#">
                     <li id="das-item-menu4"><img src="assets/img/post.png" alt="Imagem de item do menu" class="das-image-menu">
-                        <p id="das-name-menu4">Postagem no Prazo</p>
+                        <p id="das-name-menu4">Não Entregue</p>
                     </li>
                 </a>
                 <a class="das-item-menu5" href="#">
