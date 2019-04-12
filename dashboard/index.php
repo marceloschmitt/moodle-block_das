@@ -218,12 +218,12 @@ $courseusers = das_course_users($courseid);
                 </a>
                 <a class="das-item-menu5" href="#">
                     <li id="das-item-menu5"><img src="assets/img/globo.png" alt="Imagem de item do menu" class="das-image-menu">
-                        <p id="das-name-menu5">Ativos no Dia</p>
+                        <p id="das-name-menu5">Usuários Ativos no Dia</p>
                     </li>
                 </a>
                 <a class="das-item-menu6" href="#">
                     <li id="das-item-menu6"><img src="assets/img/evasão.png" alt="Imagem de item do menu" class="das-image-menu">
-                        <p id="das-name-menu6">Relatório de Evasão</p>
+                        <p id="das-name-menu6">Usuários Ausentes</p>
                     </li>
                 </a>
                 <a class="das-item-menu7" href="#">
@@ -233,7 +233,7 @@ $courseusers = das_course_users($courseid);
                 </a>
                 <a class="das-item-menu8" href="#">
                     <li id="das-item-menu8"><img src="assets/img/topicos.png" alt="Imagem de item do menu" class="das-image-menu">
-                        <p id="das-name-menu8">Acesso por Tópico</p>
+                        <p id="das-name-menu8">Acesso por Atividade</p>
                     </li>
                 </a>
                 <a class="das-item-menu9" href="#">
@@ -248,7 +248,7 @@ $courseusers = das_course_users($courseid);
                 </a>
                 <a class="das-item-menu11" href="#">
                     <li id="das-item-menu11"><img src="assets/img/tempo.png" alt="Imagem de item do menu" class="das-image-menu">
-                        <p id="das-name-menu11">Tempo Médio no Curso</p>
+                        <p id="das-name-menu11">Tempo Médio por semana</p>
                     </li>
                 </a>
                 <a class="das-item-menu12" href="das-general-report.php">
