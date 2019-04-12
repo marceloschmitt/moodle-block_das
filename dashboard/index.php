@@ -39,7 +39,7 @@ $courseusers = das_course_users($courseid);
     <script>
         $(function() {
             var menu = Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-            var blockNames = Array("das-alerts", "das-nosubmissions", "das-intimesubmissions", "das-latsubmissions", "das-resubmissions",
+            var blockNames = Array("das-alerts", "das-resubmissions", "das-intimesubmissions", "das-latesubmissions", "das-nosubmissions",
                                     "das-online-users-box", "das-missing-users-box", "das-status-class", "das-acess-activity", "das-alerts",
                                     "das-resources", "das-permanence-course");
             var columns = Array(1,1,1,1);
